@@ -1,0 +1,109 @@
+[
+  {
+    "id": "the-lohagarh-palace",
+    "name": "The Lohagarh Palace",
+    "location": "Jaipur, Rajasthan",
+    "image": "/images/hero-main.png",
+    "description": "A 19th-century palace offering a royal experience with modern amenities and breathtaking architecture.",
+    "price": "15,000",
+    "category": "Palace",
+    "amenities": ["Free Wifi", "Spa", "Pool", "Fine Dining", "Butler Service"],
+    "rating": 4.8
+  },
+  {
+    "id": "lohagarh-desert-resort",
+    "name": "Lohagarh Desert Resort",
+    "location": "Jaisalmer, Rajasthan",
+    "image": "/images/spa-wellness.png",
+    "description": "Serene luxury nestled on the banks of Lake Pichola, offering private pool villas and exquisite dining.",
+    "price": "22,000",
+    "category": "Resort",
+    "amenities": ["Lake View", "Private Pool", "Spa", "Boat Ride", "Yoga"],
+    "rating": 4.9
+  },
+  {
+    "id": "lohagarh-fort-resort",
+    "name": "Lohagarh Fort Resort",
+    "location": "Jaipur, Rajasthan",
+    "image": "/images/room-luxury.png",
+    "description": "Luxury tents amidst the wilderness, perfect for wildlife enthusiasts seeking comfort and adventure.",
+    "price": "18,000",
+    "category": "Safari",
+    "amenities": [
+      "Jungle Safari",
+      "Bonfire",
+      "Naturalist",
+      "Tent Stay",
+      "Organic Food"
+    ],
+    "rating": 4.7
+  },
+  {
+    "id": "townhall-restaurant-events",
+    "name": "Townhall Restaurant & Events",
+    "location": "Bharatpur, Rajasthan",
+    "image": "/images/safari.png",
+    "description": "Experience the magic of the Thar Desert in our luxury Swiss tents with folk music and camel safaris.",
+    "price": "12,000",
+    "category": "Camping",
+    "amenities": [
+      "Camel Safari",
+      "Folk Music",
+      "Desert Dinner",
+      "Star Gazing",
+      "Luxury Tents"
+    ],
+    "rating": 4.6
+  },
+  {
+    "id": "mahalkhas",
+    "name": "Mahalkhas",
+    "location": "Bharatpur, Rajasthan",
+    "image": "/images/heritage-walk.png",
+    "description": "A colonial-style estate perched on the hills, offering panoramic views and cool mountain breeze.",
+    "price": "14,500",
+    "category": "Heritage",
+    "amenities": [
+      "Hill View",
+      "Trekking",
+      "Colonial Decor",
+      "Library",
+      "Fireplace"
+    ],
+    "rating": 4.5
+  },
+  {
+    "id": "kothi-lohagarh",
+    "name": "Kothi Lohagarh",
+    "location": "Jaipur, Rajasthan",
+    "image": "/images/wedding.png",
+    "description": "Stay in the heart of the Blue City in a heritage haveli restored to its former glory.",
+    "price": "16,000",
+    "category": "Heritage",
+    "amenities": [
+      "Heritage Walk",
+      "Rooftop Dining",
+      "Blue City View",
+      "Cultural Shows",
+      "Cooking Classes"
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": "lohagarh-corbett-resort",
+    "name": "Lohagarh Corbett Resort",
+    "location": "Corbett, Uttarakhand",
+    "image": "/images/wedding.png",
+    "description": "Stay in the heart of the Blue City in a heritage haveli restored to its former glory.",
+    "price": "16,000",
+    "category": "Heritage",
+    "amenities": [
+      "Heritage Walk",
+      "Rooftop Dining",
+      "Blue City View",
+      "Cultural Shows",
+      "Cooking Classes"
+    ],
+    "rating": 4.8
+  }
+]
