@@ -34,9 +34,9 @@ export default function Navbar() {
       label: 'Dining', 
       href: '/dining',
       submenu: [
-        { label: 'Fine Dining', href: '/dining#fine' },
-        { label: 'Bars & Lounges', href: '/dining#bars' },
-        { label: 'In-Room Dining', href: '/dining#room' }
+        { label: 'Fine Dining', category: null, href: '/dining#fine' },
+        { label: 'Bars & Lounges', category: null, href: '/dining#bars' },
+        { label: 'In-Room Dining', category: null, href: '/dining#room' }
       ]
     },
     { 
@@ -152,7 +152,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-2 gap-8">
                     {
                       Array.from(new Set(activeSubmenu.submenu?.map((item) => item?.category))).map((category, index) => (
-                        <div key={category + index}>
+                        <div key={category ?? "" + index}>
                           {
                             category &&
                             <h3 className="text-sm font-semibold uppercase text-gray-500 mb-4">

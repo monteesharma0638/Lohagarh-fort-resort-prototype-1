@@ -7,6 +7,7 @@
     "description": "A 19th-century palace offering a royal experience with modern amenities and breathtaking architecture.",
     "price": "15,000",
     "category": "Palace",
+    "featured": true,
     "amenities": ["Free Wifi", "Spa", "Pool", "Fine Dining", "Butler Service"],
     "rating": 4.8
   },
@@ -18,6 +19,7 @@
     "description": "Serene luxury nestled on the banks of Lake Pichola, offering private pool villas and exquisite dining.",
     "price": "22,000",
     "category": "Resort",
+    "featured": true,
     "amenities": ["Lake View", "Private Pool", "Spa", "Boat Ride", "Yoga"],
     "rating": 4.9
   },
@@ -29,6 +31,7 @@
     "description": "Luxury tents amidst the wilderness, perfect for wildlife enthusiasts seeking comfort and adventure.",
     "price": "18,000",
     "category": "Safari",
+    "featured": true,
     "amenities": [
       "Jungle Safari",
       "Bonfire",

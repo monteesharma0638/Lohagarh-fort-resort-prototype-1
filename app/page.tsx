@@ -8,34 +8,10 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
 import MotionA from "@/components/MotionA";
+import hotels from "./hotels/hotels.json";
 
 export default function Home() {
-  const featuredHotels = [
-    {
-      id: 1,
-      name: "The Lohagarh Palace",
-      location: "Jaipur, Rajasthan",
-      image: "/images/hero-main.png",
-      description: "A 19th-century palace offering a royal experience with modern amenities and breathtaking architecture.",
-      price: "15,000"
-    },
-    {
-      id: 2,
-      name: "Lakeside Retreat",
-      location: "Udaipur, Rajasthan",
-      image: "/images/spa-wellness.png",
-      description: "Serene luxury nestled on the banks of Lake Pichola, offering private pool villas and exquisite dining.",
-      price: "22,000"
-    },
-    {
-      id: 3,
-      name: "Wilderness Lodge",
-      location: "Ranthambore",
-      image: "/images/room-luxury.png",
-      description: "Luxury tents amidst the wilderness, perfect for wildlife enthusiasts seeking comfort and adventure.",
-      price: "18,000"
-    }
-  ];
+  const featuredHotels = hotels.filter(hotel => hotel.featured);
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
