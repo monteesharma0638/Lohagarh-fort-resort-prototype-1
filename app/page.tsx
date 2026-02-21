@@ -10,13 +10,14 @@ import MotionDiv from "@/components/MotionDiv";
 import MotionA from "@/components/MotionA";
 import hotels from "./hotels/hotels.json";
 import { Carousel, CarouselContent, CarouselNext } from "@/components/ui/carousel";
+import Hero2 from "@/components/Hero2";
 
 export default function Home() {
   const featuredHotels = hotels.filter(hotel => hotel.featured);
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
-      <Hero />
+      <Hero2 />
       <section className="py-32 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
            <div className="h-full w-full" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")' }} />
@@ -96,7 +97,7 @@ export default function Home() {
             className="flex-1 relative group overflow-hidden"
           >
             <img 
-              src="/images/dining-fine.png" 
+              src="/images/lohagarhfortresort/dine-in.jpg" 
               alt="Fine Dining" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
@@ -119,7 +120,7 @@ export default function Home() {
             className="flex-1 relative group overflow-hidden"
           >
             <img 
-              src="/images/spa-wellness.png" 
+              src="/images/lohagarhfortresort/food-item-1.jpg" 
               alt="Spa" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
