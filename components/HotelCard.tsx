@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-interface HotelCardProps {
+export interface HotelCardProps {
   id?: string;
   name: string;
   location: string;
@@ -16,7 +16,7 @@ export default function HotelCard({ id, name, location, image, description, pric
   const linkHref = id ? `/hotels/${id}` : "/hotels";
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

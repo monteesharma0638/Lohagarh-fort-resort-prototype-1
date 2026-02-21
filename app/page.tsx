@@ -1,15 +1,9 @@
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import HotelCard from "@/components/HotelCard";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
-import MotionA from "@/components/MotionA";
 import hotels from "./hotels/hotels.json";
-import { Carousel, CarouselContent, CarouselNext } from "@/components/ui/carousel";
 import Hero2 from "@/components/Hero2";
 
 export default function Home() {

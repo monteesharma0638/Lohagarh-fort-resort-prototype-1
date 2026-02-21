@@ -12,7 +12,7 @@ export default function HotelCarousel() {
           {
             featuredHotels.map((hotel, index) => (
               <CarouselItem key={hotel.name + index} className="pl-2 md:pl-4">
-                  <HotelCard hotel={hotel} />
+                  <HotelCard {...hotel} />
               </CarouselItem>
             ))
           }
