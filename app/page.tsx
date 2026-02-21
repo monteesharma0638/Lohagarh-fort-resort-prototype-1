@@ -5,6 +5,7 @@ import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
 import hotels from "./hotels/hotels.json";
 import Hero2 from "@/components/Hero2";
+import Image from "next/image";
 
 export default function Home() {
   const featuredHotels = hotels.filter(hotel => hotel.featured);
@@ -90,10 +91,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex-1 relative group overflow-hidden"
           >
-            <img 
-              src="/images/lohagarhfortresort/dine-in.jpg" 
-              alt="Fine Dining" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            <Image 
+              src="/images/lohagarhfortresort/dine-in.jpg"
+              alt="Fine Dining"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              width={600}
+              height={800}
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
             <div className="absolute inset-0 flex flex-col justify-end p-12 md:p-20">
@@ -113,10 +116,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex-1 relative group overflow-hidden"
           >
-            <img 
+            <Image 
               src="/images/lohagarhfortresort/food-item-1.jpg" 
               alt="Spa" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              width={600}
+              height={800}
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
             <div className="absolute inset-0 flex flex-col justify-end p-12 md:p-20">

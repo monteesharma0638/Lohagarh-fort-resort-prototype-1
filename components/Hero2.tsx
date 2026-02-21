@@ -4,6 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from "next/image";
 
 const slides = [
   {
@@ -43,10 +44,12 @@ export default function Hero() {
         <div className="flex h-full">
           {slides.map((slide, index) => (
             <div key={index} className="relative flex-[0_0_100%] min-w-0 h-full">
-              <img 
+              <Image 
                 src={slide.image} 
                 alt={slide.title} 
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
+                width={1200}
+                height={800}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" />
               
