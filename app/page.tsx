@@ -9,6 +9,7 @@ import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
 import MotionA from "@/components/MotionA";
 import hotels from "./hotels/hotels.json";
+import { Carousel, CarouselContent, CarouselNext } from "@/components/ui/carousel";
 
 export default function Home() {
   const featuredHotels = hotels.filter(hotel => hotel.featured);

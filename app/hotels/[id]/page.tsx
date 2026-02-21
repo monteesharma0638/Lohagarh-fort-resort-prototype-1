@@ -14,7 +14,7 @@ export default async function HotelDetail({params}: {params: Promise<{id: string
     <div className="min-h-screen bg-background">      
       {/* Hero Section */}
       <div className="relative h-[70vh]">
-        <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+        <img src={hotel.coverImage ?? hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 bg-gradient-to-t from-black/80 to-transparent text-white">
           <div className="container mx-auto">
@@ -60,8 +60,16 @@ export default async function HotelDetail({params}: {params: Promise<{id: string
             <h3 className="text-2xl font-serif mb-6">Gallery</h3>
             <div className="grid grid-cols-2 gap-4">
                {/* Reusing existing images for gallery demo */}
-               <img src="/images/dining-fine.png" className="w-full h-48 object-cover hover:opacity-90 transition-opacity" />
-               <img src="/images/spa-wellness.png" className="w-full h-48 object-cover hover:opacity-90 transition-opacity" />
+               {
+                  hotel.gallery && hotel.gallery.length > 0 ? hotel.gallery.map((img, idx) => (
+                    <img key={idx} src={img} className="w-full h-48 object-cover hover:opacity-90 transition-opacity" />
+                  )) : (
+                    <>
+                      <img src="/images/dining-fine.png" className="w-full h-48 object-cover hover:opacity-90 transition-opacity" />
+                      <img src="/images/spa-wellness.png" className="w-full h-48 object-cover hover:opacity-90 transition-opacity" />
+                    </>
+                  )
+               }
             </div>
           </div>
 

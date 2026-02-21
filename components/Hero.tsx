@@ -52,7 +52,8 @@ export default function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 1 }}
-              className="italic font-light gold-text-gradient ml-0 md:ml-32 mt-2"
+              style={{lineHeight: 1.1}}
+              className="italic font-light gold-text-gradient ml-0 md:ml-32"
             >
               Lohagarh
             </motion.span>
@@ -62,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="mt-12"
+            className="mt-10"
           >
             <div className="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto mb-8" />
             <p className="text-white/70 text-sm md:text-base tracking-[0.2em] uppercase max-w-xl mx-auto font-medium">
