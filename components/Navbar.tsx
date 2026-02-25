@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import MotionDiv from "./MotionDiv";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -103,28 +105,28 @@ export default function Navbar() {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="fixed inset-0 bg-black z-[60] p-8 flex flex-col">
+          <MotionDiv initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="fixed inset-0 bg-black z-[60] p-8 flex flex-col">
             <button className="self-end text-primary mb-12" onClick={() => setIsMobileMenuOpen(false)}><X size={32} /></button>
             <div className="flex flex-col gap-6">
               {navItems.map((item) => (
                 <div key={item.label} className="flex flex-col gap-4">
-                  <Link href={item.href} onClick={() => setActiveSubmenu(null)}><a onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif text-white">{item.label}</a></Link>
+                  <Link href={item.href} onClick={() => setActiveSubmenu(null)}><span onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif text-white">{item.label}</span></Link>
                   {item.submenu && (
                     <div className="flex flex-col gap-3 pl-4 border-l border-primary/20">
                       {item.submenu.map((sub) => (
-                        <Link key={sub.label} href={sub.href}><a onClick={() => setIsMobileMenuOpen(false)} className="text-sm tracking-[0.1em] uppercase text-primary/70">{sub.label}</a></Link>
+                        <Link key={sub.label} href={sub.href}><span onClick={() => setIsMobileMenuOpen(false)} className="text-sm tracking-[0.1em] uppercase text-primary/70">{sub.label}</span></Link>
                       ))}
                     </div>
                   )}
                 </div>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
       {
         activeSubmenu && (
-          <motion.div
+          <MotionDiv
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -138,7 +140,7 @@ export default function Navbar() {
                     className="h-[380px] rounded-xl bg-cover bg-center"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1566073771259-6a8506099945')",
+                        "url('/images/lohagarhfortresort/coridoor.jpg')",
                     }}
                   >
                     <div className="h-full w-full bg-black/30 rounded-xl flex items-end p-6">
@@ -175,7 +177,7 @@ export default function Navbar() {
                     }
                   </div>
                 </div>
-          </motion.div>
+          </MotionDiv>
         )
       }
     </header>

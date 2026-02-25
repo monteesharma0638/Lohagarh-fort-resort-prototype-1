@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface HotelCardProps {
   id?: string;
@@ -26,10 +27,12 @@ export default function HotelCard({ id, name, location, image, description, pric
       <Link href={linkHref}>
         <div className="relative overflow-hidden aspect-[4/5] mb-6">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10" />
-          <img 
+          <Image
             src={image} 
             alt={name} 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            width={360}
+            height={450}
           />
           <div className="absolute bottom-0 left-0 right-0 p-6 z-20 bg-gradient-to-t from-black/80 to-transparent">
              <span className="text-xs font-bold tracking-widest text-primary uppercase mb-2 block">{location}</span>

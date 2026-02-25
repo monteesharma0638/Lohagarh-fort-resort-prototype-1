@@ -7,24 +7,24 @@ import { motion } from 'framer-motion';
 import Image from "next/image";
 
 const slides = [
-  {
-    image: "/images/lohagarhfortresort/homepage-slider-image-1.webp",
-    title: "The Royal Lohagarh",
-    subtitle: "Heritage of Excellence",
-    description: "A Symphony of Indian Hospitality & Grandeur"
-  },
-  {
-    image: "/images/lohagarhfortresort/front-gate.jpg",
-    title: "Palatial Suites",
-    subtitle: "Modern Luxury",
-    description: "Experience the pinnacle of comfort in our restored royal chambers"
-  },
-  {
-    image: "/images/lohagarhfortresort/pool-site.jpg",
-    title: "Culinary Arts",
-    subtitle: "Gourmet Flavors",
-    description: "Authentic recipes from the royal kitchens of India"
-  }
+    {
+      image: "/images/lohagarhfortresort/front-gate.jpg",
+      title: "The Royal Lohagarh",
+      subtitle: "Heritage of Excellence",
+      description: "A Symphony of Indian Hospitality & Grandeur"
+    },
+    {
+        image: "/images/lohagarhfortresort/homepage-slider-image-1.webp",
+        title: "Palatial Suites",
+        subtitle: "Modern Luxury",
+        description: "Experience the pinnacle of comfort in our restored royal chambers"
+    },
+    {
+        image: "/images/lohagarhfortresort/pool-site.jpg",
+        title: "Culinary Arts",
+        subtitle: "Gourmet Flavors",
+        description: "Authentic recipes from the royal kitchens of India"
+    }
 ];
 
 export default function Hero() {
@@ -48,10 +48,9 @@ export default function Hero() {
                 src={slide.image} 
                 alt={slide.title} 
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
-                width={1200}
-                height={800}
+                fill
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-foreground/60" />
               
               <div className="relative h-full flex items-center justify-center text-center px-4">
                 <motion.div

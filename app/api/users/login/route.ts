@@ -1,0 +1,42 @@
+import { connectDB } from "@/lib/db";
+import Users from "@/models/Users";
+import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
+export async function POST(req: Request) {
+    try {
+        const {  email, password, loginType } = await req.json();
+
+        await connectDB();
+        let token;
+        if(loginType === "super-admin") {
+            const user = await Users.findOne({ email, access: "super-admin" });
+            if (!user || !(await bcrypt.compare(password, user.password))) {
+                return NextResponse.json({ error: 'Invalid Super Admin credentials' }, { status: 401 });
+            }
+            token = jwt.sign({ id: user._id, access: user.access }, process.env.JWT_SECRET!, { expiresIn: '7d' });
+        }
+        else {
+            const user = await Users.findOne({ email });
+            if(!user || !(await bcrypt.compare(password, user.password))) {
+                return NextResponse.json({ error: "Invalid Admin Login Credentails" }, { status: 401 });
+            }
+            token = jwt.sign({ id: user._id, access: user.access }, process.env.JWT_SECRET!, { expiresIn: '7d' });
+        }
+        
+        const response = NextResponse.json({ message: "logged in successfully", token });
+        response.cookies.set('session', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'lax',
+            maxAge: 60 * 60 * 24, // 1 day
+            path: '/',
+        });
+
+        return response;
+    }
+    catch(err: any) {
+        return NextResponse.json({ message: "Error logging in", error: err.message }, { status: 500 });
+    }
+}
