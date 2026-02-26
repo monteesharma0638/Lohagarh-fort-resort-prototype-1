@@ -6,11 +6,12 @@ import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
     try {
-        const {  email, password, loginType } = await req.json();
+        const {  email, password, role } = await req.json();
+        console.log("🚀 ~ POST ~ em̥ail:", email);
 
         await connectDB();
         let token;
-        if(loginType === "super-admin") {
+        if(role === "super-admin") {
             const user = await Users.findOne({ email, access: "super-admin" });
             if (!user || !(await bcrypt.compare(password, user.password))) {
                 return NextResponse.json({ error: 'Invalid Super Admin credentials' }, { status: 401 });

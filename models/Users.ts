@@ -10,6 +10,7 @@ const UsersSchema = new Schema(
     TotalLogins: {type: Number, default: 0}
   },
   { timestamps: true }
+  
 );
 
 export default mongoose.models.Users ||

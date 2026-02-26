@@ -1,6 +1,4 @@
-"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { 
   LayoutDashboard, 
   Users, 
@@ -10,20 +8,29 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Params } from "next/dist/server/request/params";
+import { getSession } from "../helpers";
+import { redirect } from "next/navigation";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
+  params: Promise<Params>
 }
 
-export default function AdminLayout({ children }: AdminLayoutProps) {
-  const location = usePathname();
+const navItems = [
+  { icon: LayoutDashboard, label: "Dashboard", href: "/admin/dashboard" },
+  { icon: Users, label: "Users (Super Admin)", href: "/admin/dashboard/users" },
+  { icon: FileText, label: "Pages", href: "/admin/dashboard/pages" },
+  { icon: Newspaper, label: "Blogs", href: "/admin/dashboard/blogs" },
+];
 
-  const navItems = [
-    { icon: LayoutDashboard, label: "Dashboard", href: "/admin/dashboard" },
-    { icon: Users, label: "Users (Super Admin)", href: "/admin/dashboard/users" },
-    { icon: FileText, label: "Pages", href: "/admin/dashboard/pages" },
-    { icon: Newspaper, label: "Blogs", href: "/admin/dashboard/blogs" },
-  ];
+export default async function AdminLayout({ children, params }: AdminLayoutProps) {
+  const { slug: location } = await params;
+  const session = await getSession();
+
+  if(!session) {
+    redirect("/admin/login")
+  }
 
   return (
     <div className="flex h-screen bg-muted/30">
@@ -61,7 +68,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </div>
         
         <div className="p-4 border-t border-sidebar-border">
-          <Link href="/login">
+          <Link href="/api/users/logout">
             <Button variant="ghost" className="w-full justify-start text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground mt-1">
               <LogOut className="mr-3 h-5 w-5" />
               Logout

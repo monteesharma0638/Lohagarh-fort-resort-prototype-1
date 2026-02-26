@@ -6,28 +6,42 @@ import { Label } from "@/components/ui/label";
 import { Lock, Mail } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import Swal from "sweetalert2";
 
 export default function LoginForm() {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("admin");
-    const {mutate: loginMutate, isPending} = useMutation({
-        mutationFn: async () => {
-            const response = await fetch("/api/auth/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password, role })
-            });
-        },
-        onSuccess: () => {
-            redirect("/admin/dashboard");
-        }
-    })
+    const handleLogin =  async (e: any) => {
+      e.preventDefault();
+      console.log("email, password, role", email, password, role)
+      await fetch("/api/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, role })
+      }).then((_) => {
+        Swal.fire({
+          title: "Login Successfull",
+          text: "Welcome to Lohagarh Group",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000
+        })
+        router.push("/admin/dashboard");
+        router.refresh();
+      }).catch((err: any) => {
+        Swal.fire({
+          title: "Unable to Login.",
+          text: err.message,
+          icon: "error"
+        })
+      });
+    }
 
   return (
-          <Card className="w-[400px] shadow-xl border-border/50 bg-background/80 backdrop-blur-xl animate-in zoom-in-95 duration-500">
+      <Card className="w-[400px] shadow-xl border-border/50 bg-background/80 backdrop-blur-xl animate-in zoom-in-95 duration-500">
         <CardHeader className="space-y-3 pb-6 text-center">
           <div className="mx-auto w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2">
             <Lock className="h-6 w-6 text-primary" />
@@ -36,7 +50,7 @@ export default function LoginForm() {
           <CardDescription>Enter your credentials to access the panel</CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={() => loginMutate()} className="space-y-5">
+          <form onSubmit={(e) => handleLogin(e)} className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
@@ -46,6 +60,8 @@ export default function LoginForm() {
                   placeholder="admin@lohagarh.com" 
                   className="pl-10 h-11 transition-all focus-visible:ring-primary/20 focus-visible:border-primary"
                   required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   data-testid="input-email"
                 />
               </div>
@@ -63,6 +79,8 @@ export default function LoginForm() {
                   type="password" 
                   className="pl-10 h-11 transition-all focus-visible:ring-primary/20 focus-visible:border-primary"
                   required
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                   data-testid="input-password"
                 />
               </div>
