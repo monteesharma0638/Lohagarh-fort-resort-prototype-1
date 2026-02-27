@@ -29,7 +29,7 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
   const session = await getSession();
 
   if(!session) {
-    redirect("/admin/login")
+    redirect("/admin/login");
   }
 
   return (

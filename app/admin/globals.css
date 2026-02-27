@@ -132,3 +132,38 @@
     @apply font-heading tracking-tight;
   }
 }
+
+.codex-editor {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.ce-toolbar__content,
+.ce-block__content {
+  max-width: 100%;
+}
+
+.codex-editor h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.codex-editor h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.codex-editor h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.codex-editor img {
+  margin: 20px auto;
+  display: block;
+}
+
+.codex-editor .ce-block {
+  max-width: 100%;
+}

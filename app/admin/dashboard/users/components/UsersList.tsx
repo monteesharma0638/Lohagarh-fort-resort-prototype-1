@@ -87,10 +87,10 @@ export default function UsersList({users}: {users: IUsers[]}) {
 
   const getBadgeColor = (access: string) => {
     switch(access) {
-      case "super admin": return "bg-red-500/10 text-red-600 hover:bg-red-500/20";
-      case "page content and blogs": return "bg-blue-500/10 text-blue-600 hover:bg-blue-500/20";
-      case "blog edits": return "bg-orange-500/10 text-orange-600 hover:bg-orange-500/20";
-      case "page content": return "bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20";
+      case "super-admin": return "bg-red-500/10 text-red-600 hover:bg-red-500/20";
+      case "admin": return "bg-blue-500/10 text-blue-600 hover:bg-blue-500/20";
+      case "blog-edits": return "bg-orange-500/10 text-orange-600 hover:bg-orange-500/20";
+      case "page-content": return "bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20";
       default: return "bg-gray-500/10 text-gray-600";
     }
   };
@@ -141,9 +141,9 @@ export default function UsersList({users}: {users: IUsers[]}) {
                       <SelectValue placeholder="Select access level" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="page content">Page Content Only</SelectItem>
-                      <SelectItem value="blog edits">Blog Edits Only</SelectItem>
-                      <SelectItem value="page content and blogs">Page Content & Blogs</SelectItem>
+                      <SelectItem value="page-content">Page Content Only</SelectItem>
+                      <SelectItem value="blog-edits">Blog Edits Only</SelectItem>
+                      <SelectItem value="admin">Page Content & Blogs</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -201,7 +201,7 @@ export default function UsersList({users}: {users: IUsers[]}) {
                   <TableCell className="text-muted-foreground text-sm">{user.lastLogin}</TableCell>
                   <TableCell className="text-right">
                     <Button 
-                      variant="ghost" 
+                      variant="ghost"
                       size="sm" 
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
                       onClick={() => handleEdit(user)}
@@ -250,7 +250,7 @@ export default function UsersList({users}: {users: IUsers[]}) {
                   <SelectContent>
                     <SelectItem value="page-content">Page Content Only</SelectItem>
                     <SelectItem value="blog-edits">Blog Edits Only</SelectItem>
-                    <SelectItem value="page-content-and-blogs">Page Content & Blogs</SelectItem>
+                    <SelectItem value="admin">Page Content & Blogs</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

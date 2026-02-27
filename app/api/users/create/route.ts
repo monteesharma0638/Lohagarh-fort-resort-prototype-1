@@ -9,7 +9,7 @@ export async function POST(req: Request) {
         const superAdmin = await requireSuperAdmin();
         const { name, email, password, access } = await req.json();
         
-        if(!name || !email || !password || !access) {
+        if (!name || !email || !password || !access) {
             return NextResponse.json({ message: "All fields are required" }, { status: 400 });
         }
         const passwordHash = await bcrypt.hash(password, 10);
