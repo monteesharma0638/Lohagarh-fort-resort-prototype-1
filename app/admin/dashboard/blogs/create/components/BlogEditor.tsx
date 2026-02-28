@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { ToolConstructable } from '@editorjs/editorjs';
 
 export default function BlogEditor({editorRef}: {editorRef: any}) {
   const holderRef = useRef<HTMLDivElement | null>(null);
@@ -30,7 +29,7 @@ export default function BlogEditor({editorRef}: {editorRef: any}) {
       editorRef.current = new EditorJS({
         holder: holderRef.current!,
         placeholder: "Write something...",
-
+        data: {time: 2389239, blocks: []}, // replace this for initial data set.
         tools: {
           header: {
             class: Header as any,
@@ -49,7 +48,6 @@ export default function BlogEditor({editorRef}: {editorRef: any}) {
             class: List,
             inlineToolbar: true,
           },
-
           image: {
             class: ImageTool,
             config: {
@@ -59,7 +57,6 @@ export default function BlogEditor({editorRef}: {editorRef: any}) {
             },
             tunes: ['alignmentTune'],
           },
-
           quote: {
             class: Quote,
             inlineToolbar: true,
@@ -80,7 +77,7 @@ export default function BlogEditor({editorRef}: {editorRef: any}) {
                     Paragraph: "center"
                 }
             },
-            }
+          }
         },
         defaultBlock: "paragraph"
       });

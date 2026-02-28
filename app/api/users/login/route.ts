@@ -6,26 +6,18 @@ import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
     try {
-        const {  email, password, role } = await req.json();
-        console.log("🚀 ~ POST ~ em̥ail:", email);
+        const { email, password } = await req.json();
+
+        if(!email) throw new Error("Email is required");
+        if(!password) throw new Error("Password is required");
 
         await connectDB();
-        let token;
-        if(role === "super-admin") {
-            const user = await Users.findOne({ email, access: "super-admin" });
-            if (!user || !(await bcrypt.compare(password, user.password))) {
-                return NextResponse.json({ error: 'Invalid Super Admin credentials' }, { status: 401 });
-            }
-            token = jwt.sign({ id: user._id, access: user.access }, process.env.JWT_SECRET!, { expiresIn: '7d' });
+        const user = await Users.findOne({ email });
+        if (!user || !(await bcrypt.compare(password, user.password))) {
+            return NextResponse.json({ error: 'Invalid Super Admin credentials' }, { status: 401 });
         }
-        else {
-            const user = await Users.findOne({ email });
-            if(!user || !(await bcrypt.compare(password, user.password))) {
-                return NextResponse.json({ error: "Invalid Admin Login Credentails" }, { status: 401 });
-            }
-            token = jwt.sign({ id: user._id, access: user.access }, process.env.JWT_SECRET!, { expiresIn: '7d' });
-        }
-        
+        const token = jwt.sign({ id: user._id, access: user.access, name: user.name, email: user.email }, process.env.JWT_SECRET!, { expiresIn: '7d' });
+
         const response = NextResponse.json({ message: "logged in successfully", token });
         response.cookies.set('session', token, {
             httpOnly: true,

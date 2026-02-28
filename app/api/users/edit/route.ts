@@ -3,11 +3,11 @@ import { connectDB } from "@/lib/db";
 import Users from "@/models/Users";
 import { NextResponse } from "next/server";
 
-async function PUT(req: Request) {
+export async function PUT(req: Request) {
     try {
         await connectDB();
         const superAdmin = await requireSuperAdmin();
-        const {userId, name, email, password, access } = await req.json();
+        const { userId, name, email, password, access } = await req.json();
         if (!userId) {
             return NextResponse.json({ message: "user id is required" }, { status: 400 });
         }

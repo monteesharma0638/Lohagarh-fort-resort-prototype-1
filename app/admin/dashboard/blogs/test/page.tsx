@@ -21,79 +21,25 @@ export default function page() {
     const doc = useRef<null | HTMLDivElement>(null);
     useEffect(() => {
     const html = edjsParser.parse({
-    "time": 1772193862240,
-    "blocks": [
-        {
-            "id": "nlfI-BF3px",
-            "type": "header",
-            "data": {
-                "text": "Hello Sunio",
-                "level": 2
-            },
-            "tunes": {
-                "alignmentTune": {
-                    "alignment": "center"
+            "time": 1772254832730,
+            "blocks": [
+                {
+                    "id": "d1UgG9xjmB",
+                    "type": "code",
+                    "data": {
+                        "code": "<h1>Hello world</h1>"
+                    }
+                },
+                {
+                    "id": "y0KOqiCdIQ",
+                    "type": "code",
+                    "data": {
+                        "code": "<p>some paragraph</p>"
+                    }
                 }
-            }
-        },
-        {
-            "id": "cBUqjeOSIP",
-            "type": "paragraph",
-            "data": {
-                "text": "hello JIAN"
-            },
-            "tunes": {
-                "alignmentTune": {
-                    "alignment": "left"
-                }
-            }
-        },
-        {
-            "id": "pKMJDregjw",
-            "type": "paragraph",
-            "data": {
-                "text": "Hello Nobita"
-            },
-            "tunes": {
-                "alignmentTune": {
-                    "alignment": "left"
-                }
-            }
-        },
-        {
-            "id": "Sijd1AWMgN",
-            "type": "image",
-            "data": {
-                "caption": "",
-                "withBorder": false,
-                "withBackground": false,
-                "stretched": false,
-                "file": {
-                    "url": "/uploads/1772193850564-Screenshot 2026-02-03 215838.png"
-                }
-            },
-            "tunes": {
-                "alignmentTune": {
-                    "alignment": "left"
-                }
-            }
-        },
-        {
-            "id": "ajAkYIJbZs",
-            "type": "header",
-            "data": {
-                "text": "hello Doraemon",
-                "level": 2
-            },
-            "tunes": {
-                "alignmentTune": {
-                    "alignment": "center"
-                }
-            }
-        }
-    ],
-    "version": "2.31.3"
-    })
+            ],
+            "version": "2.31.3"
+        })
 
         if(doc.current) {
             doc.current.innerHTML = html;

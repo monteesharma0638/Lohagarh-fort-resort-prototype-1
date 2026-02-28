@@ -10,7 +10,7 @@ export async function getSession() {
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET || "");
     // Return the user data stored in the JWT
-    return payload;
+    return payload as jwt.JwtPayload;
   } catch (error) {
     // Token is expired or invalid
     return null;

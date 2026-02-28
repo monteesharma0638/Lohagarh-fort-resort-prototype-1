@@ -19,7 +19,7 @@ interface AdminLayoutProps {
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/admin/dashboard" },
-  { icon: Users, label: "Users (Super Admin)", href: "/admin/dashboard/users" },
+  { icon: Users, label: "Users (Super Admin)", href: "/admin/dashboard/users", onlySuperAdmin: true },
   { icon: FileText, label: "Pages", href: "/admin/dashboard/pages" },
   { icon: Newspaper, label: "Blogs", href: "/admin/dashboard/blogs" },
 ];
@@ -48,7 +48,16 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
           </div>
           {navItems.map((item) => {
             const isActive = location === item.href;
+            let canRender = false;
+            if(item.onlySuperAdmin && session.access === "super-admin") {
+              canRender = true;
+            }
+            else if (!item.onlySuperAdmin) {
+              canRender = true;
+            }
+
             return (
+              canRender &&
               <Link key={item.href} href={item.href}>
                 <Button
                   variant={isActive ? "secondary" : "ghost"}
@@ -85,10 +94,7 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
             {navItems.find(item => item.href === location)?.label || "Lohagarh Admin Panel"}
           </div>
           <div className="flex items-center space-x-4">
-            <Avatar className="h-8 w-8 cursor-pointer ring-2 ring-primary/10 transition-all hover:ring-primary/30">
-              <AvatarImage src="https://i.pravatar.cc/150?u=admin" />
-              <AvatarFallback>AD</AvatarFallback>
-            </Avatar>
+            {session?.name}
           </div>
         </header>
 

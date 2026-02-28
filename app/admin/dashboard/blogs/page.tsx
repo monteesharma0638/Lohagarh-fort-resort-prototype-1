@@ -1,41 +1,22 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Search, Edit3, Image as ImageIcon, FolderTree } from "lucide-react";
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogDescription, 
-  DialogFooter, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogTrigger 
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Plus, Search, Edit3 } from "lucide-react";
 import Link from "next/link";
+import AddCategory from "./components/AddCategory";
+import BlogCategories from "@/models/BlogCategories";
 
-export default function Blogs() {
-  const [blogs] = useState([
-    { id: 1, title: "10 Reasons to Visit Jaipur", category: "Travel Guide", status: "Published", date: "2024-02-20" },
-    { id: 2, title: "Ultimate Wedding Destinations", category: "Weddings", status: "Published", date: "2024-02-15" },
-    { id: 3, title: "Relaxing Spa Treatments to Try", category: "Wellness", status: "Draft", date: "2024-02-24" },
-  ]);
+const blogs = [
+  { id: 1, title: "10 Reasons to Visit Jaipur", category: "Travel Guide", status: "Published", date: "2024-02-20" },
+  { id: 2, title: "Ultimate Wedding Destinations", category: "Weddings", status: "Published", date: "2024-02-15" },
+  { id: 3, title: "Relaxing Spa Treatments to Try", category: "Wellness", status: "Draft", date: "2024-02-24" },
+];
 
-  const [isCatModalOpen, setIsCatModalOpen] = useState(false);
-
-  const [categories] = useState([
-    { id: 1, name: "Travel Guide", description: "Tips and guides for traveling in Rajasthan.", articles: 12 },
-    { id: 2, name: "Weddings", description: "All about regal weddings.", articles: 5 },
-    { id: 3, name: "Wellness", description: "Spa and salon treatments.", articles: 3 },
-  ]);
-
+export default async function Blogs() {
+  const categories = await BlogCategories.find().lean();
 
   return (
     <div className="space-y-6 animate-in fade-in zoom-in-95 duration-300">
@@ -59,8 +40,8 @@ export default function Blogs() {
             </div>
             <Link href={"/admin/dashboard/blogs/create"}>
                 <Button>
-                    <Plus className="mr-2 h-4 w-4" />
-                    New Blog Post
+                  <Plus className="mr-2 h-4 w-4" />
+                  New Blog Post
                 </Button>
             </Link>
           </div>
@@ -111,39 +92,7 @@ export default function Blogs() {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input placeholder="Search categories..." className="pl-9 h-9" />
             </div>
-            
-            <Dialog open={isCatModalOpen} onOpenChange={setIsCatModalOpen}>
-              <DialogTrigger asChild>
-                <Button variant="secondary">
-                  <FolderTree className="mr-2 h-4 w-4" />
-                  New Category
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Create Category</DialogTitle>
-                  <DialogDescription>Add a new category to organize your blogs.</DialogDescription>
-                </DialogHeader>
-                <div className="grid gap-4 py-4">
-                  <div className="grid gap-2">
-                    <Label>Category Name</Label>
-                    <Input placeholder="e.g. Travel Destinations" />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label>Description</Label>
-                    <Textarea placeholder="Short description about this category" />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label>Image URL (Optional)</Label>
-                    <Input placeholder="https://..." />
-                  </div>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => setIsCatModalOpen(false)}>Cancel</Button>
-                  <Button onClick={() => setIsCatModalOpen(false)}>Save Category</Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+            <AddCategory />
           </div>
 
           <Card className="border-border shadow-sm">
@@ -153,16 +102,16 @@ export default function Blogs() {
                   <TableRow>
                     <TableHead className="w-[200px]">Name</TableHead>
                     <TableHead>Description</TableHead>
-                    <TableHead>Articles Count</TableHead>
+                    <TableHead>Image Url</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {categories.map((cat) => (
-                    <TableRow key={cat.id}>
+                    <TableRow key={cat._id}>
                       <TableCell className="font-medium">{cat.name}</TableCell>
                       <TableCell className="text-muted-foreground text-sm">{cat.description}</TableCell>
-                      <TableCell>{cat.articles}</TableCell>
+                      <TableCell>{cat.image}</TableCell>
                       <TableCell className="text-right">
                         <Button variant="ghost" size="sm">Edit</Button>
                       </TableCell>

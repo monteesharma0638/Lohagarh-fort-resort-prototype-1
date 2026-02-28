@@ -8,6 +8,8 @@ export async function requireAdmin(access: Array<String>) {
   const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
     id: string;
     access: string;
+    name: string;
+    email: string;
   };
 
   if(!access.includes(decoded.access)) throw new Error("Unauthorized");
@@ -20,8 +22,10 @@ export async function requireSuperAdmin() {
     if (!token) throw new Error("Unauthorized");
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
-        id: string;
-        access: string;
+      id: string;
+      access: string;
+      name: string;
+      email: string;
     }
 
     if(decoded.access !== "super-admin") throw new Error("You need to be a super admin to create a user.");

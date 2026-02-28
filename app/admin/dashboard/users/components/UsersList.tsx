@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
@@ -31,11 +32,66 @@ export default function UsersList({users}: {users: IUsers[]}) {
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<any>(null);
+  const router = useRouter();
 
   const handleEdit = (user: any) => {
     setSelectedUser(user);
     setIsEditOpen(true);
   };
+
+  const handleUpdateUser = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const access = formData.get("access");
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      "userId": selectedUser._id,
+      email,
+      password,
+      access,
+      name
+    });
+
+    const requestOptions = {
+      method: "PUT",
+      headers: myHeaders,
+      body: raw
+    };
+    setIsEditOpen(false);
+    await fetch("/api/users/edit", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        if(result.error) {
+          console.log("Error while updating user.", result.error);
+          Swal.fire({
+            title: result.message,
+            text: "You may trying to put an email that already exist.",
+            icon: "error",
+          })
+          return;
+        }
+        Swal.fire({
+          title: result.message,
+          icon: "success",
+          timer: 3000
+        })  
+        router.refresh();
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          title: "Unable to update user.",
+          text: error.message,
+          icon: "error"
+        })
+      });
+  }
 
   const handleCreateUser = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -227,39 +283,41 @@ export default function UsersList({users}: {users: IUsers[]}) {
               Update information and access levels for {selectedUser?.name}.
             </DialogDescription>
           </DialogHeader>
-          {selectedUser && (
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="edit-name">Name</Label>
-                <Input id="edit-name" defaultValue={selectedUser.name} />
+          <form onSubmit={handleUpdateUser}>
+            {selectedUser && (
+              <div className="grid gap-4 py-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="edit-name">Name</Label>
+                  <Input id="edit-name" name="name" defaultValue={selectedUser.name} />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="edit-email">Email</Label>
+                  <Input id="edit-email" name="email" type="email" defaultValue={selectedUser.email} />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="edit-password">New Password (Optional)</Label>
+                  <Input id="edit-password" name="password" type="password" placeholder="Leave blank to keep current" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="edit-access">Access Level</Label>
+                  <Select name="access" defaultValue={selectedUser.access}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="page-content">Page Content Only</SelectItem>
+                      <SelectItem value="blog-edits">Blog Edits Only</SelectItem>
+                      <SelectItem value="admin">Page Content & Blogs</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
-              <div className="grid gap-2">
-                <Label htmlFor="edit-email">Email</Label>
-                <Input id="edit-email" type="email" defaultValue={selectedUser.email} />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="edit-password">New Password (Optional)</Label>
-                <Input id="edit-password" type="password" placeholder="Leave blank to keep current" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="edit-access">Access Level</Label>
-                <Select defaultValue={selectedUser.access}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="page-content">Page Content Only</SelectItem>
-                    <SelectItem value="blog-edits">Blog Edits Only</SelectItem>
-                    <SelectItem value="admin">Page Content & Blogs</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          )}
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setIsEditOpen(false)}>Cancel</Button>
-            <Button type="button" onClick={() => setIsEditOpen(false)}>Save Changes</Button>
-          </DialogFooter>
+            )}
+            <DialogFooter>
+              <Button type="button" variant="outline" onClick={() => setIsEditOpen(false)}>Cancel</Button>
+              <Button type="submit">Save Changes</Button>
+            </DialogFooter>
+          </form>
         </DialogContent>
       </Dialog>
     </div>
