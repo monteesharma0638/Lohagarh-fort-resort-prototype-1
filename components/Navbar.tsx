@@ -2,18 +2,147 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
 import MotionDiv from "./MotionDiv";
+
+type SubMenuItem = {
+  label: string;
+  href: string;
+};
+
+type SubMenuCategory = {
+  category: string;
+  items: SubMenuItem[];
+};
+
+type NavItem = {
+  label: string;
+  href: string;
+  submenu?: SubMenuCategory[];
+};
+
+const navItems: NavItem[] = [
+  {
+    label: "About",
+    href: "/about",
+    submenu: [
+      {
+        category: "",
+        items: [
+          { label: "About Lohagarh", href: "/about" },
+          { label: "Letter from Chairman", href: "/about/chairman-letter" },
+          { label: "Management", href: "/about/management" },
+          { label: "Our Mission", href: "/about/mission" },
+          { label: "Code of Conduct", href: "/about/code-of-conduct" },
+          { label: "Code of Ethics", href: "/about/code-of-ethics" },
+          { label: "Testimonials", href: "/about/testimonials" },
+          { label: "Definition of LOGO", href: "/about/logo-definition" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Our Hotels",
+    href: "/hotels",
+    submenu: [
+      {
+        category: "Jaipur",
+        items: [
+          { label: "Lohagarh Fort Resort", href: "/hotels/lohagarh-fort-resort" },
+          { label: "Kothi Lohagarh", href: "/hotels/kothi-lohagarh" },
+        ],
+      },
+      {
+        category: "Jaisalmer",
+        items: [
+          { label: "Lohagarh Desert Resort", href: "/hotels/lohagarh-desert-resort" },
+        ],
+      },
+      {
+        category: "Bharatpur",
+        items: [
+          { label: "Townhall Restaurant & Events", href: "/hotels/townhall" },
+          { label: "Mahalkhas", href: "/hotels/mahalkhas" },
+        ],
+      },
+      {
+        category: "Nainital",
+        items: [
+          { label: "Lohagarh Corbett Resort", href: "/hotels/corbett-resort" },
+        ],
+      },
+      {
+        category: "Special Packages",
+        items: [
+          { label: "Wedding", href: "/special-packages/wedding" },
+          { label: "Events", href: "/special-packages/events" },
+          { label: "Palace on Wheels", href: "/special-packages/palace-on-wheels" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Experiences",
+    href: "/experiences",
+    submenu: [
+      {
+        category: "",
+        items: [
+          { label: "Regal Experience", href: "/experiences/regal-experience" },
+          { label: "Regal Weddings", href: "/experiences/regal-weddings" },
+          { label: "Spa and Salon", href: "/experiences/spa-and-salon" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Awards",
+    href: "/awards",
+  },
+  {
+    label: "Gallery",
+    href: "/gallery",
+    submenu: [
+      {
+        category: "Properties",
+        items: [
+          { label: "Lohagarh Fort Resort", href: "/gallery?property=lohagarh-fort-resort" },
+          { label: "Kothi Lohagarh", href: "/gallery?property=kothi-lohagarh" },
+          { label: "Lohagarh Desert Resort", href: "/gallery?property=lohagarh-desert-resort" },
+          { label: "Townhall Restaurant & Events", href: "/gallery?property=townhall" },
+          { label: "Mahalkhas", href: "/gallery?property=mahalkhas" },
+          { label: "Lohagarh Corbett Resort", href: "/gallery?property=corbett-resort" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Contact Us",
+    href: "/contact",
+    submenu: [
+      {
+        category: "",
+        items: [
+          { label: "Marketing & Sales", href: "/contact?dept=marketing" },
+          { label: "Investors", href: "/contact?dept=investors" },
+          { label: "Feedback", href: "/contact?dept=feedback" },
+          { label: "Career", href: "/contact?dept=career" },
+        ],
+      },
+    ],
+  },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<typeof navItems[number] | null>(null);
-  const location = usePathname();
+  const [activeSubmenu, setActiveSubmenu] = useState<NavItem | null>(null);
+  const [expandedMobileItems, setExpandedMobileItems] = useState<string[]>([]);
+  const pathname = usePathname();
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -21,100 +150,173 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    {
-      label: 'Hotels', 
-      href: '/hotels',
-      // submenu: [
-      //   { label: 'Palaces', href: '/hotels?type=palace' },
-      //   { label: 'Resorts', href: '/hotels?type=resort' },
-      //   { label: 'Safari Lodges', href: '/hotels?type=safari' },
-      //   { label: 'Heritage Havelis', href: '/hotels?type=heritage' }
-      // ]
-    },
-    { 
-      label: 'Dining', 
-      href: '/dining',
-      submenu: [
-        { label: 'Fine Dining', category: null, href: '/dining#fine' },
-        { label: 'Bars & Lounges', category: null, href: '/dining#bars' },
-        { label: 'In-Room Dining', category: null, href: '/dining#room' }
-      ]
-    },
-    { 
-      label: 'Experiences', 
-      href: '/experiences',
-      submenu: [
-        { label: 'Jiva Spa', category: "Rooms", href: '/experiences/spa' },
-        { label: 'Weddings', category: "Rooms", href: '/experiences/weddings' },
-        { label: 'Lohagarh Wedding Venue', category: "Weddings", href: 'https://www.lohagarhfortresort.in/wedding/' },
-        { label: 'Royal Wedding', category: "Weddings", href: 'https://www.lohagarhfortresort.in/5-star-luxury-destination-wedding-venues-in-jaipur-rajasthan-for-royal-wedding/' },
-      ]
-    },
-    { label: 'Offers', href: '/offers' },
-    { label: 'Discover', href: '/discover' }
-  ];
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setActiveSubmenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const toggleMobileSubmenu = (label: string) => {
+    setExpandedMobileItems((prev) =>
+      prev.includes(label) ? prev.filter((l) => l !== label) : [...prev, label]
+    );
+  };
+
+  const isOurHotels = activeSubmenu?.label === "Our Hotels";
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-      isScrolled || activeSubmenu ? "bg-[white]/95 backdrop-blur-md py-4 border-b border-primary/20 shadow-2xl" : "bg-gradient-to-b from-black/80 to-transparent py-8"
-    )}>
+    <header
+      ref={navRef}
+      className={cn(
+        "fixed top-9 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled || activeSubmenu
+          ? "bg-[white]/95 backdrop-blur-md py-4 border-b border-primary/20 shadow-2xl"
+          : "bg-gradient-to-b from-black/80 to-transparent py-8"
+      )}
+    >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" onClick={() => setActiveSubmenu(null)} className="flex flex-col items-center group">
-            <span className="font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold text-primary transition-all group-hover:text-primary">LOHAGARH</span>
-            <span className="text-[0.5rem] tracking-[0.6em] uppercase text-primary font-bold mt-1">ROYAL HERITAGE</span>
+        <Link
+          href="/"
+          onClick={() => setActiveSubmenu(null)}
+          className="flex flex-col items-center group"
+        >
+          <span className="font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold text-primary transition-all group-hover:text-primary">
+            LOHAGARH
+          </span>
+          <span className="text-[0.5rem] tracking-[0.6em] uppercase text-primary font-bold mt-1">
+            ROYAL HERITAGE
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
-            <div 
+            <div
               key={item.label}
               className="relative group py-2"
-              onClick={() => item.submenu ? setActiveSubmenu(item) : setActiveSubmenu(null)}
-              // onMouseLeave={() => setActiveSubmenu(null)}
+              onMouseEnter={() => item.submenu ? setActiveSubmenu(item) : setActiveSubmenu(null)}
             >
-              {
-                item.submenu ? (
-                      <a className={cn(
-                        "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1 cursor-pointer",
-                        location.startsWith(item.href) ? "text-primary" : "text-primary/60 hover:text-primary"
-                      )}>
-                        {item.label} {item.submenu && <ChevronDown size={12} className={cn("transition-transform duration-300", activeSubmenu?.label === item.label && "rotate-180")} />}
-                      </a>
-                ): (
-                  <Link href={item.href} className={cn(
-                      "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1",
-                      location.startsWith(item.href) ? "text-primary" : "text-primary/60 hover:text-primary"
-                    )}>
-                      {item.label} {item.submenu}
-                  </Link>
-                )
-              }
-              
+              {item.submenu ? (
+                <a
+                  className={cn(
+                    "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1 cursor-pointer",
+                    pathname.startsWith(item.href)
+                      ? "text-primary"
+                      : "text-primary/60 hover:text-primary"
+                  )}
+                >
+                  {item.label}
+                  <ChevronDown
+                    size={12}
+                    className={cn(
+                      "transition-transform duration-300",
+                      activeSubmenu?.label === item.label && "rotate-180"
+                    )}
+                  />
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setActiveSubmenu(null)}
+                  className={cn(
+                    "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1",
+                    pathname.startsWith(item.href)
+                      ? "text-primary"
+                      : "text-primary/60 hover:text-primary"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )}
             </div>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-6">
-          <button className="px-6 py-2.5 border border-primary/50 text-[0.65rem] tracking-[0.2em] uppercase text-primary font-bold hover:bg-primary hover:text-black transition-all">Book Now</button>
+          <Link
+            href="/reservations"
+            className="px-6 py-2.5 border border-primary/50 text-[0.65rem] tracking-[0.2em] uppercase text-primary font-bold hover:bg-primary hover:text-black transition-all"
+          >
+            Book Now
+          </Link>
         </div>
 
-        <button className="lg:hidden text-primary p-2 border border-primary/20" onClick={() => setIsMobileMenuOpen(true)}><Menu size={24} /></button>
+        <button
+          className="lg:hidden text-primary p-2 border border-primary/20"
+          onClick={() => setIsMobileMenuOpen(true)}
+        >
+          <Menu size={24} />
+        </button>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <MotionDiv initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="fixed inset-0 bg-black z-[60] p-8 flex flex-col">
-            <button className="self-end text-primary mb-12" onClick={() => setIsMobileMenuOpen(false)}><X size={32} /></button>
+          <MotionDiv
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            className="fixed inset-0 bg-black z-[60] p-8 flex flex-col overflow-y-auto"
+          >
+            <button
+              className="self-end text-primary mb-12"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={32} />
+            </button>
             <div className="flex flex-col gap-6">
               {navItems.map((item) => (
                 <div key={item.label} className="flex flex-col gap-4">
-                  <Link href={item.href} onClick={() => setActiveSubmenu(null)}><span onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif text-white">{item.label}</span></Link>
-                  {item.submenu && (
-                    <div className="flex flex-col gap-3 pl-4 border-l border-primary/20">
-                      {item.submenu.map((sub) => (
-                        <Link key={sub.label} href={sub.href}><span onClick={() => setIsMobileMenuOpen(false)} className="text-sm tracking-[0.1em] uppercase text-primary/70">{sub.label}</span></Link>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <span className="text-3xl font-serif text-white">
+                        {item.label}
+                      </span>
+                    </Link>
+                    {item.submenu && (
+                      <button
+                        onClick={() => toggleMobileSubmenu(item.label)}
+                        className="text-primary p-1"
+                      >
+                        <ChevronDown
+                          size={20}
+                          className={cn(
+                            "transition-transform duration-300",
+                            expandedMobileItems.includes(item.label) &&
+                              "rotate-180"
+                          )}
+                        />
+                      </button>
+                    )}
+                  </div>
+                  {item.submenu && expandedMobileItems.includes(item.label) && (
+                    <div className="flex flex-col gap-4 pl-4 border-l border-primary/20">
+                      {item.submenu.map((group) => (
+                        <div key={group.category || "default"}>
+                          {group.category && (
+                            <p className="text-xs tracking-[0.15em] uppercase text-primary/40 mb-2">
+                              {group.category}
+                            </p>
+                          )}
+                          <div className="flex flex-col gap-3">
+                            {group.items.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                <span className="text-sm tracking-[0.1em] uppercase text-primary/70">
+                                  {sub.label}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   )}
@@ -124,62 +326,78 @@ export default function Navbar() {
           </MotionDiv>
         )}
       </AnimatePresence>
-      {
-        activeSubmenu && (
+
+      <AnimatePresence>
+        {activeSubmenu && activeSubmenu.submenu && (
           <MotionDiv
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                onMouseLeave={() => setActiveSubmenu(null)}
-                className={"absolute left-0 top-full w-full bg-white shadow-2xl border-t"}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            onMouseLeave={() => setActiveSubmenu(null)}
+            className="absolute left-0 top-full w-full bg-white shadow-2xl border-t"
+          >
+            <div
+              className={cn(
+                "max-w-7xl mx-auto p-10",
+                isOurHotels ? "grid grid-cols-3 gap-10" : "grid grid-cols-2 gap-10"
+              )}
+            >
+              <div
+                className="h-[380px] rounded-xl bg-cover bg-center"
+                style={{
+                  backgroundImage:
+                    "url('/images/lohagarhfortresort/coridoor.jpg')",
+                }}
               >
-                <div className="grid grid-cols-2 max-w-7xl mx-auto p-10 gap-10">
-
-                  {/* LEFT SIDE IMAGE */}
-                  <div
-                    className="h-[380px] rounded-xl bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url('/images/lohagarhfortresort/coridoor.jpg')",
-                    }}
-                  >
-                    <div className="h-full w-full bg-black/30 rounded-xl flex items-end p-6">
-                      <h2 className="text-white text-2xl font-semibold">
-                        Experience Luxury & Comfort
-                      </h2>
-                    </div>
-                  </div>
-
-                  {/* RIGHT SIDE MENU */}
-                  <div className="grid grid-cols-2 gap-8">
-                    {
-                      Array.from(new Set(activeSubmenu.submenu?.map((item) => item?.category))).map((category, index) => (
-                        <div key={category ?? "" + index}>
-                          {
-                            category &&
-                            <h3 className="text-sm font-semibold uppercase text-gray-500 mb-4">
-                              {category}
-                            </h3>
-                          }
-                          <ul className="space-y-3">
-                            {
-                              activeSubmenu.submenu?.filter((sub) => sub?.category === category)?.map((sub) => (
-                                <li key={sub.label}>
-                                  <Link href={sub.href} onClick={() => setActiveSubmenu(null)}>
-                                    <span className="text-sm tracking-[0.1em] uppercase text-primary/70 hover:text-primary"> {sub.label}</span>
-                                  </Link>
-                                </li>
-                              ))
-                            }
-                          </ul>
-                        </div>
-                      ))   
-                    }
-                  </div>
+                <div className="h-full w-full bg-black/30 rounded-xl flex items-end p-6">
+                  <h2 className="text-white text-2xl font-semibold">
+                    {activeSubmenu.label === "About" && "Discover Our Legacy"}
+                    {activeSubmenu.label === "Our Hotels" && "Luxury Across Rajasthan"}
+                    {activeSubmenu.label === "Experiences" && "Unforgettable Moments"}
+                    {activeSubmenu.label === "Gallery" && "Visual Stories"}
+                    {activeSubmenu.label === "Contact Us" && "Get in Touch"}
+                  </h2>
                 </div>
+              </div>
+
+              <div
+                className={cn(
+                  "grid gap-8",
+                  isOurHotels ? "grid-cols-3 col-span-2" : "grid-cols-2"
+                )}
+              >
+                {activeSubmenu.submenu.map((group, index) => (
+                  <div key={group.category || `group-${index}`}>
+                    {group.category && (
+                      <h3 className="text-sm font-semibold uppercase text-gray-500 mb-4">
+                        {group.category}
+                      </h3>
+                    )}
+                    <ul className="space-y-3">
+                      {group.items.map((sub) => (
+                        <li key={sub.label}>
+                          <Link
+                            href={sub.href}
+                            onClick={() => setActiveSubmenu(null)}
+                          >
+                            <span className="text-sm tracking-[0.1em] uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-1 group/link">
+                              <ChevronRight
+                                size={12}
+                                className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200"
+                              />
+                              {sub.label}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </MotionDiv>
-        )
-      }
+        )}
+      </AnimatePresence>
     </header>
   );
 }

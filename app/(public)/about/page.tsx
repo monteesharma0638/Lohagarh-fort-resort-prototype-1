@@ -1,0 +1,47 @@
+import MotionDiv from "@/components/MotionDiv";
+import Image from "next/image";
+
+export default function AboutLohagarh() {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="relative h-[60vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image src="/images/lohagarhfortresort/cover_drone_view.jpg" alt="About Lohagarh" width={1200} height={700} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative z-10 text-center text-white">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="block text-sm tracking-[0.3em] uppercase mb-4">Our Heritage</span>
+            <h1 className="text-5xl md:text-7xl font-serif">About Lohagarh</h1>
+          </MotionDiv>
+        </div>
+      </div>
+
+      <div className="py-24 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <MotionDiv
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-serif italic mb-12">
+              "A legacy built on the foundations of Indian royalty, where every stone tells a story and every guest becomes family."
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              Lohagarh Group of Hotels represents the finest in Indian heritage hospitality. Our properties, spanning across Rajasthan and beyond, are living testaments to the grandeur of a bygone era. Each hotel in our collection has been meticulously restored and curated to offer guests an authentic royal experience while providing every modern comfort.
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              From the sun-kissed deserts of Jaisalmer to the vibrant streets of Jaipur, from the bird sanctuary of Bharatpur to the serene hills of Nainital, our properties invite you to experience India's rich cultural tapestry in unparalleled luxury.
+            </p>
+          </MotionDiv>
+        </div>
+      </div>
+    </div>
+  );
+}

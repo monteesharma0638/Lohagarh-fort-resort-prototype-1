@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-[#1a1a1a] text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Brand */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/">
               <span className="block mb-8">
@@ -33,50 +32,37 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-serif mb-6">Our Hotels</h4>
+            <h4 className="text-lg font-serif mb-6 uppercase tracking-wider">Site Links</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-primary transition-colors">Lohagarh Fort Resort</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Lohagarh Desert Resort (Jaisalmer)</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Townhall Restaurant & Events</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mahalkhas</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Kothi Lohagarh</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Lohagarh Corbett Resort</a></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/awards" className="hover:text-primary transition-colors">Awards</Link></li>
+              <li><Link href="/about/management" className="hover:text-primary transition-colors">Management</Link></li>
+              <li><Link href="/about/testimonials" className="hover:text-primary transition-colors">Testimonials</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors">Careers</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-lg font-serif mb-6">Contact Us</h4>
+            <h4 className="text-lg font-serif mb-6 uppercase tracking-wider">Experiences</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li>
-                <span className="block text-white mb-1">Reservations</span>
-                +91 123 456 7890
-              </li> 
-              <li>
-                <span className="block text-white mb-1">Email</span>
-                reservations@lohagarh.com
-              </li>
-              <li>
-                <span className="block text-white mb-1">Corporate Office</span>
-                Jaipur, Rajasthan, India
-              </li>
+              <li><Link href="/experiences/regal-experience" className="hover:text-primary transition-colors">Regal Experiences</Link></li>
+              <li><Link href="/experiences/regal-weddings" className="hover:text-primary transition-colors">Regal Weddings</Link></li>
+              <li><Link href="/experiences/spa-and-salon" className="hover:text-primary transition-colors">Spa and Salon</Link></li>
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-serif mb-6">Newsletter</h4>
+            <h4 className="text-lg font-serif mb-6 uppercase tracking-wider">Newsletter</h4>
             <p className="text-gray-400 text-sm mb-6">Subscribe to receive exclusive offers and updates.</p>
             <div className="flex border-b border-white/30 pb-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
+              <input
+                type="email"
+                placeholder="Enter your email"
                 className="bg-transparent border-none outline-none w-full text-sm placeholder:text-gray-500"
               />
               <button className="text-primary text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
-                Subscribe
+                Submit
               </button>
             </div>
           </div>
@@ -84,10 +70,12 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>© 2024 The Lohagarh Group. All Rights Reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+          <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
+            <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility Statement</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Statement</Link>
+            <Link href="/redressal" className="hover:text-white transition-colors">Redressal Forum</Link>
+            <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>
