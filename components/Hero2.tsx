@@ -61,7 +61,7 @@ export default function Hero() {
                   <span className="block text-primary text-xs md:text-sm tracking-[0.5em] uppercase font-bold mb-6">
                     {slide.subtitle}
                   </span>
-                  <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white mb-8 leading-tight">
+                  <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white mb-8 leading-tight hero-text-shadow">
                     {slide.title}
                   </h1>
                   <p className="text-white/70 text-sm md:text-base tracking-[0.2em] uppercase max-w-xl mx-auto font-medium">

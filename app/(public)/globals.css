@@ -36,6 +36,7 @@
   --color-chart-5: hsl(var(--chart-5));
   --color-bhagwa: hsl(var(--bhagwa));
   --color-maroon: hsl(var(--maroon));
+  --color-gold: hsl(var(--gold));
 
   --font-sans: 'Montserrat', sans-serif;
   --font-serif: 'Cormorant Garamond', 'Playfair Display', serif;
@@ -44,36 +45,37 @@
 }
 
 :root {
-  --background: 35 50% 95%;
-  --foreground: 15 30% 10%;
+  --background: 30 40% 96%;
+  --foreground: 20 25% 12%;
   
-  --card: 35 40% 97%;
-  --card-foreground: 15 30% 10%;
+  --card: 30 35% 98%;
+  --card-foreground: 20 25% 12%;
   
-  --popover: 35 40% 97%;
-  --popover-foreground: 15 30% 10%;
+  --popover: 30 35% 98%;
+  --popover-foreground: 20 25% 12%;
   
-  --primary: 43 72% 46%;
+  --primary: 24 88% 50%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 15 60% 15%;
-  --secondary-foreground: 35 50% 95%;
+  --secondary: 20 50% 12%;
+  --secondary-foreground: 30 40% 96%;
   
-  --muted: 35 25% 88%;
-  --muted-foreground: 15 15% 45%;
+  --muted: 30 20% 90%;
+  --muted-foreground: 20 10% 40%;
   
-  --accent: 25 80% 50%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 43 80% 48%;
+  --accent-foreground: 20 25% 12%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 35 30% 82%;
-  --input: 35 30% 82%;
-  --ring: 43 72% 46%;
+  --border: 30 25% 85%;
+  --input: 30 25% 85%;
+  --ring: 24 88% 50%;
   
-  --bhagwa: 24 90% 52%;
-  --maroon: 5 80% 18%;
+  --bhagwa: 24 88% 50%;
+  --maroon: 5 70% 20%;
+  --gold: 43 80% 48%;
   
   --radius: 0rem;
 }
@@ -84,9 +86,6 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
-    background-image: 
-      radial-gradient(circle at 20% 20%, hsla(43, 72%, 46%, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, hsla(24, 90%, 52%, 0.02) 0%, transparent 50%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight leading-tight;
@@ -95,42 +94,48 @@
 
 @layer utilities {
   .text-gold {
-    color: hsl(43 72% 46%);
+    color: hsl(43 80% 48%);
   }
   .bg-gold {
-    background-color: hsl(43 72% 46%);
+    background-color: hsl(43 80% 48%);
   }
   .border-gold {
-    border-color: hsl(43 72% 46%);
+    border-color: hsl(43 80% 48%);
   }
   .text-bhagwa {
-    color: hsl(24 90% 52%);
+    color: hsl(24 88% 50%);
   }
   .bg-bhagwa {
-    background-color: hsl(24 90% 52%);
+    background-color: hsl(24 88% 50%);
   }
   .text-maroon {
-    color: hsl(5 80% 18%);
+    color: hsl(5 70% 20%);
   }
   .bg-maroon {
-    background-color: hsl(5 80% 18%);
+    background-color: hsl(5 70% 20%);
   }
   .gold-gradient {
     background: linear-gradient(135deg, #C5961B 0%, #E8C252 50%, #C5961B 100%);
   }
   .gold-text-gradient {
-    background: linear-gradient(to right, #C5961B, #F5D76E, #C5961B);
+    background: linear-gradient(to right, #D4880E, #F5C842, #D4880E);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .bhagwa-gradient {
-    background: linear-gradient(135deg, #E8611A 0%, #FF8C42 50%, #E8611A 100%);
+    background: linear-gradient(135deg, #E05A10 0%, #FF8C42 50%, #E05A10 100%);
   }
   .heritage-gradient {
     background: linear-gradient(135deg, #3D0C02 0%, #5C1A0A 50%, #3D0C02 100%);
   }
+  .saffron-gradient {
+    background: linear-gradient(135deg, #D4620A 0%, #F09030 40%, #D4620A 100%);
+  }
   .glass-dark {
     @apply bg-[#2A0A00]/60 backdrop-blur-xl border border-primary/10;
+  }
+  .hero-text-shadow {
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
   }
 }
 
@@ -140,7 +145,7 @@
 }
 
 .animate-gold-shine {
-  background: linear-gradient(90deg, transparent, rgba(197, 150, 27, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232, 97, 26, 0.3), transparent);
   background-size: 200% 100%;
   animation: gold-shine 3s infinite;
 }

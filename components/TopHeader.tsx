@@ -17,27 +17,27 @@ export default function TopHeader() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-[#3D0C02] text-white/80 text-[0.65rem] tracking-[0.15em] uppercase border-b border-[#D4AF37]/20">
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-white text-[0.65rem] tracking-[0.15em] uppercase font-medium">
       <div className="container mx-auto px-6 flex items-center justify-between h-9">
         <nav className="hidden sm:flex items-center gap-6">
           {links.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="hover:text-[#D4AF37] transition-colors"
+              className="hover:text-white/70 transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4 ml-auto">
-          <a href="#" className="hover:text-[#D4AF37] transition-colors" aria-label="Facebook">
+          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Facebook">
             <Facebook size={14} />
           </a>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors" aria-label="Twitter">
+          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Twitter">
             <Twitter size={14} />
           </a>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors" aria-label="Instagram">
+          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Instagram">
             <Instagram size={14} />
           </a>
         </div>

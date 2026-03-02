@@ -169,14 +169,26 @@ export default function Navbar() {
 
   const isOurHotels = activeSubmenu?.label === "Our Hotels";
 
+  const navTextClass = (active: boolean) =>
+    cn(
+      "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1",
+      isScrolled || activeSubmenu
+        ? active
+          ? "text-primary"
+          : "text-gray-700 hover:text-primary"
+        : active
+          ? "text-white"
+          : "text-white/80 hover:text-white"
+    );
+
   return (
     <header
       ref={navRef}
       className={cn(
         "fixed top-9 left-0 right-0 z-50 transition-all duration-500",
         isScrolled || activeSubmenu
-          ? "bg-[#2A0A00]/95 backdrop-blur-md py-4 border-b border-primary/30 shadow-2xl"
-          : "bg-gradient-to-b from-[#1a0500]/80 to-transparent py-8"
+          ? "bg-white/97 backdrop-blur-md py-4 border-b border-primary/15 shadow-lg"
+          : "bg-gradient-to-b from-black/60 to-transparent py-8"
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -185,10 +197,16 @@ export default function Navbar() {
           onClick={() => setActiveSubmenu(null)}
           className="flex flex-col items-center group"
         >
-          <span className="font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold text-primary transition-all group-hover:text-primary">
+          <span className={cn(
+            "font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold transition-all",
+            isScrolled || activeSubmenu ? "text-primary" : "text-white"
+          )}>
             LOHAGARH
           </span>
-          <span className="text-[0.5rem] tracking-[0.6em] uppercase text-primary font-bold mt-1">
+          <span className={cn(
+            "text-[0.5rem] tracking-[0.6em] uppercase font-bold mt-1 transition-all",
+            isScrolled || activeSubmenu ? "text-primary/70" : "text-white/80"
+          )}>
             ROYAL HERITAGE
           </span>
         </Link>
@@ -203,10 +221,8 @@ export default function Navbar() {
               {item.submenu ? (
                 <a
                   className={cn(
-                    "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1 cursor-pointer",
-                    pathname.startsWith(item.href)
-                      ? "text-primary"
-                      : "text-primary/60 hover:text-primary"
+                    navTextClass(pathname.startsWith(item.href)),
+                    "cursor-pointer"
                   )}
                 >
                   {item.label}
@@ -222,12 +238,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => setActiveSubmenu(null)}
-                  className={cn(
-                    "text-[0.7rem] font-bold tracking-[0.2em] uppercase transition-all flex items-center gap-1",
-                    pathname.startsWith(item.href)
-                      ? "text-primary"
-                      : "text-primary/60 hover:text-primary"
-                  )}
+                  className={navTextClass(pathname.startsWith(item.href))}
                 >
                   {item.label}
                 </Link>
@@ -239,14 +250,22 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/reservations"
-            className="px-6 py-2.5 border border-primary/50 text-[0.65rem] tracking-[0.2em] uppercase text-primary font-bold hover:bg-primary hover:text-white transition-all"
+            className={cn(
+              "px-6 py-2.5 text-[0.65rem] tracking-[0.2em] uppercase font-bold transition-all",
+              isScrolled || activeSubmenu
+                ? "bg-primary text-white hover:bg-primary/90"
+                : "border border-white/60 text-white hover:bg-white hover:text-gray-900"
+            )}
           >
             Book Now
           </Link>
         </div>
 
         <button
-          className="lg:hidden text-primary p-2 border border-primary/20"
+          className={cn(
+            "lg:hidden p-2 border transition-colors",
+            isScrolled ? "text-primary border-primary/20" : "text-white border-white/30"
+          )}
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <Menu size={24} />
@@ -311,7 +330,7 @@ export default function Navbar() {
                                 href={sub.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
-                                <span className="text-sm tracking-[0.1em] uppercase text-primary/70">
+                                <span className="text-sm tracking-[0.1em] uppercase text-white/60 hover:text-primary transition-colors">
                                   {sub.label}
                                 </span>
                               </Link>
@@ -331,11 +350,11 @@ export default function Navbar() {
       <AnimatePresence>
         {activeSubmenu && activeSubmenu.submenu && (
           <MotionDiv
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
             onMouseLeave={() => setActiveSubmenu(null)}
-            className="absolute left-0 top-full w-full bg-[#FFF8EE] shadow-2xl border-t border-primary/20"
+            className="absolute left-0 top-full w-full bg-white shadow-2xl border-t-2 border-primary"
           >
             <div
               className={cn(
@@ -344,14 +363,14 @@ export default function Navbar() {
               )}
             >
               <div
-                className="h-[380px] rounded-xl bg-cover bg-center"
+                className="h-[380px] rounded-lg bg-cover bg-center overflow-hidden"
                 style={{
                   backgroundImage:
                     "url('/images/lohagarhfortresort/coridoor.jpg')",
                 }}
               >
-                <div className="h-full w-full bg-black/30 rounded-xl flex items-end p-6">
-                  <h2 className="text-white text-2xl font-semibold">
+                <div className="h-full w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
+                  <h2 className="text-white text-2xl font-serif font-semibold">
                     {activeSubmenu.label === "About" && "Discover Our Legacy"}
                     {activeSubmenu.label === "Our Hotels" && "Luxury Across Rajasthan"}
                     {activeSubmenu.label === "Experiences" && "Unforgettable Moments"}
@@ -370,7 +389,7 @@ export default function Navbar() {
                 {activeSubmenu.submenu.map((group, index) => (
                   <div key={group.category || `group-${index}`}>
                     {group.category && (
-                      <h3 className="text-sm font-semibold uppercase text-gray-500 mb-4">
+                      <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-4">
                         {group.category}
                       </h3>
                     )}
@@ -381,10 +400,10 @@ export default function Navbar() {
                             href={sub.href}
                             onClick={() => setActiveSubmenu(null)}
                           >
-                            <span className="text-sm tracking-[0.1em] uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-1 group/link">
+                            <span className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1 group/link">
                               <ChevronRight
                                 size={12}
-                                className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200"
+                                className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200 text-primary"
                               />
                               {sub.label}
                             </span>

@@ -13,6 +13,17 @@ A Next.js 16 application for the Lohagarh Royal Heritage hotel brand. Features a
 - **Rich Text**: EditorJS for blog content
 - **Animations**: Framer Motion
 
+## Design Theme
+
+- **Primary Color**: Saffron/Bhagwa (`hsl(24, 88%, 50%)`) - dominant brand color used for TopHeader, buttons, accents
+- **Accent Color**: Royal Gold (`hsl(43, 80%, 48%)`) - used for secondary highlights
+- **Dark Sections**: Deep Maroon (`#1E0800`) - footer, dark feature sections
+- **Background**: Warm Cream (`hsl(30, 40%, 96%)`) - main page background
+- **Fonts**: Cormorant Garamond (serif headings) + Montserrat (sans-serif body)
+- **Navbar**: White text on transparent hero, dark text on white scrolled background
+- **TopHeader**: Solid saffron background with white text
+- **Text Contrast**: hero-text-shadow utility for readability over images; text-foreground/60+ for body text
+
 ## Project Structure
 
 - `app/(public)/` - Public-facing pages

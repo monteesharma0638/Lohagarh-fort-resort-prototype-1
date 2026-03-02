@@ -42,7 +42,7 @@ export default function Home() {
               "To enter a Lohagarh property is to step back into an era of gold-leafed ceilings, intricate marble work, and hospitality that knows no bounds."
             </p>
             <div className="flex flex-col items-center">
-              <p className="text-gray-400 text-sm tracking-widest uppercase max-w-2xl mx-auto leading-loose mb-10">
+              <p className="text-gray-600 text-sm tracking-widest uppercase max-w-2xl mx-auto leading-loose mb-10">
                 For over a century, we have preserved the architectural marvels of the subcontinent, transforming historic forts and palaces into sanctuaries of unparalleled luxury.
               </p>
               <Link href="/discover">
@@ -62,7 +62,7 @@ export default function Home() {
             {stats.map((stat, idx) => (
               <MotionDiv key={idx} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                 <div className="text-4xl md:text-6xl font-serif text-primary mb-2">{stat.value}</div>
-                <div className="text-xs tracking-[0.3em] uppercase text-gray-500 font-bold">{stat.label}</div>
+                <div className="text-xs tracking-[0.3em] uppercase text-foreground/60 font-bold">{stat.label}</div>
               </MotionDiv>
             ))}
           </div>
@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* Featured Hotels - Horizontal Reveal */}
-      <section className="py-32 px-4 bg-secondary/30 border-y border-white/5">
+      <section className="py-32 px-4 bg-[#1E0800] border-y border-primary/10">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <SectionHeading 
@@ -78,6 +78,7 @@ export default function Home() {
               subtitle="The Royal Collection" 
               centered={false}
               className="mb-0"
+              light
             />
             <Link href="/hotels">
               <MotionDiv
@@ -180,8 +181,8 @@ export default function Home() {
       <section className="py-32 bg-[#1E0800] text-center">
         <div className="container mx-auto px-6">
           <Globe className="text-primary/20 mx-auto mb-8" size={120} />
-          <SectionHeading title="Global Footprint" subtitle="Our Presence" />
-          <p className="text-gray-400 max-w-2xl mx-auto mb-16 font-light">From the deserts of Rajasthan to the bustling streets of London, Lohagarh represents the pinnacle of Indian luxury worldwide.</p>
+          <SectionHeading title="Global Footprint" subtitle="Our Presence" light />
+          <p className="text-white/60 max-w-2xl mx-auto mb-16 font-light">From the deserts of Rajasthan to the bustling streets of London, Lohagarh represents the pinnacle of Indian luxury worldwide.</p>
           <div className="flex flex-wrap justify-center gap-12 opacity-50">
             {['Jaipur', 'Bharatpur', 'Jaisalmer', 'Nainital'].map(city => (
               <span key={city} className="text-white font-serif text-3xl tracking-widest">{city}</span>
