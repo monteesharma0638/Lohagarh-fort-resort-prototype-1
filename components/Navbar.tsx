@@ -173,10 +173,10 @@ export default function Navbar() {
     <header
       ref={navRef}
       className={cn(
-        "fixed left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-9 left-0 right-0 z-50 transition-all duration-500",
         isScrolled || activeSubmenu
-          ? "top-0 bg-[white]/95 backdrop-blur-md py-4 border-b border-primary/20 shadow-2xl"
-          : "top-9 bg-gradient-to-b from-black/80 to-transparent py-8"
+          ? "bg-[#2A0A00]/95 backdrop-blur-md py-4 border-b border-primary/30 shadow-2xl"
+          : "bg-gradient-to-b from-[#1a0500]/80 to-transparent py-8"
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -239,7 +239,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/reservations"
-            className="px-6 py-2.5 border border-primary/50 text-[0.65rem] tracking-[0.2em] uppercase text-primary font-bold hover:bg-primary hover:text-black transition-all"
+            className="px-6 py-2.5 border border-primary/50 text-[0.65rem] tracking-[0.2em] uppercase text-primary font-bold hover:bg-primary hover:text-white transition-all"
           >
             Book Now
           </Link>
@@ -259,7 +259,7 @@ export default function Navbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed inset-0 bg-black z-[60] p-8 flex flex-col overflow-y-auto"
+            className="fixed inset-0 bg-[#1E0800] z-[70] p-8 flex flex-col overflow-y-auto"
           >
             <button
               className="self-end text-primary mb-12"
@@ -335,7 +335,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             onMouseLeave={() => setActiveSubmenu(null)}
-            className="absolute left-0 top-full w-full bg-white shadow-2xl border-t"
+            className="absolute left-0 top-full w-full bg-[#FFF8EE] shadow-2xl border-t border-primary/20"
           >
             <div
               className={cn(

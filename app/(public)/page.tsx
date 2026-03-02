@@ -46,7 +46,7 @@ export default function Home() {
                 For over a century, we have preserved the architectural marvels of the subcontinent, transforming historic forts and palaces into sanctuaries of unparalleled luxury.
               </p>
               <Link href="/discover">
-                <span className="bg-primary/10 border border-primary text-primary px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-black transition-all duration-500">
+                <span className="bg-primary/10 border border-primary text-primary px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-500">
                   Discover Our Story
                 </span>
               </Link>
@@ -144,7 +144,7 @@ export default function Home() {
           <Sparkles className="text-primary mx-auto mb-8" size={48} />
           <h2 className="text-5xl md:text-7xl font-serif text-secondary mb-8">Sacred Rituals of <br/><span className="text-primary italic">Eternal Youth</span></h2>
           <p className="text-gray-700 text-xl font-light mb-12">Rediscover your inner self with ancient Ayurvedic therapies practiced in our palace sanctuaries for over five centuries.</p>
-          <button className="bg-primary text-black px-12 py-5 text-xs font-bold tracking-[0.3em] uppercase hover:bg-white transition-all">Explore Wellness</button>
+          <button className="bg-primary text-white px-12 py-5 text-xs font-bold tracking-[0.3em] uppercase hover:bg-accent transition-all">Explore Wellness</button>
         </div>
       </section>
 
@@ -177,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* NEW 5: Global Presence Map Placeholder */}
-      <section className="py-32 bg-[#0a0a0a] text-center">
+      <section className="py-32 bg-[#1E0800] text-center">
         <div className="container mx-auto px-6">
           <Globe className="text-primary/20 mx-auto mb-8" size={120} />
           <SectionHeading title="Global Footprint" subtitle="Our Presence" />
