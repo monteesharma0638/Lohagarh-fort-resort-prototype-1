@@ -152,13 +152,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      if (isMobileMenuOpen) return;
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setActiveSubmenu(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const toggleMobileSubmenu = (label: string) => {
     setExpandedMobileItems((prev) =>
@@ -172,10 +173,10 @@ export default function Navbar() {
     <header
       ref={navRef}
       className={cn(
-        "fixed top-9 left-0 right-0 z-50 transition-all duration-500",
+        "fixed left-0 right-0 z-50 transition-all duration-500",
         isScrolled || activeSubmenu
-          ? "bg-[white]/95 backdrop-blur-md py-4 border-b border-primary/20 shadow-2xl"
-          : "bg-gradient-to-b from-black/80 to-transparent py-8"
+          ? "top-0 bg-[white]/95 backdrop-blur-md py-4 border-b border-primary/20 shadow-2xl"
+          : "top-9 bg-gradient-to-b from-black/80 to-transparent py-8"
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">

@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 
 export default function TopHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const links = [
     ...(isHome ? [] : [{ label: "Home", href: "/" }]),
@@ -17,7 +25,7 @@ export default function TopHeader() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-[#1a1a1a] text-white/70 text-[0.65rem] tracking-[0.1em] uppercase">
+    <div className={`fixed top-0 left-0 right-0 z-[60] bg-[#1a1a1a] text-white/70 text-[0.65rem] tracking-[0.1em] uppercase transition-transform duration-500 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between h-9">
         <nav className="flex items-center gap-6">
           {links.map((link) => (
