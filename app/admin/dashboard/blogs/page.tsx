@@ -8,6 +8,8 @@ import { Plus, Search, Edit3 } from "lucide-react";
 import Link from "next/link";
 import AddCategory from "./components/AddCategory";
 import BlogCategories from "@/models/BlogCategories";
+import EditCategory from "./components/EditCategory";
+import { connectDB } from "@/lib/db";
 
 const blogs = [
   { id: 1, title: "10 Reasons to Visit Jaipur", category: "Travel Guide", status: "Published", date: "2024-02-20" },
@@ -16,6 +18,7 @@ const blogs = [
 ];
 
 export default async function Blogs() {
+  await connectDB();
   const categories = await BlogCategories.find().lean();
 
   return (
@@ -113,7 +116,7 @@ export default async function Blogs() {
                       <TableCell className="text-muted-foreground text-sm">{cat.description}</TableCell>
                       <TableCell>{cat.image}</TableCell>
                       <TableCell className="text-right">
-                        <Button variant="ghost" size="sm">Edit</Button>
+                        <EditCategory category={JSON.parse(JSON.stringify(cat))} />
                       </TableCell>
                     </TableRow>
                   ))}

@@ -12,7 +12,7 @@ export async function POST(req: Request) {
         if (!name || !email || !password || !access) {
             return NextResponse.json({ message: "All fields are required" }, { status: 400 });
         }
-        const passwordHash = await bcrypt.hash(password, 10);
+        const passwordHash = bcrypt.hashSync(password, 10);
 
         const user = await Users.create({ name, email, password: passwordHash, access });
         await createActivity(superAdmin, "create", "users", [user.id.toString()], `Created user with email: ${email} and access: ${access}`);

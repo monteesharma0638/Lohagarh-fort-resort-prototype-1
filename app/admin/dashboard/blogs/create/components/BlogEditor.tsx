@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export default function BlogEditor({editorRef}: {editorRef: any}) {
+export default function BlogEditor({editorRef, blocks}: {editorRef: any, blocks?: any}) {
   const holderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function BlogEditor({editorRef}: {editorRef: any}) {
       editorRef.current = new EditorJS({
         holder: holderRef.current!,
         placeholder: "Write something...",
-        data: {time: 2389239, blocks: []}, // replace this for initial data set.
+        data: blocks || {time: 2389239, blocks: []}, // replace this for initial data set.
         tools: {
           header: {
             class: Header as any,
