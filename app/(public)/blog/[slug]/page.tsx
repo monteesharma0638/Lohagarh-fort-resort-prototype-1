@@ -1,7 +1,6 @@
 import Blogs from "@/models/Blogs";
 import { connectDB } from "@/lib/db";
 import edjsHTML from "editorjs-html";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 

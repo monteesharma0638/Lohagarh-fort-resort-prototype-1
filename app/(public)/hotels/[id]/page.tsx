@@ -43,7 +43,7 @@ export default async function HotelDetail({params}: {params: Promise<{id: string
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-serif mb-6">About the Property</h2>
+            <h2 className="text-3xl font-serif mb-6">{hotel.title || "About the hotel"}</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-12 font-light">
               {hotel.description}
             </p>
