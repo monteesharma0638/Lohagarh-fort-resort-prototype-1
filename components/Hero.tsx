@@ -1,9 +1,13 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
+  const [videoLoaded, setVideoLoaded] = useState(false)
+
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
@@ -14,11 +18,25 @@ export default function Hero() {
         style={{ y: y1 }}
         className="absolute inset-0 z-0"
       >
-        <img 
-          src="/lohagarhfort/room1.jpg" 
-          alt="Luxury Palace" 
-          className="w-full h-full object-cover scale-110"
-        />
+        {!videoLoaded && (
+          <Image
+            src="/lohagarhfort/room1.jpg"
+            alt="Luxury Palace"
+            fill
+            priority
+            className="object-cover"
+          />
+        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          onCanPlay={() => setVideoLoaded(true)}
+        >
+          <source src="/videos/mahal-khas.mov" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" />
       </motion.div>

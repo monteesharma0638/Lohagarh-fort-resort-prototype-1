@@ -7,6 +7,7 @@ import hotels from "./hotels/hotels.json";
 import Hero2 from "@/components/Hero2";
 import Image from "next/image";
 import RevealImage from "@/components/motion/RevealImage";
+import Hero from "@/components/Hero";
 
 
   const stats = [
@@ -21,7 +22,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
-      <Hero2 />
+      <Hero />
       <section className="py-32 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
            <div className="h-full w-full" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")' }} />

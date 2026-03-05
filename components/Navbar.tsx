@@ -182,6 +182,7 @@ export default function Navbar() {
     );
 
   return (
+    <>
     <header
       ref={navRef}
       className={cn(
@@ -272,6 +273,80 @@ export default function Navbar() {
         </button>
       </div>
 
+
+      <AnimatePresence>
+        {activeSubmenu && activeSubmenu.submenu && (
+          <MotionDiv
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            onMouseLeave={() => setActiveSubmenu(null)}
+            className="absolute left-0 top-full w-full bg-white shadow-2xl border-t-2 border-primary"
+          >
+            <div
+              className={cn(
+                "max-w-7xl mx-auto p-10",
+                isOurHotels ? "grid grid-cols-3 gap-10" : "grid grid-cols-2 gap-10"
+              )}
+            >
+              <div
+                className="h-[380px] rounded-lg bg-cover bg-center overflow-hidden"
+                style={{
+                  backgroundImage:
+                    "url('/images/lohagarhfortresort/coridoor.jpg')",
+                }}
+              >
+                <div className="h-full w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
+                  <h2 className="text-white text-2xl font-serif font-semibold">
+                    {activeSubmenu.label === "About" && "Discover Our Legacy"}
+                    {activeSubmenu.label === "Our Hotels" && "Luxury Across Rajasthan"}
+                    {activeSubmenu.label === "Experiences" && "Unforgettable Moments"}
+                    {activeSubmenu.label === "Gallery" && "Visual Stories"}
+                    {activeSubmenu.label === "Contact Us" && "Get in Touch"}
+                  </h2>
+                </div>
+              </div>
+
+              <div
+                className={cn(
+                  "grid gap-8",
+                  isOurHotels ? "grid-cols-3 col-span-2" : "grid-cols-2"
+                )}
+              >
+                {activeSubmenu.submenu.map((group, index) => (
+                  <div key={group.category || `group-${index}`}>
+                    {group.category && (
+                      <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-4">
+                        {group.category}
+                      </h3>
+                    )}
+                    <ul className="space-y-3">
+                      {group.items.map((sub) => (
+                        <li key={sub.label}>
+                          <Link
+                            href={sub.href}
+                            onClick={() => setActiveSubmenu(null)}
+                          >
+                            <span className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1 group/link">
+                              <ChevronRight
+                                size={12}
+                                className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200 text-primary"
+                              />
+                              {sub.label}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </MotionDiv>
+        )}
+      </AnimatePresence>
+    </header>
+    
       <AnimatePresence>
         {isMobileMenuOpen && (
           <MotionDiv
@@ -346,78 +421,6 @@ export default function Navbar() {
           </MotionDiv>
         )}
       </AnimatePresence>
-
-      <AnimatePresence>
-        {activeSubmenu && activeSubmenu.submenu && (
-          <MotionDiv
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            onMouseLeave={() => setActiveSubmenu(null)}
-            className="absolute left-0 top-full w-full bg-white shadow-2xl border-t-2 border-primary"
-          >
-            <div
-              className={cn(
-                "max-w-7xl mx-auto p-10",
-                isOurHotels ? "grid grid-cols-3 gap-10" : "grid grid-cols-2 gap-10"
-              )}
-            >
-              <div
-                className="h-[380px] rounded-lg bg-cover bg-center overflow-hidden"
-                style={{
-                  backgroundImage:
-                    "url('/images/lohagarhfortresort/coridoor.jpg')",
-                }}
-              >
-                <div className="h-full w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
-                  <h2 className="text-white text-2xl font-serif font-semibold">
-                    {activeSubmenu.label === "About" && "Discover Our Legacy"}
-                    {activeSubmenu.label === "Our Hotels" && "Luxury Across Rajasthan"}
-                    {activeSubmenu.label === "Experiences" && "Unforgettable Moments"}
-                    {activeSubmenu.label === "Gallery" && "Visual Stories"}
-                    {activeSubmenu.label === "Contact Us" && "Get in Touch"}
-                  </h2>
-                </div>
-              </div>
-
-              <div
-                className={cn(
-                  "grid gap-8",
-                  isOurHotels ? "grid-cols-3 col-span-2" : "grid-cols-2"
-                )}
-              >
-                {activeSubmenu.submenu.map((group, index) => (
-                  <div key={group.category || `group-${index}`}>
-                    {group.category && (
-                      <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-4">
-                        {group.category}
-                      </h3>
-                    )}
-                    <ul className="space-y-3">
-                      {group.items.map((sub) => (
-                        <li key={sub.label}>
-                          <Link
-                            href={sub.href}
-                            onClick={() => setActiveSubmenu(null)}
-                          >
-                            <span className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1 group/link">
-                              <ChevronRight
-                                size={12}
-                                className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200 text-primary"
-                              />
-                              {sub.label}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </MotionDiv>
-        )}
-      </AnimatePresence>
-    </header>
+    </>
   );
 }
