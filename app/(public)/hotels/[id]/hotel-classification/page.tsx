@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 import { Star, Award, Shield } from "lucide-react";
 
 export default async function HotelClassificationPage({ params }: { params: Promise<{ id: string }> }) {
@@ -15,6 +15,7 @@ export default async function HotelClassificationPage({ params }: { params: Prom
       hotelId={id}
       pageTitle="Hotel Classification"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Classification & Standards</h2>

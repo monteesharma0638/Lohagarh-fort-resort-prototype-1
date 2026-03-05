@@ -168,8 +168,6 @@ export default function Navbar() {
   };
 
   const isOurHotels = activeSubmenu?.label === "Our Hotels";
-  const isHotelDetail = /^\/hotels\/[^/]+/.test(pathname);
-  if (isHotelDetail) return null;
 
   const navTextClass = (active: boolean) =>
     cn(

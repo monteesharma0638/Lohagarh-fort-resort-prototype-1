@@ -1,8 +1,10 @@
 import { Wifi, Coffee, MapPin, Star, Calendar } from "lucide-react";
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
+import HotelNavbar from "@/components/HotelNavbar";
 import hotelsData from "../hotels.json";
 import Image from "next/image";
+import { hasWeddingPages } from "./helpers";
 
 export default async function HotelOverview({params}: {params: Promise<{id: string}>}) {
   const id = (await params).id;
@@ -11,6 +13,8 @@ export default async function HotelOverview({params}: {params: Promise<{id: stri
   if (!hotel) {
     return <div className="min-h-screen flex items-center justify-center text-foreground font-serif text-3xl">Hotel not found</div>;
   }
+
+  const hasWedding = hasWeddingPages(id);
 
   return (
     <div className="min-h-screen bg-background">
@@ -49,79 +53,85 @@ export default async function HotelOverview({params}: {params: Promise<{id: stri
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2">
-            <h2 className="text-3xl font-serif mb-6 text-foreground">{hotel.title || "About the Hotel"}</h2>
-            <p className="text-foreground/70 text-lg leading-relaxed mb-12 font-light">
-              {hotel.description}
-            </p>
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-10 items-start">
+          <HotelNavbar hotelId={id} hotelName={hotel.name} hasWedding={hasWedding} />
+          <div className="flex-1 min-w-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="text-3xl font-serif mb-6 text-foreground">{hotel.title || "About the Hotel"}</h2>
+                <p className="text-foreground/70 text-lg leading-relaxed mb-12 font-light">
+                  {hotel.description}
+                </p>
 
-            <h3 className="text-2xl font-serif mb-6 text-foreground">Amenities</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-              {hotel.amenities.map((amenity, index) => (
-                <div key={index} className="flex items-center gap-3 text-foreground/70 border border-border p-4">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  {amenity}
-                </div>
-              ))}
-            </div>
-
-            {hotel.gallery && hotel.gallery.length > 0 && (
-              <>
-                <h3 className="text-2xl font-serif mb-6 text-foreground">Gallery Preview</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {hotel.gallery.slice(0, 4).map((img, idx) => (
-                    <div key={idx} className="relative aspect-video overflow-hidden group">
-                      <Image
-                        src={img}
-                        alt={`${hotel.name} gallery ${idx + 1}`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                <h3 className="text-2xl font-serif mb-6 text-foreground">Amenities</h3>
+                <div className="grid grid-cols-2 gap-4 mb-12">
+                  {hotel.amenities.map((amenity, index) => (
+                    <div key={index} className="flex items-center gap-3 text-foreground/70 border border-border p-4">
+                      <div className="w-2 h-2 bg-primary rounded-full" />
+                      {amenity}
                     </div>
                   ))}
                 </div>
-              </>
-            )}
-          </div>
 
-          <div className="lg:col-span-1">
-            <div className="bg-card p-8 sticky top-32 border border-border shadow-sm">
-              <h3 className="text-xl font-serif mb-6 text-foreground">Book Your Stay</h3>
-              <div className="space-y-4 mb-6">
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Check In</label>
-                  <div className="flex items-center border border-border bg-background p-3">
-                    <Calendar size={16} className="text-foreground/40 mr-2" />
-                    <input type="date" className="w-full outline-none text-sm bg-transparent" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Check Out</label>
-                  <div className="flex items-center border border-border bg-background p-3">
-                    <Calendar size={16} className="text-foreground/40 mr-2" />
-                    <input type="date" className="w-full outline-none text-sm bg-transparent" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Guests</label>
-                  <select className="w-full border border-border bg-background p-3 outline-none text-sm">
-                    <option>2 Adults, 0 Children</option>
-                    <option>2 Adults, 1 Child</option>
-                    <option>1 Adult</option>
-                  </select>
-                </div>
+                {hotel.gallery && hotel.gallery.length > 0 && (
+                  <>
+                    <h3 className="text-2xl font-serif mb-6 text-foreground">Gallery Preview</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      {hotel.gallery.slice(0, 4).map((img, idx) => (
+                        <div key={idx} className="relative aspect-video overflow-hidden group">
+                          <Image
+                            src={img}
+                            alt={`${hotel.name} gallery ${idx + 1}`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
 
-              <div className="flex justify-between items-center mb-6 pt-6 border-t border-border">
-                <span className="text-foreground/60">Total (1 Night)</span>
-                <span className="font-bold text-lg text-foreground">₹{hotel.price}</span>
-              </div>
+              <div className="lg:col-span-1">
+                <div className="bg-card p-8 sticky top-32 border border-border shadow-sm">
+                  <h3 className="text-xl font-serif mb-6 text-foreground">Book Your Stay</h3>
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Check In</label>
+                      <div className="flex items-center border border-border bg-background p-3">
+                        <Calendar size={16} className="text-foreground/40 mr-2" />
+                        <input type="date" className="w-full outline-none text-sm bg-transparent" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Check Out</label>
+                      <div className="flex items-center border border-border bg-background p-3">
+                        <Calendar size={16} className="text-foreground/40 mr-2" />
+                        <input type="date" className="w-full outline-none text-sm bg-transparent" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-foreground/50 mb-2">Guests</label>
+                      <select className="w-full border border-border bg-background p-3 outline-none text-sm">
+                        <option>2 Adults, 0 Children</option>
+                        <option>2 Adults, 1 Child</option>
+                        <option>1 Adult</option>
+                      </select>
+                    </div>
+                  </div>
 
-              <button className="w-full bg-primary text-white py-4 text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors font-bold">
-                Book Now
-              </button>
+                  <div className="flex justify-between items-center mb-6 pt-6 border-t border-border">
+                    <span className="text-foreground/60">Total (1 Night)</span>
+                    <span className="font-bold text-lg text-foreground">₹{hotel.price}</span>
+                  </div>
+
+                  <button className="w-full bg-primary text-white py-4 text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors font-bold">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

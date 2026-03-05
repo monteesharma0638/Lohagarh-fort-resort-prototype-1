@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 
 export default async function HotelFactSheetPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -32,6 +32,7 @@ export default async function HotelFactSheetPage({ params }: { params: Promise<{
       hotelId={id}
       pageTitle="Hotel Fact Sheet"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">At a Glance</h2>

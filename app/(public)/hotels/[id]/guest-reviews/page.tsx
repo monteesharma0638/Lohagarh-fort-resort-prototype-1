@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 import { Star } from "lucide-react";
 
 export default async function GuestReviewsPage({ params }: { params: Promise<{ id: string }> }) {
@@ -21,6 +21,7 @@ export default async function GuestReviewsPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Guest Reviews"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <div className="flex items-center gap-4 mb-8">

@@ -31,11 +31,14 @@ A Next.js 16 application for the Lohagarh Royal Heritage hotel brand. Features a
   - Awards, Gallery, Contact, Media, Reservations, Special Packages (3 subpages)
   - Blog (`/blog/[slug]`) - EditorJS-powered blog posts with custom parsers
   - Legal pages: Accessibility, Terms, Privacy, Redressal, Sitemap
-  - Hotels detail pages (`/hotels/[id]/`) with hotel-specific navigation:
+  - Hotels detail pages (`/hotels/[id]/`) with contained sidebar navigation:
     - Overview, Dining, Spa & Salon, Gallery, Contact Us, Guest Reviews
     - Offers, Wedding Venues, Royal Wedding, Explore, Classification, Fact Sheet
-    - Uses `HotelNavbar` (replaces main Navbar), `HotelBreadcrumb`, `HotelSubPage` components
-    - `helpers.ts` provides `getHotel()` utility for all sub-pages
+    - `HotelNavbar` renders as a sticky sidebar (left) alongside page content (right) below the hero banner
+    - Main Navbar remains visible on hotel detail pages
+    - On mobile: sidebar becomes a slide-in drawer triggered by a floating button
+    - `HotelSubPage` shared component provides hero + sidebar + content layout for sub-pages
+    - `helpers.ts` provides `getHotel()` and `hasWeddingPages()` utilities
 - `app/admin/` - Admin dashboard (login, manage blogs, users, categories)
 - `app/api/` - Next.js API routes (blogs, categories, users, upload-image)
 - `components/` - Shared UI components

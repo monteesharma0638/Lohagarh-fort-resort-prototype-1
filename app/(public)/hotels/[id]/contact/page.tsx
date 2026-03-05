@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default async function HotelContactPage({ params }: { params: Promise<{ id: string }> }) {
@@ -15,6 +15,7 @@ export default async function HotelContactPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Contact Us"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>

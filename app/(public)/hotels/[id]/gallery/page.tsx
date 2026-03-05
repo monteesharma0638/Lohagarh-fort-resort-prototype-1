@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 import Image from "next/image";
 
 export default async function HotelGalleryPage({ params }: { params: Promise<{ id: string }> }) {
@@ -17,6 +17,7 @@ export default async function HotelGalleryPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Gallery"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Photo Gallery</h2>

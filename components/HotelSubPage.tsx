@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HotelBreadcrumb from "./HotelBreadcrumb";
+import HotelNavbar from "./HotelNavbar";
 import MotionDiv from "./MotionDiv";
 import { MapPin } from "lucide-react";
 
@@ -10,6 +11,7 @@ interface HotelSubPageProps {
   hotelId: string;
   pageTitle: string;
   pageSubtitle?: string;
+  hasWedding?: boolean;
   children: React.ReactNode;
 }
 
@@ -20,6 +22,7 @@ export default function HotelSubPage({
   hotelId,
   pageTitle,
   pageSubtitle,
+  hasWedding = false,
   children,
 }: HotelSubPageProps) {
   return (
@@ -57,8 +60,13 @@ export default function HotelSubPage({
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-16 max-w-5xl">
-        {children}
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-10 items-start">
+          <HotelNavbar hotelId={hotelId} hotelName={hotelName} hasWedding={hasWedding} />
+          <div className="flex-1 min-w-0">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );

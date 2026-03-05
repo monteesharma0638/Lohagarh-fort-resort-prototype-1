@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 import { MapPin } from "lucide-react";
 
 export default async function ExplorePage({ params }: { params: Promise<{ id: string }> }) {
@@ -24,6 +24,7 @@ export default async function ExplorePage({ params }: { params: Promise<{ id: st
       hotelId={id}
       pageTitle={`Explore ${cityName}`}
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Discover {cityName}</h2>

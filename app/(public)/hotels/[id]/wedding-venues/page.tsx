@@ -1,5 +1,5 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel } from "../helpers";
+import { getHotel, hasWeddingPages } from "../helpers";
 
 export default async function WeddingVenuesPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -20,6 +20,7 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
       hotelId={id}
       pageTitle="Wedding Venues"
       pageSubtitle={hotel.name}
+      hasWedding={hasWeddingPages(id)}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Celebrate in Royal Splendor</h2>
