@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import TopHeader from "@/components/TopHeader";
-import Navbar from "@/components/Navbar";
+import "../(public)/globals.css";
 import Footer from "@/components/Footer";
-import hotelsData from "../(hotels)/hotels/hotels.json"
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Lohagarh Hotels - A Legacy of Indian Royalty",
@@ -15,12 +13,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body>
-        <TopHeader />
-        <Navbar />
+        <Navbar noTopHeader />
         {children}
         <Footer />
       </body>

@@ -136,7 +136,7 @@ const navItems: NavItem[] = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<NavItem | null>(null);
@@ -186,7 +186,7 @@ export default function Navbar() {
     <header
       ref={navRef}
       className={cn(
-        "fixed top-9 left-0 right-0 z-50 transition-all duration-500",
+        `fixed top-${noTopHeader? "0": "9"} left-0 right-0 z-50 transition-all duration-500 ${noTopHeader? "hidden md:block": ""}`,
         isScrolled || activeSubmenu
           ? "bg-white/97 backdrop-blur-md py-4 border-b border-primary/15 shadow-lg"
           : "bg-gradient-to-b from-black/60 to-transparent py-8"

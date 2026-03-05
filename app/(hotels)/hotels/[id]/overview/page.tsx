@@ -2,9 +2,9 @@ import { Wifi, Coffee, MapPin, Star, Calendar } from "lucide-react";
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import HotelNavbar from "@/components/HotelNavbar";
-import hotelsData from "../hotels.json";
+import hotelsData from "../../hotels.json";
 import Image from "next/image";
-import { hasWeddingPages } from "./helpers";
+import { hasWeddingPages } from "../helpers";
 
 export default async function HotelOverview({params}: {params: Promise<{id: string}>}) {
   const id = (await params).id;
@@ -18,7 +18,7 @@ export default async function HotelOverview({params}: {params: Promise<{id: stri
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="relative h-[70vh]">
+      <div className="relative h-[100vh]">
         <Image src={hotel.coverImage ?? hotel.image} alt={hotel.name} className="object-cover" fill priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
         <div className="absolute top-28 left-0 right-0 px-8 md:px-16">
@@ -38,7 +38,7 @@ export default async function HotelOverview({params}: {params: Promise<{id: stri
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center gap-2 mb-4 text-primary text-sm tracking-widest uppercase font-bold">
+              <div className="flex items-center gap-2 mb-4 text-white text-sm tracking-widest uppercase font-bold">
                 <MapPin size={16} /> {hotel.location}
               </div>
               <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 hero-text-shadow">{hotel.name}</h1>

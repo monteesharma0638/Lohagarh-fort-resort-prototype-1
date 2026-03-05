@@ -53,7 +53,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="block text-primary text-xs md:text-sm tracking-[0.5em] uppercase font-bold mb-8"
+            className="block text-primary text-xs md:text-sm tracking-[0.5em] uppercase font-bold mb-8 invisible"
           >
             Est. 1924 • Heritage of Excellence
           </motion.span>
@@ -71,7 +71,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 1 }}
               style={{lineHeight: 1.1}}
-              className="italic font-light gold-text-gradient ml-0 md:ml-32"
+              className="italic font-light gold-text-gradient text-center"
             >
               Lohagarh
             </motion.span>
@@ -83,8 +83,8 @@ export default function Hero() {
             transition={{ delay: 1.5, duration: 1 }}
             className="mt-10"
           >
-            <div className="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto mb-8" />
-            <p className="text-white/70 text-sm md:text-base tracking-[0.2em] uppercase max-w-xl mx-auto font-medium">
+            <div className="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto mb-8 invisible" />
+            <p className="text-white/70 text-sm md:text-base leading-loose tracking-[0.2em] uppercase max-w-xl mx-auto font-medium">
               A Symphony of Indian Hospitality & Grandeur
             </p>
           </motion.div>

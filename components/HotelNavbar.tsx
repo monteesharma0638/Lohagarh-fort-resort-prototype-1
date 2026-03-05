@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, ArrowRightIcon, ArrowBigRightDash, Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import MotionDiv from "./MotionDiv";
+import MenuIcon from "@/icons/menu-with-arrow.svg"
+import Image from "next/image";
 
 interface HotelNavbarProps {
   hotelId: string;
@@ -47,13 +49,13 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
     <>
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden fixed bottom-6 right-6 z-[55] bg-primary text-white w-12 h-12 flex items-center justify-center shadow-lg"
+        className="z-[55] bg-primary fixed top-0 left-0 md:top-0 md:left-0 text-white w-15 h-15 md:w-20 md:h-21 flex items-center justify-center shadow-lg"
         aria-label="Open hotel menu"
       >
-        <Menu size={22} />
+        <Image src={MenuIcon} alt="Lohagarh group hotels menu" className="h-10 w-10 md:h-12 md:w-12" height={40} width={40} />
       </button>
 
-      <aside className="hidden lg:block w-64 shrink-0">
+      {/* <aside className="hidden lg:block w-64 shrink-0">
         <div className="sticky top-28">
           <div className="bg-white border border-border shadow-sm">
             <div className="p-5 border-b border-border">
@@ -103,7 +105,7 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
             </div>
           </div>
         </div>
-      </aside>
+      </aside> */}
 
       <AnimatePresence>
         {mobileOpen && (
@@ -112,7 +114,7 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-[60] lg:hidden"
+              className="fixed inset-0 bg-black/50 z-[60]"
               onClick={() => setMobileOpen(false)}
             />
             <MotionDiv
@@ -120,7 +122,7 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-72 bg-white z-[65] shadow-2xl lg:hidden flex flex-col"
+              className="fixed top-0 left-0 bottom-0 w-72 bg-white z-[65] shadow-2xl flex flex-col"
             >
               <div className="p-5 border-b border-border flex items-center justify-between">
                 <div>
