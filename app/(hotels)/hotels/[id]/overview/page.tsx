@@ -2,7 +2,7 @@ import { Wifi, Coffee, MapPin, Star, Calendar } from "lucide-react";
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import HotelNavbar from "@/components/HotelNavbar";
-import hotelsData from "../../hotels.json";
+import hotelsData from "@/data/hotels.json";
 import Image from "next/image";
 import { hasWeddingPages } from "../helpers";
 

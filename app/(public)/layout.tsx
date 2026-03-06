@@ -3,7 +3,6 @@ import "./globals.css";
 import TopHeader from "@/components/TopHeader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import hotelsData from "../(hotels)/hotels/hotels.json"
 
 export const metadata: Metadata = {
   title: "Lohagarh Hotels - A Legacy of Indian Royalty",

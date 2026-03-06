@@ -2,7 +2,7 @@ import { Wifi, Coffee, MapPin, Star, Calendar } from "lucide-react";
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import HotelNavbar from "@/components/HotelNavbar";
-import hotelsData from "../hotels.json";
+import hotelsData from "@/data/hotels.json";
 import Image from "next/image";
 import { hasWeddingPages } from "./helpers";
 
@@ -145,8 +145,8 @@ export default async function HotelOverview({
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-10 items-start">
           <div className="flex-1 min-w-0">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 gap-12">
+              <div className="">
                 <h2 className="text-3xl font-serif mb-6 text-foreground">
                   {hotel.title || "About the Hotel"}
                 </h2>
@@ -178,15 +178,33 @@ export default async function HotelOverview({
                       {hotel.gallery.slice(0, 4).map((img, idx) => (
                         <div
                           key={idx}
-                          className="relative aspect-video overflow-hidden group"
+                          className="relative aspect-video overflow-hidden group rounded-xl"
                         >
                           <Image
                             src={img}
                             alt={`${hotel.name} gallery ${idx + 1}`}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:blur-[1.5px] group-hover:brightness-75"
                           />
+
+                          {/* dark overlay */}
+                          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                          {/* Center text */}
+                          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                            <span className="text-white text-xl md:text-2xl tracking-[0.25em] font-serif opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                              {hotel?.captions?.[idx] || hotel.name}
+                            </span>
+                          </div>
+
+                          {/* animated frame */}
+                          <div className="pointer-events-none absolute inset-0">
+                            <span className="absolute top-2 left-1/2 h-[2px] w-0 bg-gradient-to-r from-yellow-300 to-yellow-500 transition-all duration-500 group-hover:w-[85%] group-hover:left-[7.5%]" />
+                            <span className="absolute bottom-2 left-1/2 h-[2px] w-0 bg-gradient-to-r from-yellow-300 to-yellow-500 transition-all duration-500 group-hover:w-[85%] group-hover:left-[7.5%]" />
+                            <span className="absolute left-2 top-1/2 w-[2px] h-0 bg-gradient-to-b from-yellow-300 to-yellow-500 transition-all duration-500 group-hover:h-[85%] group-hover:top-[7.5%]" />
+                            <span className="absolute right-2 top-1/2 w-[2px] h-0 bg-gradient-to-b from-yellow-300 to-yellow-500 transition-all duration-500 group-hover:h-[85%] group-hover:top-[7.5%]" />
+                          </div>
                         </div>
                       ))}
                     </div>

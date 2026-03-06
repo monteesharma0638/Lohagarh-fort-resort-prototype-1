@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#1E0800] text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
         <div className="w-24 h-[2px] bg-primary mx-auto mb-16" />
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Link href="/">
               <span className="block mb-8">
@@ -32,25 +32,26 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          <div className="grid grid-cols-2">
+            <div className="col-span-1 md:col-span-1">
+              <h4 className="text-lg font-serif mb-6 uppercase tracking-wider text-primary">Site Links</h4>
+              <ul className="space-y-4 text-sm text-white/60">
+                <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                <li><Link href="/awards" className="hover:text-primary transition-colors">Awards</Link></li>
+                <li><Link href="/about/management" className="hover:text-primary transition-colors">Management</Link></li>
+                <li><Link href="/about/testimonials" className="hover:text-primary transition-colors">Testimonials</Link></li>
+                <li><Link href="/contact?dept=career" className="hover:text-primary transition-colors">Careers</Link></li>
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="text-lg font-serif mb-6 uppercase tracking-wider text-primary">Site Links</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/awards" className="hover:text-primary transition-colors">Awards</Link></li>
-              <li><Link href="/about/management" className="hover:text-primary transition-colors">Management</Link></li>
-              <li><Link href="/about/testimonials" className="hover:text-primary transition-colors">Testimonials</Link></li>
-              <li><Link href="/contact?dept=career" className="hover:text-primary transition-colors">Careers</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-serif mb-6 uppercase tracking-wider text-primary">Experiences</h4>
-            <ul className="space-y-4 text-sm text-white/60">
-              <li><Link href="/experiences/regal-experience" className="hover:text-primary transition-colors">Regal Experiences</Link></li>
-              <li><Link href="/experiences/regal-weddings" className="hover:text-primary transition-colors">Regal Weddings</Link></li>
-              <li><Link href="/experiences/spa-and-salon" className="hover:text-primary transition-colors">Spa and Salon</Link></li>
-            </ul>
+            <div className="col-span-1 md:col-span-1">
+              <h4 className="text-lg font-serif mb-6 uppercase tracking-wider text-primary">Experiences</h4>
+              <ul className="space-y-4 text-sm text-white/60">
+                <li><Link href="/experiences/regal-experience" className="hover:text-primary transition-colors">Regal Experiences</Link></li>
+                <li><Link href="/experiences/regal-weddings" className="hover:text-primary transition-colors">Regal Weddings</Link></li>
+                <li><Link href="/experiences/spa-and-salon" className="hover:text-primary transition-colors">Spa and Salon</Link></li>
+              </ul>
+            </div>
           </div>
 
           <div>
@@ -71,7 +72,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
           <p>&copy; 2025 The Lohagarh Group. All Rights Reserved.</p>
-          <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-evenly gap-6 mt-4 md:mt-0">
             <Link href="/accessibility" className="hover:text-primary transition-colors">Accessibility Statement</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Statement</Link>

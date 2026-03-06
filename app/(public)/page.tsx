@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import HotelCard from "@/components/HotelCard";
 import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
-import hotels from "../(hotels)/hotels/hotels.json";
+import hotels from "@/data/hotels.json";
 import Hero2 from "@/components/Hero2";
 import Image from "next/image";
 import RevealImage from "@/components/motion/RevealImage";

@@ -35,7 +35,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="/videos/mahal-khas.mov" type="video/mp4" />
+          <source src="/videos/mahal-khas.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" />
