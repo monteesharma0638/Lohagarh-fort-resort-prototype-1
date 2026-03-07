@@ -3,6 +3,7 @@ import { connectDB } from "@/lib/db";
 import edjsHTML from "editorjs-html";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import { formatDate } from "@/lib/utils";
 
 const customParsers: Record<string, (block: any) => string> = {
   header: (block: any) => {
@@ -74,18 +75,45 @@ const customParsers: Record<string, (block: any) => string> = {
 
 const edjsParser = edjsHTML(customParsers);
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("en-IN", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+
+export async function generateMetadata({ params }: any) {
+  await connectDB();
+  const slug = (await params)?.slug;
+  const blog = await Blogs.findOne({ slug }).populate("category").lean() as any;
+
+  const metadata = blog.metadata;
+
+  let description = "";
+  let keywords = "";
+  let openGraph: any = {};
+
+  metadata.forEach((tag: any) => {
+    if (tag.property === "name" && tag.key === "description") {
+      description = tag.content;
+    }
+
+    if (tag.property === "name" && tag.key === "keywords") {
+      keywords = tag.content;
+    }
+
+    if (tag.property === "property" && tag.key.startsWith("og:")) {
+      const ogKey = tag.key.replace("og:", "");
+      openGraph[ogKey] = tag.content;
+    }
   });
+
+  return {
+    title: blog.title,
+    description,
+    keywords,
+    openGraph
+  };
 }
 
 export default async function BlogPost({ params }: any) {
   await connectDB();
   const slug = (await params)?.slug;
-  const blog = await Blogs.findOne({ slug }).populate("category").lean() as any;
+  const blog = await Blogs.findOne({ slug, status: "published" }).populate("category").lean() as any;
 
   if (!blog) {
     return (

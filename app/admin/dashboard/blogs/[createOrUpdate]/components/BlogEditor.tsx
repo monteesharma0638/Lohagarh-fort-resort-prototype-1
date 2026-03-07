@@ -86,9 +86,8 @@ export default function BlogEditor({editorRef, blocks}: {editorRef: any, blocks?
     initEditor();
 
     return () => {
-      holderRef.current?.remove();
       if (editorRef.current) {
-        editorRef.current.destroy();
+        editorRef.current?.destroy?.();
         editorRef.current = null;
       }
     };

@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { title } from "process";
 
 const SectionSchema = new Schema(
   {
@@ -12,8 +11,9 @@ const SectionSchema = new Schema(
 
 export const MetadataSchema = new Schema(
   {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
+    property: { type: String, required: true },
+    key: { type: String, required: true },
+    content: { type: String, required: true },
   },
   { timestamps: false }
 );
@@ -26,7 +26,7 @@ const PagesSchema = new Schema(
     metadata: [MetadataSchema],
     sections: [SectionSchema]
   },
-  { timestamps: true }
+  { timestamps: false }
 );
 
 export default mongoose.models.Pages ||

@@ -9,6 +9,7 @@
       "/images/lohagarhdesertresort/gallery1.png",
       "/images/lohagarhdesertresort/gallery2.png"
     ],
+    "captions": ["Desert Luxury Tents", "Interior Tent Room"],
     "description": "Serene luxury nestled on the banks of Lake Pichola, offering private pool villas and exquisite dining.",
     "price": "22,000",
     "category": "Resort",
@@ -119,11 +120,12 @@
     "rating": 4.8
   },
   {
-    "id": "lohagarh-corbett-resort",
+    "id": "corbett-resort",
     "name": "Lohagarh Corbett Resort",
     "location": "Corbett, Uttarakhand",
     "image": "/images/corbett/banner.jpg",
-    "description": "Stay in the heart of the Blue City in a heritage haveli restored to its former glory.",
+    "title": "Luxury Wilderness Retreat",
+    "description": "Experience the epitome of luxury at Lohagarh Corbett Resort, nestled in the heart of Jim Corbett National Park, Nainital. Renowned as an idyllic weekend escape for travelers from Uttarakhand and neighboring cities, our resort offers unparalleled hospitality amidst nature's embrace. Discover a distinctive array of accommodations at Lohagarh Corbett Resort, ranging from charming Village Theme Rooms to opulent Luxury Suites and cozy Deluxe Rooms. Situated right on the cusp of the forest within Jim Corbett National Park, our resort seamlessly combines tranquility with vibrant activity.",
     "price": "16,000",
     "category": "Heritage",
     "amenities": [

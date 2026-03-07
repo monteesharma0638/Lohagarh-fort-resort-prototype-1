@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { redirect } from "next/navigation";
 import LoginForm from "./components/LoginForm";
 import {cookies} from "next/headers";
