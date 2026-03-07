@@ -19,7 +19,8 @@ export default function LoginForm() {
       await fetch("/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
+        credentials: "include"
       }).then(res => res.json())
       .then((response) => {
         if(response.error) {
@@ -37,8 +38,9 @@ export default function LoginForm() {
             showConfirmButton: false,
             timer: 1000
           })
-          router.push("/admin/dashboard");
-          router.refresh();
+          setTimeout(() => {
+            router.push("/admin/dashboard");
+          }, 5000)
         }
       }).catch((err: any) => {
         Swal.fire({

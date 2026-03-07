@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
 export async function requireAdmin(access: Array<String>) {
-  const token = (await cookies()).get("session")?.value;
+  const token = (await cookies()).get("admin_session")?.value;
   if (!token) throw new Error("Unauthorized");
   
   const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
@@ -18,7 +18,7 @@ export async function requireAdmin(access: Array<String>) {
 }
 
 export async function requireSuperAdmin() {
-    const token = (await cookies()).get("session")?.value;
+    const token = (await cookies()).get("admin_session")?.value;
     if (!token) throw new Error("Unauthorized");
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {

@@ -329,7 +329,7 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
                             href={sub.href}
                             onClick={() => setActiveSubmenu(null)}
                           >
-                            <span className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-1 group/link">
+                            <span className="text-md text-gray-600 hover:text-primary transition-colors flex items-center gap-1 group/link">
                               <ChevronRight
                                 size={12}
                                 className="opacity-0 -ml-4 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all duration-200 text-primary"

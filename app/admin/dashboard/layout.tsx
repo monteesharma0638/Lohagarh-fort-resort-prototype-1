@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Link from "next/link";
 import { 
   LayoutDashboard, 
@@ -49,7 +51,7 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
           {navItems.map((item) => {
             const isActive = location === item.href;
             let canRender = false;
-            if(item.onlySuperAdmin && session.access === "super-admin") {
+            if (item.onlySuperAdmin && session.access === "super-admin") {
               canRender = true;
             }
             else if (!item.onlySuperAdmin) {

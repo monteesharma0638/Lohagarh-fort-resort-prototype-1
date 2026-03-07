@@ -129,14 +129,14 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
                   <Link
                     href="/hotels"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-1.5 text-[0.6rem] tracking-[0.15em] uppercase font-bold text-foreground/40 hover:text-primary transition-colors mb-2"
+                    className="flex items-center gap-1.5 text-[0.6rem] tracking-[0.15em] uppercase font-bold text-foreground/80 hover:text-primary transition-colors mb-2"
                   >
                     <ChevronLeft size={12} />
                     All Hotels
                   </Link>
                   <h3 className="font-serif text-lg text-foreground leading-snug">{hotelName}</h3>
                 </div>
-                <button onClick={() => setMobileOpen(false)} className="text-foreground/40 hover:text-foreground">
+                <button onClick={() => setMobileOpen(false)} className="text-foreground/80 hover:text-foreground">
                   <X size={22} />
                 </button>
               </div>
@@ -151,7 +151,7 @@ export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: H
                       "flex items-center justify-between px-5 py-3 text-[0.7rem] tracking-[0.08em] uppercase transition-all",
                       isActive(item.href)
                         ? "text-primary font-bold bg-primary/5 border-r-2 border-primary"
-                        : "text-foreground/60 hover:text-foreground hover:bg-muted/50"
+                        : "text-foreground/90 hover:text-foreground hover:bg-muted/50"
                     )}
                   >
                     {item.label}

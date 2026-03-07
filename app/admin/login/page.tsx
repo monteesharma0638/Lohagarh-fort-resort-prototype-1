@@ -3,10 +3,10 @@ export const dynamic = "force-dynamic";
 import { redirect } from "next/navigation";
 import LoginForm from "./components/LoginForm";
 import {cookies} from "next/headers";
+import { getSession } from "../helpers";
 
 export default async function page() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("session")?.value;
+  const token = await getSession();
 
   if(token) {
     redirect("/admin/dashboard");
