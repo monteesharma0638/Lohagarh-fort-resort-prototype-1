@@ -8,8 +8,8 @@ export async function POST(req: Request) {
     try {
         const { email, password } = await req.json();
 
-        if (!email) throw new Error("Email is required");
-        if (!password) throw new Error("Password is required");
+        if(!email) throw new Error("Email is required");
+        if(!password) throw new Error("Password is required");
 
         await connectDB();
         const user = await Users.findOne({ email });
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         const response = NextResponse.json({ message: "logged in successfully", token });
         response.cookies.set('admin_session', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: false,
             sameSite: 'lax', // lax for same domain
             maxAge: 60 * 60 * 24, // 1 day
             path: '/',

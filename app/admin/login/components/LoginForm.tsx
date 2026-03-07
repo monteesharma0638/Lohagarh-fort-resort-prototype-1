@@ -38,9 +38,7 @@ export default function LoginForm() {
             showConfirmButton: false,
             timer: 1000
           })
-          setTimeout(() => {
-            router.push("/admin/dashboard");
-          }, 5000)
+          router.push("/admin/dashboard");
         }
       }).catch((err: any) => {
         Swal.fire({

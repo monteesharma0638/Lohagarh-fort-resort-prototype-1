@@ -51,7 +51,7 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
           {navItems.map((item) => {
             const isActive = location === item.href;
             let canRender = false;
-            if (item.onlySuperAdmin && session.access === "super-admin") {
+            if (item.onlySuperAdmin && session?.access === "super-admin") {
               canRender = true;
             }
             else if (!item.onlySuperAdmin) {
@@ -79,12 +79,10 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
         </div>
         
         <div className="p-4 border-t border-sidebar-border">
-          <Link href="/api/users/logout">
-            <Button variant="ghost" className="w-full justify-start text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground mt-1">
+            <a href="/api/users/logout" className="w-full justify-start text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground mt-1">
               <LogOut className="mr-3 h-5 w-5" />
               Logout
-            </Button>
-          </Link>
+            </a>
         </div>
       </aside>
 

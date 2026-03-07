@@ -7,8 +7,6 @@ import MotionDiv from "@/components/MotionDiv";
 import hotelsData from "@/data/hotels.json";
 import Image from "next/image";
 
-// const hotelsData = ;
-
 const categories = ["All", "Palace", "Resort", "Safari", "Camping", "Heritage"];
 
 export default function Hotels() {
