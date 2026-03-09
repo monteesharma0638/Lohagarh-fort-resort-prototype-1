@@ -25,6 +25,7 @@ export default function HotelSubPage({
   hasWedding = false,
   children,
 }: HotelSubPageProps) {
+  
   return (
     <div className="min-h-screen bg-background">
       <div className="relative h-[50vh] min-h-[350px]">

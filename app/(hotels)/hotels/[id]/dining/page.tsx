@@ -1,9 +1,10 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
+import { getHotel } from "@/lib/db";
 
 export default async function DiningPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const hotel = getHotel(id);
+  const hotel = await getHotel(id);
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
   return (

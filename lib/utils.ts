@@ -12,3 +12,6 @@ export function formatDate(dateStr: string) {
     day: "numeric",
   });
 }
+
+// lib/utils.js
+export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

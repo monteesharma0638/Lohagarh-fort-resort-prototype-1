@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 
 export default async function ExplorePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const hotel = getHotel(id);
+  const hotel = await getHotel(id);
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
   const cityName = hotel.location.split(",")[0].trim();

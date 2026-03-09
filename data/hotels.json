@@ -15,7 +15,229 @@
     "category": "Resort",
     "featured": true,
     "amenities": ["Luxury Swiss Tents", "Desert Safaris", "Camel Safaris", "Jeep Safaris", "Cultural Evenings", "Bonfire Nights", "Rajasthani Dining"],
-    "rating": 4.9
+    "rating": 4.9,
+    "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
+
   },
   {
     "id": "lohagarh-fort-resort",
@@ -48,7 +270,228 @@
       "Tent Stay",
       "Organic Food"
     ],
-    "rating": 4.7
+    "rating": 4.7,
+        "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
   },
   {
     "id": "townhall",
@@ -74,7 +517,228 @@
       "/images/townhall/gallery6.jpg",
       "/images/townhall/gallery7.jpg"
     ],
-    "rating": 4.6
+    "rating": 4.6,
+        "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
   },
   {
     "id": "mahalkhas",
@@ -100,7 +764,228 @@
       "/images/mahalkhas/gallery4.jpg",
       "/images/mahalkhas/gallery5.jpg"
     ],
-    "rating": 4.5
+    "rating": 4.5,
+        "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
   },
   {
     "id": "kothi-lohagarh",
@@ -117,7 +1002,228 @@
       "Cultural Shows",
       "Cooking Classes"
     ],
-    "rating": 4.8
+    "rating": 4.8,
+        "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
   },
   {
     "id": "corbett-resort",
@@ -139,6 +1245,227 @@
       "Guided Nature Walks",
       "24-Hour Room Service"
     ],
-    "rating": 4.8
+    "rating": 4.8,
+        "dining": {
+      "coverImage": "/images/lohagarhdesertresort/cover.png",
+      "heading": "Culinary Heritage",
+      "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
+      "cards": [
+        {
+          "title": "Royal Dining Hall",
+          "content": "A regal setting for an unforgettable dining experience with traditional Rajasthani thali and more.",
+          "heighlight": "Open for Lunch & Dinner"
+        },
+        {
+          "title": "Poolside Kitchen",
+          "content": "Casual dining by the pool with grills, kebabs, and refreshing beverages under the open sky.",
+          "heighlight": "Open All Day"
+        }
+      ]
+    },
+    "spa&salon": {
+      "title": "Wellness & Rejuvenation",
+      "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
+      "cards": [
+        {
+          "title": "Ayurvedic Massage",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Aromatherapy",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Royal Bath Ritual",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Yoga Sessions",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Beauty Salon",
+          "content": "Experience traditional healing"
+        },
+        {
+          "title": "Meditation",
+          "content": "Experience traditional healing"
+        }
+      ]
+    },
+    "photo-gallery": {
+      "content": "Explore the beauty and grandeur of Lohagarh Fort Resort through our curated photo gallery.",
+      "images": [
+        {
+          "title": "Coridoor",
+          "src": "/images/lohagarhfortresort/coridoor.jpg"
+        },
+        {
+          "title": "Cover Drone View",
+          "src": "/images/lohagarhfortresort/cover_drone_view.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine_in.jpg"
+        },
+        {
+          "title": "Dine In",
+          "src": "/images/lohagarhfortresort/dine-in.jpg"
+        },
+        {
+          "title": "Drone View",
+          "src": "/images/lohagarhfortresort/drone-view.jpeg"
+        },
+        {
+          "title": "Food",
+          "src": "/images/lohagarhfortresort/food-item-1.jpg"
+        },
+        {
+          "title": "Front Gate",
+          "src": "/images/lohagarhfortresort/front-gate.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery1.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery2.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery3.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery4.jpg"
+        },
+        {
+          "title": "Gallery",
+          "src": "/images/lohagarhfortresort/gallery5.jpg"
+        }
+      ]
+    },
+    "contact-us": {
+      "description": "We would love to hear from you. Reach out to us for reservations, inquiries, or any assistance you may need.",
+      "address": "Jaipur, Rajasthan",
+      "phone": "9599159559",
+      "email": "reservations@lohagarh.com",
+      "front-desk": "24 Hours, 7 Days a week"
+    },
+    "guest-reviews": {
+      "overall": 4.7,
+      "reviews": [
+        {
+          "name": "Rajesh Sharma",
+          "time": "January 2025",
+          "rating": 5,
+          "description": "An absolutely magnificent experience. The heritage architecture combined with modern luxury made our stay unforgettable."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Special Offers & Packages",
+      "description": "Take advantage of our exclusive offers and make your stay at Lohagarh Fort Resort even more memorable.",
+      "cards": [
+        {
+          "badge": "25% OFF",
+          "heading": "Early Bird Special",
+          "description": "Book 30 days in advance and save up to 25% on your stay."
+        }
+      ]
+    },
+    "wedding-venues": {
+      "title": "Celebrate in Royal Splendor",
+      "description": "Host your dream wedding at Lohagarh Fort Resort. Our magnificent venues provide the perfect setting for every ceremony, from intimate gatherings to grand celebrations.",
+      "cards": [
+        {
+          "title": "The Grand Courtyard",
+          "description": "An expansive open-air courtyard set against the backdrop of historic fort walls, perfect for grand celebrations.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Royal Banquet Hall",
+          "description": "An elegant indoor venue adorned with traditional Rajasthani artwork and crystal chandeliers.",
+          "capacity": "500+ Guests"
+        },
+        {
+          "title": "Poolside Lawns",
+          "description": "Lush green lawns surrounding the pool area, ideal for evening cocktails and mehendi ceremonies.",
+          "capacity": "500+ Guests"
+        }
+      ]
+    },
+    "royal-wedding": {
+      "title": "A Wedding Fit for Royalty",
+      "description": "Let us craft a wedding celebration that echoes the grandeur of Rajasthani royalty. From the majestic baraat procession to the intimate pheras ceremony, every moment is choreographed to perfection at Lohagarh Fort Resort.",
+      "cards": [
+        {
+          "title": "Royal Baraat",
+          "description": "Grand procession with decorated elephants, horses, and traditional band."
+        },
+        {
+          "title": "Mandap Ceremony",
+          "description": "Beautifully decorated mandap with floral arrangements and heritage elements."
+        },
+        {
+          "title": "Mehendi & Sangeet",
+          "description": "Vibrant celebrations with live music, dance, and traditional rituals."
+        },
+        {
+          "title": "Royal Feast",
+          "description": "Multi-course banquet featuring authentic Rajasthani and pan-Indian cuisine."
+        }
+      ]
+    },
+    "explore": {
+      "description": "Beyond the walls of Lohagarh Fort Resort, a world of heritage, culture, and natural beauty awaits. Explore the best that Jaipur has to offer.",
+      "cards": [
+        {
+          "title": "Jaipur City Palace",
+          "description": "A magnificent blend of Rajasthani and Mughal architecture.",
+          "distance": "12 km"
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification & Standards",
+      "description": "Lohagarh Fort Resort is classified as a premium heritage property, meeting the highest standards of luxury hospitality as set by the Ministry of Tourism, Government of India.",
+      "cards": [
+        {
+          "title": "5-Star Heritage",
+          "description": "Classified heritage property"
+        },
+        {
+          "title": "FHRAI Approved",
+          "description": "Federation of Hotel & Restaurant Associations"
+        },
+        {
+          "title": "Safety Certified",
+          "description": "Meets all safety and hygiene standards"
+        }
+      ]
+    },
+    "fact-sheet": {
+      "title": "At a Glance",
+      "description": "Everything you need to know about Lohagarh Fort Resort at a glance.",
+      "table": {
+        "propertyName": "Lohagarh Fort Resort",
+        "location": "Jaipur, Rajasthan",
+        "category": "Safari",
+        "rating": "4.7 / 5",
+        "startingPrice": "₹18,000 / Night",
+        "checkInTime": "2:00 PM",
+        "checkOutTime": "11:00 AM",
+        "totalRooms": "To be updated",
+        "diningOptions": "Multi-cuisine restaurant, Room service",
+        "banquetCapacity": "Up to 500 guests",
+        "parking": "Complimentary valet parking",
+        "wifi": "Complimentary high-speed internet",
+        "petPolicy": "Pets not allowed",
+        "nearestAirport": "To be updated",
+        "nearestRailwayStation": "To be updated"
+      }
+    }
   }
 ]

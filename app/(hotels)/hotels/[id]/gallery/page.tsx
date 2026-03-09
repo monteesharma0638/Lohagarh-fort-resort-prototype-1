@@ -1,10 +1,11 @@
 import HotelSubPage from "@/components/HotelSubPage";
 import { getHotel, hasWeddingPages } from "../helpers";
 import Image from "next/image";
+import { delay } from "@/lib/utils";
 
 export default async function HotelGalleryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const hotel = getHotel(id);
+  const hotel = await getHotel(id);
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
   const gallery = hotel.gallery || [];

@@ -2,9 +2,9 @@ import { Wifi, Coffee, MapPin, Star, Calendar } from "lucide-react";
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import HotelNavbar from "@/components/HotelNavbar";
-import hotelsData from "@/data/hotels.json";
 import Image from "next/image";
 import { hasWeddingPages } from "./helpers";
+import { getHotel } from "@/lib/db";
 
 export default async function HotelOverview({
   params,
@@ -12,7 +12,7 @@ export default async function HotelOverview({
   params: Promise<{ id: string }>;
 }) {
   const id = (await params).id;
-  const hotel = hotelsData.find((h) => h.id === id);
+  const hotel = await getHotel(id);
 
   if (!hotel) {
     return (
@@ -158,7 +158,7 @@ export default async function HotelOverview({
                   Amenities
                 </h3>
                 <div className="grid grid-cols-2 gap-4 mb-12">
-                  {hotel.amenities.map((amenity, index) => (
+                  {hotel.amenities.map((amenity: any, index: number) => (
                     <div
                       key={index}
                       className="flex items-center gap-3 text-foreground/70 border border-border p-4"
@@ -175,7 +175,7 @@ export default async function HotelOverview({
                       Gallery Preview
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
-                      {hotel.gallery.slice(0, 4).map((img, idx) => (
+                      {hotel.gallery.slice(0, 4).map((img: any, idx: number) => (
                         <div
                           key={idx}
                           className="relative aspect-video overflow-hidden group rounded-xl"

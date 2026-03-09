@@ -4,9 +4,8 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default async function HotelContactPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const hotel = getHotel(id);
+  const hotel = await getHotel(id);
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
-
   return (
     <HotelSubPage
       hotelName={hotel.name}

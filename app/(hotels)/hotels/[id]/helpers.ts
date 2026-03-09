@@ -1,6 +1,6 @@
 import hotelsData from "@/data/hotels.json";
 
-export function getHotel(id: string) {
+export async function getHotel(id: string) {
   return hotelsData.find((h) => h.id === id);
 }
 

@@ -3,7 +3,7 @@ import { getHotel, hasWeddingPages } from "../helpers";
 
 export default async function WeddingVenuesPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const hotel = getHotel(id);
+  const hotel = await getHotel(id);
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
   const venues = [
