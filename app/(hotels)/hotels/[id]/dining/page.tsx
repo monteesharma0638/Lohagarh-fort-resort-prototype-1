@@ -1,6 +1,10 @@
 import HotelSubPage from "@/components/HotelSubPage";
 import { hasWeddingPages } from "../helpers";
 import { getHotel } from "@/lib/db";
+import SignatureDishesSection from "@/sections/SignatureDishesSection";
+import DiningExperiencesSection from "@/sections/DiningExperiences";
+import DiningJourneySection from "@/sections/DiningJourneySection";
+import DiningRestaurantsSection from "@/sections/DiningRestaurantSection";
 
 export default async function DiningPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -17,7 +21,7 @@ export default async function DiningPage({ params }: { params: Promise<{ id: str
       pageSubtitle={hotel.name}
       hasWedding={hasWeddingPages(id)}
     >
-      <div className="prose max-w-none">
+      {/* <div className="prose max-w-none">
         <h2 className="text-3xl font-serif text-foreground mb-6">Culinary Heritage</h2>
         <p className="text-foreground/70 text-lg leading-relaxed mb-8">
           Indulge in an exquisite culinary journey at {hotel.name}. Our restaurants offer a curated selection
@@ -36,7 +40,14 @@ export default async function DiningPage({ params }: { params: Promise<{ id: str
             <span className="text-primary text-xs tracking-widest uppercase font-bold">Open All Day</span>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      {/* section */}
+      {/* <SignatureDishesSection /> */}
+
+      {/* <DiningJourneySection /> */}
+      <DiningRestaurantsSection />
+      <DiningExperiencesSection />
     </HotelSubPage>
   );
 }

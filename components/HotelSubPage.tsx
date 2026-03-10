@@ -28,7 +28,7 @@ export default function HotelSubPage({
   
   return (
     <div className="min-h-screen bg-background">
-      <div className="relative h-[50vh] min-h-[350px]">
+      <div className="relative h-[70vh] min-h-[350px]">
         <Image src={hotelImage} alt={hotelName} className="object-cover" fill priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
         <div className="absolute top-28 left-0 right-0 px-8 md:px-16">

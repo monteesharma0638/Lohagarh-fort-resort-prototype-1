@@ -1,6 +1,8 @@
 "use client";
 
-import { X } from "lucide-react";
+import CloudinaryPicker from "@/components/CloudinaryPicker";
+import { Button } from "@/components/ui/button";
+import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -65,13 +67,18 @@ export default function UpdatePage({ hotel }: any) {
     }
 
     const handleAddPhotoGalleryItem = () => {
-        setData((prev: any) => ({
-            ...prev,
-            "photo-gallery": [
-                ...prev["photo-gallery"],
-                prev["photo-gallery"][0]
-            ]
-        }))
+        setData((prev: any) => {
+            return ({
+                ...prev,
+                "photo-gallery": {
+                    ...prev["photo-gallery"],
+                    images: [
+                        ...prev["photo-gallery"]["images"],
+                        prev["photo-gallery"]["images"][0]
+                    ]
+                }
+            })
+        })
     }
 
     return (
@@ -262,7 +269,7 @@ export default function UpdatePage({ hotel }: any) {
 
                     <div className="space-y-4">
                         {data["photo-gallery"].images?.map((img: any, i: number) => (
-                            <div key={i} className="grid md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+                            <div key={i} className="grid md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
                                 <Field label={`Image ${i + 1} Title`}>
                                     <input
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -288,9 +295,19 @@ export default function UpdatePage({ hotel }: any) {
                                         }}
                                     />
                                 </Field>
+                                <div className="relative top-5">
+                                    <CloudinaryPicker onUpload={(url: string) => {
+                                        const images = [...data["photo-gallery"].images];
+                                        images[i].src = url;
+                                        updateNested("photo-gallery", "images", images);
+                                    }} />
+                                    <Button style={{position: "relative", top: 2, right: 0}}><X /></Button>
+                                </div>
                             </div>
                         ))}
                     </div>
+
+                    <Button onClick={handleAddPhotoGalleryItem}><Plus /> Add Image</Button>
                 </div>
 
                 {/* CONTACT */}
@@ -355,12 +372,8 @@ export default function UpdatePage({ hotel }: any) {
                     </div>
                 </div>
             </div>
-            <Button style={{background: "black", color: "white", width: "fit-content", padding: 10, position: "fixed", bottom: 20, right: 20}}>Save Details</Button>
+            <Button style={{background: "green", color: "white", width: "fit-content", padding: 10, position: "fixed", bottom: 20, right: 20}}>Save Details</Button>
         </div>
     );
 }
 
-
-const Button = ({...props}) => {
-    return  <button style={{background: "black", color: "white", width: "fit-content", padding: 10}} {...props} />
-}

@@ -1,0 +1,99 @@
+/* components/AwardsShowcase.module.css */
+.awardsCarouselSection {
+  background-color: #f7f7f7; /* Light grey, matching image_0.png */
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: serif;
+  color: #333;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+}
+
+.sectionHeader h4 {
+  font-size: 14px;
+  color: #a38f65; /* Dark gold */
+  margin-bottom: 10px;
+}
+
+.sectionHeader h2 {
+  font-size: 40px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.sectionHeader .subText {
+  font-size: 16px;
+  color: #555;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.navButton {
+  background: none;
+  border: 1px solid #ccc;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carouselItems {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.awardPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Soft rounded corners as requested */
+  padding: 20px;
+  background-color: #fff;
+}
+
+.awardImage {
+  width: auto;
+  height: 100px; /* Adjust height based on actual images */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.awardTitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.dotActive {
+  width: 10px;
+  height: 10px;
+  background-color: #a38f65;
+  border-radius: 50%;
+}

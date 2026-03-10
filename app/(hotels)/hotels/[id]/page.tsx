@@ -5,6 +5,8 @@ import HotelNavbar from "@/components/HotelNavbar";
 import Image from "next/image";
 import { hasWeddingPages } from "./helpers";
 import { getHotel } from "@/lib/db";
+import HighlightsSection from "@/sections/HighlightsSection";
+import HotelInformationSection from "@/sections/HotelInformationSection";
 
 export default async function HotelOverview({
   params,
@@ -142,12 +144,14 @@ export default async function HotelOverview({
           </div>
         </div>
       </div>
+
+      {/* Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-10 items-start">
           <div className="flex-1 min-w-0">
             <div className="grid grid-cols-1 gap-12">
               <div className="">
-                <h2 className="text-3xl font-serif mb-6 text-foreground">
+                <h2 className="text-3xl md:text-5xl font-serif mb-6 text-foreground">
                   {hotel.title || "About the Hotel"}
                 </h2>
                 <p className="text-foreground/70 text-lg leading-relaxed mb-12 font-light">
@@ -215,6 +219,13 @@ export default async function HotelOverview({
           </div>
         </div>
       </div>
+
+      {/* Section */}
+      <HotelInformationSection />
+
+      {/* Section */}
+      <HighlightsSection />
+
     </div>
   );
 }

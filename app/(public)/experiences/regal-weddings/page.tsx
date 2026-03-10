@@ -1,5 +1,8 @@
 import SectionHeading from "@/components/SectionHeading";
 import MotionDiv from "@/components/MotionDiv";
+import { WeddingGallery } from "@/sections/WeddingGallery";
+import { WeddingContent } from "@/sections/WeddingContent";
+import { WeddingFAQ } from "@/sections/WeddingFAQ";
 
 export default function RegalWeddings() {
   return (
@@ -19,6 +22,9 @@ export default function RegalWeddings() {
           Exchange vows in the splendor of our heritage palaces. Our wedding specialists craft every detail to create a celebration worthy of royalty.
         </p>
       </section>
+      <WeddingGallery />
+      <WeddingContent />
+      <WeddingFAQ />
     </div>
   );
 }
