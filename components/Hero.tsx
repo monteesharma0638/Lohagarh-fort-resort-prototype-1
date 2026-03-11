@@ -35,10 +35,10 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="/videos/mahal-khas.webm" type="video/webm" />
+          <source src="https://res.cloudinary.com/drayl5ppi/video/upload/v1773225725/lohagarh/Mahal_Khas_Website_Video_fzmu7h.mp4" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" /> */}
       </motion.div>
 
       {/* Content */}
@@ -102,7 +102,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Decorative Borders */}
-      <div className="absolute inset-8 border border-white/10 pointer-events-none z-20 hidden md:block" />
+      {/* <div className="absolute inset-8 border border-white/10 pointer-events-none z-20 hidden md:block" /> */}
     </section>
   );
 }
