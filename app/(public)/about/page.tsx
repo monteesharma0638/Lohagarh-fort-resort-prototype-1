@@ -1,12 +1,13 @@
 import MotionDiv from "@/components/MotionDiv";
+import AboutIntroSection from "@/sections/AboutIntroSection";
 import Image from "next/image";
 
 export default function AboutLohagarh() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="relative h-[60vh] flex items-center justify-center">
+      <div className="relative h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0">
-          <Image src="/images/lohagarhfortresort/cover_drone_view.jpg" alt="About Lohagarh" width={1200} height={700} className="w-full h-full object-cover" />
+          <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg" alt="About Lohagarh" width={1200} height={700} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 text-center text-white">
@@ -20,6 +21,8 @@ export default function AboutLohagarh() {
           </MotionDiv>
         </div>
       </div>
+
+      <AboutIntroSection />
 
       <div className="py-24 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -42,6 +45,7 @@ export default function AboutLohagarh() {
           </MotionDiv>
         </div>
       </div>
+
     </div>
   );
 }

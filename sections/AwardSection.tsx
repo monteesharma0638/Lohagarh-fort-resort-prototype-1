@@ -11,11 +11,11 @@ import 'swiper/css/pagination';
 
 const awards = [
   { id: 1, title: 'TripAdvisor', subtitle: 'Certificate of Excellence', img: '/awards/tripadvisor.png' },
-  { id: 1, title: 'TripAdvisor 2022', subtitle: 'Certificate of Excellence', img: '/awards/tripadvisor-2022.png' },
-  { id: 2, title: 'Goibibo', subtitle: '4.5/5 Star Partner', img: '/awards/goibibo.jpg' },
-  { id: 3, title: 'MakeMyTrip', subtitle: 'Star Partner Award', img: '/awards/makemytrip.jpg' },
-  { id: 4, title: 'Nearbuy.com', subtitle: 'Traveller Review Award', img: '/awards/nearbuy.jpg' },
-  { id: 5, title: 'Heritage Awards', subtitle: 'Best Luxury Resort', img: '/awards/holidayiq.jpg' },
+  { id: 2, title: 'TripAdvisor 2022', subtitle: 'Certificate of Excellence', img: '/awards/tripadvisor-2022.png' },
+  { id: 3, title: 'Goibibo', subtitle: '4.5/5 Star Partner', img: '/awards/goibibo.jpg' },
+  { id: 4, title: 'MakeMyTrip', subtitle: 'Star Partner Award', img: '/awards/makemytrip.jpg' },
+  { id: 5, title: 'Nearbuy.com', subtitle: 'Traveller Review Award', img: '/awards/nearbuy.jpg' },
+  { id: 6, title: 'Heritage Awards', subtitle: 'Best Luxury Resort', img: '/awards/holidayiq.jpg' },
 ];
 
 const AwardSection = () => {

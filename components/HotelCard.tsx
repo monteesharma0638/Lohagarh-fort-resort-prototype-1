@@ -41,20 +41,20 @@ export default function HotelCard({ id, name, location, image, description, pric
         </div>
       </Link>
       
-      <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+      <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
         {description}
       </p>
       
       <div className="flex items-center justify-between">
         {price && (
           <div>
-            <span className="text-xs text-gray-500 uppercase block">Starting from</span>
-            <span className="text-lg font-serif font-medium">₹{price}</span>
+            <span className="text-xs text-white uppercase block">Starting from</span>
+            <span className="text-lg font-serif text-gold font-medium">₹{price}</span>
           </div>
         )}
         <Link href={linkHref}>
-            <span className="inline-flex items-center text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors group-hover:underline decoration-primary underline-offset-4">
-            View Details <ArrowRight size={14} className="ml-2" />
+            <span className="inline-flex items-center text-xs font-bold tracking-widest uppercase text-white hover:text-primary transition-colors group-hover:underline decoration-primary underline-offset-4">
+              View Details <ArrowRight size={14} className="ml-2" />
             </span>
         </Link>
       </div>

@@ -16,12 +16,12 @@ export default function RegalWeddings() {
           </MotionDiv>
         </div>
       </div>
-      <section className="py-24 container mx-auto px-6 max-w-5xl">
+      {/* <section className="py-24 container mx-auto px-6 max-w-5xl">
         <SectionHeading title="A Fairy Tale Affair" subtitle="Royal Weddings" />
         <p className="text-gray-400 text-lg leading-relaxed text-center max-w-3xl mx-auto">
           Exchange vows in the splendor of our heritage palaces. Our wedding specialists craft every detail to create a celebration worthy of royalty.
         </p>
-      </section>
+      </section> */}
       <WeddingGallery />
       <WeddingContent />
       <WeddingFAQ />

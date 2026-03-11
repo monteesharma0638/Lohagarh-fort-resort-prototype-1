@@ -1,5 +1,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import MotionDiv from "@/components/MotionDiv";
+import SpaCarouselSection from "@/sections/SpaCarouselSection";
+import SpaAlternateSections from "@/sections/SpaAlternateSection";
 
 export default function SpaAndSalon() {
   return (
@@ -13,12 +15,8 @@ export default function SpaAndSalon() {
           </MotionDiv>
         </div>
       </div>
-      <section className="py-24 container mx-auto px-6 max-w-5xl">
-        <SectionHeading title="Rejuvenate Your Senses" subtitle="Wellness & Beauty" />
-        <p className="text-gray-400 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-          Indulge in ancient Ayurvedic therapies and modern beauty treatments at our world-class spa and salon facilities across all Lohagarh properties.
-        </p>
-      </section>
+      <SpaCarouselSection />
+      <SpaAlternateSections />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import HotelSubPage from "@/components/HotelSubPage";
 import { getHotel, hasWeddingPages } from "../helpers";
+import SpaDetailsSection from "@/sections/SpaDetailsSection";
 
 export default async function SpaSalonPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -17,6 +18,7 @@ export default async function SpaSalonPage({ params }: { params: Promise<{ id: s
       hasWedding={hasWeddingPages(id)}
     >
       <div>
+        <SpaDetailsSection />
         <h2 className="text-3xl font-serif text-foreground mb-6">Wellness & Rejuvenation</h2>
         <p className="text-foreground/70 text-lg leading-relaxed mb-8">
           Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists

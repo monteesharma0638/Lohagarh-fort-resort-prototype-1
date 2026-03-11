@@ -1,4 +1,5 @@
 import MotionDiv from "@/components/MotionDiv";
+import VisionaryLeaders from "@/components/VisionaryLeaders";
 import Image from "next/image";
 
 export default function Management() {
@@ -21,7 +22,7 @@ export default function Management() {
         </div>
       </div>
 
-      <div className="py-24 px-4">
+      {/* <div className="py-24 px-4">
         <div className="container mx-auto max-w-4xl">
           <MotionDiv
             initial={{ opacity: 0, y: 40 }}
@@ -37,30 +38,9 @@ export default function Management() {
               Our leadership team brings together decades of experience in luxury hospitality, heritage conservation, and sustainable tourism. Together, they guide Lohagarh Group towards a future that honors our past while embracing new possibilities.
             </p>
           </MotionDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {[
-              { name: "Coming Soon", title: "Chairman & Managing Director" },
-              { name: "Coming Soon", title: "Chief Executive Officer" },
-              { name: "Coming Soon", title: "Chief Operating Officer" },
-              { name: "Coming Soon", title: "Director of Heritage & Culture" },
-            ].map((member, index) => (
-              <MotionDiv
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center p-8 border border-primary/10"
-              >
-                <div className="w-32 h-32 bg-secondary/20 rounded-full mx-auto mb-6" />
-                <h3 className="text-xl font-serif text-primary mb-2">{member.name}</h3>
-                <p className="text-gray-500 text-sm tracking-widest uppercase">{member.title}</p>
-              </MotionDiv>
-            ))}
-          </div>
         </div>
-      </div>
+      </div> */}
+      <VisionaryLeaders />
     </div>
   );
 }

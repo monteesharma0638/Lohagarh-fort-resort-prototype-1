@@ -126,9 +126,9 @@ const navItems: NavItem[] = [
       {
         category: "",
         items: [
-          { label: "Marketing & Sales", href: "/contact?dept=marketing" },
-          { label: "Investors", href: "/contact?dept=investors" },
-          { label: "Feedback", href: "/contact?dept=feedback" },
+          { label: "Marketing & Sales", href: "/contact/marketing-and-sales" },
+          { label: "Investors", href: "/contact/investors" },
+          { label: "Feedback", href: "/contact/feedback" },
           { label: "Career", href: "/contact?dept=career" },
         ],
       },

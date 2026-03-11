@@ -33,6 +33,7 @@ const getNavItems = (hotelId: string, hasWedding: boolean) => [
   { label: "Explore", href: `/hotels/${hotelId}/explore` },
   { label: "Classification", href: `/hotels/${hotelId}/hotel-classification` },
   { label: "Fact Sheet", href: `/hotels/${hotelId}/hotel-fact-sheet` },
+  { label: "Testimonials", href: `/about/testimonials` },
 ];
 
 export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: HotelNavbarProps) {
