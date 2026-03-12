@@ -94,7 +94,7 @@ export default function AboutIntroSection() {
           <div className="grid grid-cols-3 gap-8 pt-6 border-t">
             <div>
               <h3 className="text-3xl font-serif text-[hsl(var(--gold))]">
-                10+
+                20+
               </h3>
               <p className="text-sm text-muted-foreground">Years Experience</p>
             </div>

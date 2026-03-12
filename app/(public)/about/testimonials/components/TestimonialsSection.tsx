@@ -239,11 +239,11 @@ export default function TestimonialsSection() {
           onChange={(e) => setSelectedHotel(e.target.value as any)}
           className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none"
         >
-            {
-                Object.entries(testimonials).map(([key, value], index) => (
-                    <option value={key}>{value.title}</option>
-                ))
-            }
+          {
+            Object.entries(testimonials).map(([key, value], index) => (
+              <option key={index} value={key}>{value.title}</option>
+            ))
+          }
         </select>
       </div>
 

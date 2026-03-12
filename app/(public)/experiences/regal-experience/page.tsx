@@ -1,6 +1,7 @@
 import MotionDiv from "@/components/MotionDiv";
 import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 
 function SectionDivider() {
   return (
@@ -105,8 +106,13 @@ export default function RegalExperience() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4"
         >
-          {[1, 2, 3, 4].map((i) => (
-            <ImagePlaceholder key={i} className="aspect-[4/3]" />
+          {[
+            "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg",
+            "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg",
+            "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg",
+            "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212406/lohagarh/images/hero/DSC01586_qdlvzv.jpg"
+          ].map((img, i) => (
+            <Image key={i} src={img} alt="hello" width={300} height={200} className="aspect-[4/3]" />
           ))}
         </MotionDiv>
         <p className="text-center text-xs text-foreground/40 tracking-widest uppercase mb-2">Gallery</p>
@@ -131,10 +137,10 @@ export default function RegalExperience() {
               </p>
             </div>
             <div className="space-y-4">
-              <ImagePlaceholder className="w-full h-56" />
+              <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg" alt="first image" width={400} height={200} className="w-full h-56" />
               <div className="grid grid-cols-2 gap-3">
-                <ImagePlaceholder className="aspect-[4/3]" />
-                <ImagePlaceholder className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg" alt="second image" width={300} height={300} className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212406/lohagarh/images/hero/DSC01586_qdlvzv.jpg" alt="second image" width={300} height={300} className="aspect-[4/3]" />
               </div>
             </div>
           </div>
@@ -175,12 +181,12 @@ export default function RegalExperience() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { title: "Private Heritage Trail", desc: "An exclusive behind-the-scenes guided walk through centuries of Rajput history." },
-              { title: "Royal Polo & Sports", desc: "Engage your team in ceremonial polo, archery, and traditional sporting spectacles." },
-              { title: "Desert Safari & Camp", desc: "Sunset camel rides, folk performances, and a private starlit dinner under Rajasthan skies." },
+              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg", title: "Private Heritage Trail", desc: "An exclusive behind-the-scenes guided walk through centuries of Rajput history." },
+              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg", title: "Royal Polo & Sports", desc: "Engage your team in ceremonial polo, archery, and traditional sporting spectacles." },
+              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg", title: "Desert Safari & Camp", desc: "Sunset camel rides, folk performances, and a private starlit dinner under Rajasthan skies." },
             ].map((item) => (
               <div key={item.title} className="border border-border overflow-hidden group">
-                <ImagePlaceholder className="w-full h-44 group-hover:opacity-90 transition-opacity" />
+                <Image src={item.image} alt="some alternative text" width={100} height={100} className="w-full h-44 group-hover:opacity-90 transition-opacity" />
                 <div className="p-5">
                   <h4 className="font-serif text-lg text-foreground mb-2">{item.title}</h4>
                   <p className="text-foreground/60 text-sm leading-relaxed">{item.desc}</p>
@@ -248,10 +254,10 @@ export default function RegalExperience() {
               </p>
             </div>
             <div className="space-y-3">
-              <ImagePlaceholder className="w-full h-56" />
+              <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307031/lohagarh/images/dining/DSC02330_yyau8v.jpg" alt="Dining 1" width={500} height={300} className="w-full h-56" />
               <div className="grid grid-cols-2 gap-3">
-                <ImagePlaceholder className="aspect-[4/3]" />
-                <ImagePlaceholder className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC05329_iimkd5.jpg" alt="Dining 2" width={300} height={300} className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC02346_bf8sho.jpg" alt="Dining 3" width={300} height={300} className="aspect-[4/3]" />
               </div>
             </div>
           </div>
@@ -293,7 +299,7 @@ export default function RegalExperience() {
           </div>
 
           {/* Partner / client logos */}
-          <div>
+          {/* <div>
             <p className="text-xs tracking-[0.2em] uppercase text-foreground/40 text-center mb-8">Trusted By</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-px border border-border">
               {["Allianz", "ABB", "Johnson & Johnson", "Genpact", "Capgemini", "Carpet One",
@@ -306,7 +312,7 @@ export default function RegalExperience() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </MotionDiv>
 
         {/* ── CTA Strip ───────────────────────────────────────── */}
