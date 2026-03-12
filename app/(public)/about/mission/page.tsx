@@ -1,5 +1,6 @@
 import MotionDiv from "@/components/MotionDiv";
 import Image from "next/image";
+import MissionSection from "./components/MissionSection";
 
 export default function OurMission() {
   return (
@@ -22,7 +23,18 @@ export default function OurMission() {
       </div>
 
       <div className="py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
+          <MotionDiv
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <MissionSection />
+          </MotionDiv>
+        </div>
+        {/* <div className="container mx-auto max-w-4xl">
           <MotionDiv
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +66,7 @@ export default function OurMission() {
               </div>
             </div>
           </MotionDiv>
-        </div>
+        </div> */}
       </div>
     </div>
   );

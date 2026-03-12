@@ -8,6 +8,8 @@ import Hero2 from "@/components/Hero2";
 import Image from "next/image";
 import RevealImage from "@/components/motion/RevealImage";
 import Hero from "@/components/Hero";
+import { Swiper } from "swiper/react";
+import ResortExplorer from "./components/ResortExplorer";
 
 
   const stats = [
@@ -91,19 +93,7 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {featuredHotels.map((hotel, index) => (
-              <MotionDiv
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                <HotelCard {...hotel} />
-              </MotionDiv>
-            ))}
-          </div>
+          <ResortExplorer featuredHotels={hotels} />
         </div>
       </section>
 

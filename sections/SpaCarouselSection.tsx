@@ -135,7 +135,6 @@ export default function SpaCarouselSection() {
                     </p>
 
                     {/* Treatments */}
-
                     <div className="grid sm:grid-cols-2 gap-3 mb-8">
                       {spa.treatments.map((item, idx) => (
                         <div key={idx} className="flex gap-3 items-center">
@@ -151,7 +150,6 @@ export default function SpaCarouselSection() {
                     </div>
 
                     {/* Info */}
-
                     <div className="flex gap-12 text-sm border-t pt-6">
                       <div>
                         <p className="uppercase text-xs text-muted-foreground mb-1">
