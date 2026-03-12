@@ -18,6 +18,7 @@ interface HotelNavbarProps {
 
 const getNavItems = (hotelId: string, hasWedding: boolean) => [
   { label: "Overview", href: `/hotels/${hotelId}` },
+  { label: "Rooms & Suites", href: `/hotels/${hotelId}/rooms` },
   { label: "Dining", href: `/hotels/${hotelId}/dining` },
   { label: "Spa & Salon", href: `/hotels/${hotelId}/spa-salon` },
   { label: "Gallery", href: `/hotels/${hotelId}/gallery` },

@@ -1,0 +1,313 @@
+{
+  "lohagarh-fort-resort": [
+    {
+      "id": "heritage-room",
+      "name": "Heritage Room",
+      "type": "Room",
+      "size": 420,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 18000,
+      "description": "Steeped in Rajasthani artistry, the Heritage Room features hand-painted frescoes, intricately carved wooden furniture, and a private sit-out with lush garden views. A perfect blend of old-world charm and contemporary comfort.",
+      "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "In-Room Safe", "Minibar"],
+      "features": ["Garden View", "Private Sit-Out", "Heritage Décor"],
+      "images": []
+    },
+    {
+      "id": "deluxe-room",
+      "name": "Deluxe Room",
+      "type": "Room",
+      "size": 520,
+      "occupancy": 2,
+      "beds": "1 King Bed or 2 Twin Beds",
+      "price": 22000,
+      "description": "Larger than the Heritage Room, the Deluxe offers expansive views of the Aravalli foothills and a plush lounge corner. Finished in warm sandstone tones with rich textile accents reflecting the finest Rajput craftsmanship.",
+      "amenities": ["King or Twin Beds", "Air Conditioning", "Free Wi-Fi", "55\" Smart TV", "Bathtub & Shower", "In-Room Safe", "Minibar", "Tea & Coffee Maker"],
+      "features": ["Aravalli View", "Lounge Seating", "Bathtub"],
+      "images": []
+    },
+    {
+      "id": "premier-suite",
+      "name": "Premier Suite",
+      "type": "Suite",
+      "size": 780,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 32000,
+      "description": "The Premier Suite is a sanctuary of luxury — a separate living room adorned with heirloom artefacts, a master bedroom with a four-poster bed, and an en-suite bathroom with a deep-soak bathtub overlooking a private walled courtyard.",
+      "amenities": ["Four-Poster King Bed", "Separate Living Room", "Deep-Soak Bathtub", "Rainfall Shower", "Butler Service", "Free Wi-Fi", "65\" Smart TV", "Minibar & Bar Counter", "In-Room Safe", "Tea & Coffee Station"],
+      "features": ["Private Courtyard", "Butler Service", "Heritage Artefacts", "Four-Poster Bed"],
+      "images": []
+    },
+    {
+      "id": "royal-suite",
+      "name": "Royal Suite",
+      "type": "Suite",
+      "size": 1100,
+      "occupancy": 3,
+      "beds": "1 King Bed + 1 Sofa Bed",
+      "price": 48000,
+      "description": "Our most sought-after suite reimagines royal Rajput living. With a grand dining area for six, a dressing room, two bathrooms, and a private terrace garden with a plunge pool, the Royal Suite is the epitome of regal grandeur.",
+      "amenities": ["King Bed + Sofa Bed", "Private Plunge Pool", "Terrace Garden", "Two Bathrooms", "Dining Area", "Butler Service", "Free Wi-Fi", "Dual 65\" Smart TVs", "Full Bar Setup", "In-Room Safe"],
+      "features": ["Private Plunge Pool", "Terrace Garden", "Dining Area", "Dressing Room", "Dual Bathrooms"],
+      "images": []
+    },
+    {
+      "id": "presidential-villa",
+      "name": "Presidential Villa",
+      "type": "Villa",
+      "size": 2200,
+      "occupancy": 4,
+      "beds": "2 King Beds",
+      "price": 85000,
+      "description": "An entire villa to yourself — the Presidential is a standalone residence with two bedroom suites, a sprawling private lawn, infinity pool, outdoor lounge, private chef service, and 24-hour dedicated butler. The ultimate expression of Lohagarh luxury.",
+      "amenities": ["2 King Bedrooms", "Private Infinity Pool", "Private Chef", "24hr Butler", "Lawn & Outdoor Lounge", "3 Bathrooms", "Full Kitchen", "Free Wi-Fi", "Home Theatre", "In-Villa Bar"],
+      "features": ["Private Infinity Pool", "Private Lawn", "Private Chef", "Standalone Villa", "Full Kitchen"],
+      "images": []
+    }
+  ],
+  "lohagarh-desert-resort": [
+    {
+      "id": "luxury-swiss-tent",
+      "name": "Luxury Swiss Tent",
+      "type": "Tent",
+      "size": 380,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 22000,
+      "description": "Beneath a vast desert sky, our Swiss tents combine the romance of a bygone era with modern luxuries. Each tent features a king bed, plush linen, en-suite bathroom, and a private sit-out perfect for star-gazing.",
+      "amenities": ["King Bed", "En-Suite Bathroom", "Air Cooler", "Free Wi-Fi", "Flat-Screen TV", "Private Sit-Out", "Daily Housekeeping"],
+      "features": ["Desert Views", "Private Sit-Out", "Star-Gazing Deck"],
+      "images": []
+    },
+    {
+      "id": "deluxe-desert-tent",
+      "name": "Deluxe Desert Tent",
+      "type": "Tent",
+      "size": 480,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 28000,
+      "description": "Larger and more lavishly appointed, the Deluxe Tent features handwoven Rajasthani textiles, a copper bathtub, and a wraparound deck with sweeping golden-dune panoramas and private bonfire setup.",
+      "amenities": ["King Bed", "Copper Bathtub", "Rainfall Shower", "Air Cooler", "Free Wi-Fi", "Smart TV", "Private Deck", "Personal Bonfire Setup"],
+      "features": ["Dune Panorama", "Copper Bathtub", "Private Bonfire", "Wraparound Deck"],
+      "images": []
+    },
+    {
+      "id": "royal-desert-tent",
+      "name": "Royal Desert Tent",
+      "type": "Tent",
+      "size": 680,
+      "occupancy": 3,
+      "beds": "1 King Bed + 1 Single",
+      "price": 38000,
+      "description": "The pinnacle of tented luxury in the Thar Desert — a master tent with a private living pavilion, antique furniture, butler service, and an exclusive sunset deck overlooking the dunes. A retreat fit for desert royalty.",
+      "amenities": ["King Bed + Single", "Living Pavilion", "Butler Service", "Copper Bathtub", "Outdoor Shower", "Air Cooler & Heater", "Free Wi-Fi", "Smart TV", "Sunset Deck"],
+      "features": ["Private Sunset Deck", "Living Pavilion", "Butler Service", "Exclusive Dune Views"],
+      "images": []
+    },
+    {
+      "id": "desert-suite",
+      "name": "Desert Suite",
+      "type": "Suite",
+      "size": 750,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 45000,
+      "description": "A permanent suite structure built in the style of a Jaisalmer haveli, the Desert Suite blends stone craftsmanship with luxurious amenities — featuring a jharokha window, private plunge pool, and a glass-ceiling bedroom for night-sky views.",
+      "amenities": ["King Bed", "Private Plunge Pool", "Glass-Ceiling Bedroom", "In-Suite Bar", "Butler Service", "Free Wi-Fi", "Smart TV", "Full Bathroom", "In-Room Safe"],
+      "features": ["Private Plunge Pool", "Glass-Ceiling Bedroom", "Jharokha Window", "Star-Gazing from Bed"],
+      "images": []
+    }
+  ],
+  "townhall": [
+    {
+      "id": "standard-room",
+      "name": "Standard Room",
+      "type": "Room",
+      "size": 320,
+      "occupancy": 2,
+      "beds": "1 Queen Bed",
+      "price": 8000,
+      "description": "A comfortable and well-appointed room with warm interiors, ideal for business travellers and couples seeking a restful stay in Bharatpur.",
+      "amenities": ["Queen Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "En-Suite Bathroom", "Tea & Coffee Maker"],
+      "features": ["Garden View", "Quiet Wing"],
+      "images": []
+    },
+    {
+      "id": "deluxe-room",
+      "name": "Deluxe Room",
+      "type": "Room",
+      "size": 420,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 12000,
+      "description": "Spacious and elegantly styled, the Deluxe Room at Townhall features rich wooden furnishings, soft lighting, and a private balcony overlooking the courtyard garden.",
+      "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "55\" Smart TV", "Bathtub & Shower", "Minibar", "In-Room Safe"],
+      "features": ["Balcony", "Courtyard View", "Bathtub"],
+      "images": []
+    },
+    {
+      "id": "executive-suite",
+      "name": "Executive Suite",
+      "type": "Suite",
+      "size": 620,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 18000,
+      "description": "Our Executive Suite is designed for those who appreciate the finer things — a separate lounge, a work desk, and premium amenities make it perfect for extended stays or celebrating special occasions.",
+      "amenities": ["King Bed", "Separate Lounge", "Work Desk", "Air Conditioning", "Free Wi-Fi", "65\" Smart TV", "Bathtub & Shower", "Butler Service", "Minibar"],
+      "features": ["Separate Lounge", "Butler Service", "Work Desk"],
+      "images": []
+    }
+  ],
+  "mahalkhas": [
+    {
+      "id": "heritage-room",
+      "name": "Heritage Room",
+      "type": "Room",
+      "size": 380,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 9500,
+      "description": "The Heritage Room at Mahalkhas preserves the spirit of a Rajput haveli — arched doorways, traditional jaali screens, and hand-block printed bed linen create an atmosphere of authentic heritage.",
+      "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "En-Suite Bathroom", "Tea & Coffee Maker"],
+      "features": ["Heritage Décor", "Jaali Screens", "Courtyard Access"],
+      "images": []
+    },
+    {
+      "id": "premium-room",
+      "name": "Premium Room",
+      "type": "Room",
+      "size": 480,
+      "occupancy": 2,
+      "beds": "1 King Bed or 2 Twin Beds",
+      "price": 14000,
+      "description": "Larger interiors with a contemporary design sensibility layered over heritage architecture. The Premium Room offers a private sit-out and upgraded bathroom with both a shower and soaking tub.",
+      "amenities": ["King or Twin Beds", "Air Conditioning", "Free Wi-Fi", "Smart TV", "Soaking Tub & Shower", "Sit-Out", "Minibar"],
+      "features": ["Private Sit-Out", "Soaking Tub", "Contemporary Heritage Style"],
+      "images": []
+    },
+    {
+      "id": "deluxe-suite",
+      "name": "Deluxe Suite",
+      "type": "Suite",
+      "size": 700,
+      "occupancy": 3,
+      "beds": "1 King Bed + 1 Sofa Bed",
+      "price": 22000,
+      "description": "Our Deluxe Suite at Mahalkhas features a generously proportioned living room with antique furniture, a private dining area, and a terrace that frames views of the historic town centre.",
+      "amenities": ["King Bed + Sofa Bed", "Living Room", "Private Terrace", "Butler Service", "Air Conditioning", "Free Wi-Fi", "65\" Smart TV", "Bathtub", "In-Room Safe"],
+      "features": ["Private Terrace", "Town View", "Living Room", "Butler Service"],
+      "images": []
+    }
+  ],
+  "kothi-lohagarh": [
+    {
+      "id": "heritage-room",
+      "name": "Heritage Room",
+      "type": "Room",
+      "size": 400,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 15000,
+      "description": "Kothi Lohagarh's Heritage Room is a curated retreat within a restored nobleman's residence. The room blends period furniture and hand-painted walls with modern comfort.",
+      "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "En-Suite Bathroom", "Tea & Coffee Maker", "In-Room Safe"],
+      "features": ["Garden View", "Period Furniture", "Restored Haveli"],
+      "images": []
+    },
+    {
+      "id": "deluxe-room",
+      "name": "Deluxe Room",
+      "type": "Room",
+      "size": 520,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 20000,
+      "description": "More spacious with a private sit-out facing the inner courtyard, the Deluxe Room at Kothi Lohagarh is ideal for those who want to savour the property's intimate heritage character.",
+      "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "55\" Smart TV", "Bathtub & Shower", "Private Sit-Out", "Minibar"],
+      "features": ["Courtyard View", "Private Sit-Out", "Bathtub"],
+      "images": []
+    },
+    {
+      "id": "junior-suite",
+      "name": "Junior Suite",
+      "type": "Suite",
+      "size": 680,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 28000,
+      "description": "An intimate suite with a separate seating alcove, curated art collection, and a marble bathroom complete with a clawfoot tub. Ideal for honeymooners and anniversary getaways.",
+      "amenities": ["King Bed", "Seating Alcove", "Clawfoot Bathtub", "Rainfall Shower", "Free Wi-Fi", "Smart TV", "Minibar", "Butler Service"],
+      "features": ["Clawfoot Bathtub", "Seating Alcove", "Curated Art", "Intimate Setting"],
+      "images": []
+    },
+    {
+      "id": "royal-suite",
+      "name": "Royal Suite",
+      "type": "Suite",
+      "size": 950,
+      "occupancy": 3,
+      "beds": "1 King Bed + 1 Single",
+      "price": 42000,
+      "description": "The crown jewel of Kothi Lohagarh — a full-floor suite with a private rooftop terrace, panoramic Jaipur skyline views, a private plunge pool, and dedicated concierge service.",
+      "amenities": ["King Bed + Single", "Rooftop Terrace", "Private Plunge Pool", "Dedicated Concierge", "Two Bathrooms", "Living Room", "Free Wi-Fi", "65\" Smart TV", "In-Suite Bar"],
+      "features": ["Rooftop Terrace", "Private Plunge Pool", "Jaipur Skyline View", "Dedicated Concierge"],
+      "images": []
+    }
+  ],
+  "corbett-resort": [
+    {
+      "id": "forest-cabin",
+      "name": "Forest Cabin",
+      "type": "Cabin",
+      "size": 360,
+      "occupancy": 2,
+      "beds": "1 Queen Bed",
+      "price": 14000,
+      "description": "Nestled within the dense Corbett forest, each cabin is a private hideaway surrounded by trees and natural sounds. Wake to birdsong and step outside to spot wildlife from your private deck.",
+      "amenities": ["Queen Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "En-Suite Bathroom", "Private Deck", "Tea & Coffee Maker"],
+      "features": ["Forest Views", "Private Deck", "Wildlife Proximity"],
+      "images": []
+    },
+    {
+      "id": "luxury-cottage",
+      "name": "Luxury Cottage",
+      "type": "Cottage",
+      "size": 560,
+      "occupancy": 3,
+      "beds": "1 King Bed + 1 Single",
+      "price": 22000,
+      "description": "A standalone cottage with a wrap-around verandah, separate sitting room, and open-air shower. Designed to immerse you in the sights and sounds of the Corbett wilderness while ensuring every luxury is at hand.",
+      "amenities": ["King Bed + Single", "Wrap-Around Verandah", "Outdoor Shower", "Sitting Room", "Air Conditioning", "Free Wi-Fi", "Smart TV", "Minibar"],
+      "features": ["Wrap-Around Verandah", "Outdoor Shower", "Jungle Sounds", "Standalone Cottage"],
+      "images": []
+    },
+    {
+      "id": "river-view-room",
+      "name": "River View Room",
+      "type": "Room",
+      "size": 440,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 18000,
+      "description": "Positioned to capture views of the Ramganga River, this room features floor-to-ceiling windows, a spacious bathroom, and a private balcony — the finest vantage point for sunrise over the river.",
+      "amenities": ["King Bed", "River-View Balcony", "Floor-to-Ceiling Windows", "Air Conditioning", "Free Wi-Fi", "55\" Smart TV", "Bathtub & Shower", "Minibar"],
+      "features": ["River View", "Private Balcony", "Sunrise Views", "Floor-to-Ceiling Windows"],
+      "images": []
+    },
+    {
+      "id": "premium-suite",
+      "name": "Premium Suite",
+      "type": "Suite",
+      "size": 820,
+      "occupancy": 2,
+      "beds": "1 King Bed",
+      "price": 35000,
+      "description": "Our largest accommodation at Corbett — a two-room suite with a private plunge pool, a sit-out overlooking the forest canopy, and a curated naturalist experience included with every stay.",
+      "amenities": ["King Bed", "Private Plunge Pool", "Forest Canopy Sit-Out", "Naturalist Experience", "Butler Service", "Two Bathrooms", "Free Wi-Fi", "65\" Smart TV", "In-Suite Bar", "In-Room Safe"],
+      "features": ["Private Plunge Pool", "Forest Canopy View", "Naturalist Experience Included", "Butler Service"],
+      "images": []
+    }
+  ]
+}
