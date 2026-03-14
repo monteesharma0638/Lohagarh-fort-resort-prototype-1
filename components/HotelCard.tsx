@@ -11,7 +11,7 @@ export interface HotelCardProps {
   image: string;
   description: string;
   price?: string;
-  light: boolean
+  light?: boolean
 }
 
 export default function HotelCard({ id, name, location, image, description, price, light = false }: HotelCardProps) {
