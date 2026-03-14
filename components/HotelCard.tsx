@@ -11,9 +11,10 @@ export interface HotelCardProps {
   image: string;
   description: string;
   price?: string;
+  light: boolean
 }
 
-export default function HotelCard({ id, name, location, image, description, price }: HotelCardProps) {
+export default function HotelCard({ id, name, location, image, description, price, light = false }: HotelCardProps) {
   const linkHref = id ? `/hotels/${id}` : "/hotels";
 
   return (
@@ -48,12 +49,12 @@ export default function HotelCard({ id, name, location, image, description, pric
       <div className="flex items-center justify-between">
         {price && (
           <div>
-            <span className="text-xs text-white uppercase block">Starting from</span>
+            <span className={`text-xs uppercase ${!light? "text-foreground": "text-background"} block`}>Starting from</span>
             <span className="text-lg font-serif text-gold font-medium">₹{price}</span>
           </div>
         )}
         <Link href={linkHref}>
-            <span className="inline-flex items-center text-xs font-bold tracking-widest uppercase text-white hover:text-primary transition-colors group-hover:underline decoration-primary underline-offset-4">
+            <span className={`inline-flex items-center text-xs font-bold tracking-widest uppercase ${!light? "text-foreground": "text-background"} hover:text-primary transition-colors group-hover:underline decoration-primary underline-offset-4`}>
               View Details <ArrowRight size={14} className="ml-2" />
             </span>
         </Link>

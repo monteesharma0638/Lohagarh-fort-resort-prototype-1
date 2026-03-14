@@ -8,7 +8,7 @@ interface SectionHeadingProps {
   light?: boolean;
 }
 
-export default function SectionHeading({ title, subtitle, centered = true, className, light = false }: SectionHeadingProps) {
+export default function SectionHeading({ title, subtitle, centered = false, className, light = false }: SectionHeadingProps) {
   return (
     <div className={cn("mb-12", centered && "text-center", className)}>
       {subtitle && (

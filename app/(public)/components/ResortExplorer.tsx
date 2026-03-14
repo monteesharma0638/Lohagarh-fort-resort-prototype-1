@@ -19,7 +19,7 @@ export default function ResortExplorer({
   const [isEnd, setIsEnd] = useState<boolean>(false);
 
   return (
-    <div className="relative px-16 overflow-visible">
+    <div className="relative px-4 md:px-16 overflow-visible">
       <button
         className={`nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl ${
           isBeginning ? "opacity-0 pointer-events-none" : ""
@@ -112,7 +112,6 @@ export default function ResortExplorer({
           .nav-next:hover {
             background: #b8860b;
             color: white;
-
             transform: scale(1.08);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
           }
@@ -125,9 +124,13 @@ export default function ResortExplorer({
 
           /* Hide arrows on mobile */
           @media (max-width: 768px) {
-            .nav-prev,
+            .nav-prev {
+              top: -35px;
+              left: 10px;
+            }
             .nav-next {
-              display: none;
+              top: -35px;
+              right: 10px;
             }
           }
         `}

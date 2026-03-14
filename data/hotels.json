@@ -14,7 +14,15 @@
     "price": "22,000",
     "category": "Resort",
     "featured": true,
-    "amenities": ["Luxury Swiss Tents", "Desert Safaris", "Camel Safaris", "Jeep Safaris", "Cultural Evenings", "Bonfire Nights", "Rajasthani Dining"],
+    "amenities": [
+      "Luxury Swiss Tents",
+      "Desert Safaris",
+      "Camel Safaris",
+      "Jeep Safaris",
+      "Cultural Evenings",
+      "Bonfire Nights",
+      "Rajasthani Dining"
+    ],
     "rating": 4.9,
     "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
@@ -237,7 +245,6 @@
         "nearestRailwayStation": "To be updated"
       }
     }
-
   },
   {
     "id": "lohagarh-fort-resort",
@@ -262,6 +269,52 @@
       "Premium Suites",
       "Relaxing Spaces"
     ],
+    "rooms": [
+      {
+        "title": "Sujan Mahal With Balcony",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773481728/lohagarh/images/rooms/sujanmahalwithbalcony/sujanmahalwithbalcony_awpydp.jpg"
+      },
+      {
+        "title": "Sujan Mahal Deluxe Room Without Balcony",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773481819/lohagarh/images/rooms/sujanmahaldeluxeroomwithoutbalcony/2-min-9_eax1qc.webp"
+      },
+      {
+        "title": "Suite With Jacuzzi (Peacock Theme)",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482716/lohagarh/images/rooms/suite-with-jacuzzi-peacock/2-4_ee8wxl.jpg"
+      },
+      {
+        "title": "Suite With Jacuzzi (Butterfly Theme)",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482632/lohagarh/images/rooms/suite-with-jacuzzi-butterfly/Suite-With-Jacuzzi-Butterfly-Theme_vq9w8b.jpg"
+      },
+      {
+        "title": "Suite With Jacuzzi",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482347/lohagarh/images/rooms/suite-with-jacuzzi/1684559744534_sjzzzf.jpg"
+      },
+      {
+        "title": "Luxury Tent With Jacuzzi",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773481933/lohagarh/images/rooms/luxurytentwithjacuzzi/l2_q81mzp.jpg"
+      },
+      {
+        "title": "Luxury Tent With Outdoor Pool",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482023/lohagarh/images/rooms/luxury-tent-with-outdoor-pool/lt4_icd7yo.jpg"
+      },
+      {
+        "title": "Luxury Tent With Private Pool",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482457/lohagarh/images/rooms/luxury-suits-with-private-pool/l1-1_ph42e5.jpg"
+      },
+      {
+        "title": "Family Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482278/lohagarh/images/rooms/family-room/Untitled-2_0002_VR2_3626_HDR_qhjxtv.jpg"
+      },
+      {
+        "title": "Cottage With Mini Pool",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482200/lohagarh/images/rooms/cottage-with-mini-pool/1-min-6_h8qjcz.webp"
+      },
+      {
+        "title": "Cottage With Jacuzzi",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773482105/lohagarh/images/rooms/cottage-with-jacuzzi/Untitled-2_0000_VR2_3736_HDR_kemirx.jpg"
+      }
+    ],
     "featured": true,
     "amenities": [
       "Jungle Safari",
@@ -271,7 +324,7 @@
       "Organic Food"
     ],
     "rating": 4.7,
-        "dining": {
+    "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
       "heading": "Culinary Heritage",
       "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
@@ -518,7 +571,7 @@
       "/images/townhall/gallery7.jpg"
     ],
     "rating": 4.6,
-        "dining": {
+    "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
       "heading": "Culinary Heritage",
       "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
@@ -765,7 +818,7 @@
       "/images/mahalkhas/gallery5.jpg"
     ],
     "rating": 4.5,
-        "dining": {
+    "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
       "heading": "Culinary Heritage",
       "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
@@ -1003,7 +1056,7 @@
       "Cooking Classes"
     ],
     "rating": 4.8,
-        "dining": {
+    "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
       "heading": "Culinary Heritage",
       "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",
@@ -1246,7 +1299,7 @@
       "24-Hour Room Service"
     ],
     "rating": 4.8,
-        "dining": {
+    "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
       "heading": "Culinary Heritage",
       "content": "Indulge in an exquisite culinary journey at Lohagarh Fort Resort. Our restaurants offer a curated selection of authentic Rajasthani cuisine, pan-Indian delicacies, and international flavors prepared by our award-winning chefs using locally sourced ingredients and age-old royal recipes.",

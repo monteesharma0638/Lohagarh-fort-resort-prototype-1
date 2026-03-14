@@ -249,7 +249,7 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className={`hidden ${!noTopHeader ? "lg:flex invisible": ""} items-center gap-6`}>
           <Link
             href="/reservations"
             className={cn(

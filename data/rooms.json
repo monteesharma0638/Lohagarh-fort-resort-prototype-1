@@ -1,27 +1,27 @@
 {
   "lohagarh-fort-resort": [
     {
-      "id": "heritage-room",
-      "name": "Heritage Room",
+      "id": "sujan-mahal-deluxe-room-with-balcony",
+      "name": "Sujan Mahal Deluxe Room with Balcony",
       "type": "Room",
       "size": 420,
       "occupancy": 2,
       "beds": "1 King Bed",
       "price": 18000,
-      "description": "Steeped in Rajasthani artistry, the Heritage Room features hand-painted frescoes, intricately carved wooden furniture, and a private sit-out with lush garden views. A perfect blend of old-world charm and contemporary comfort.",
+      "description": "Our Sujan Mahal Deluxe Room with Balcony is perfect for a truly indulgent and relaxing stay. Our Deluxe Rooms are tastefully designed to ensure a comfortable and relaxing stay. Each room boasts elegant decor, modern amenities, and a private balcony with breathtaking views of the surrounding natural beauty. Our Deluxe Rooms are ideal for solo travelers, couples, or families looking for a luxurious.",
       "amenities": ["King Bed", "Air Conditioning", "Free Wi-Fi", "Flat-Screen TV", "In-Room Safe", "Minibar"],
       "features": ["Garden View", "Private Sit-Out", "Heritage Décor"],
       "images": []
     },
     {
-      "id": "deluxe-room",
-      "name": "Deluxe Room",
+      "id": "sujan-mahal-deluxe-room-without-balcony",
+      "name": "Sujan Mahal Deluxe Room Without Balcony",
       "type": "Room",
       "size": 520,
       "occupancy": 2,
       "beds": "1 King Bed or 2 Twin Beds",
       "price": 22000,
-      "description": "Larger than the Heritage Room, the Deluxe offers expansive views of the Aravalli foothills and a plush lounge corner. Finished in warm sandstone tones with rich textile accents reflecting the finest Rajput craftsmanship.",
+      "description": "The Deluxe room stands out for its flawless combination of lavish furniture and modern conveniences, such as a flat-screen TV, a comfy king-size bed, and a roomy wardrobe, as well as a spacious and sumptuous atmosphere that is extraordinarily well ventilated and filled with natural light.",
       "amenities": ["King or Twin Beds", "Air Conditioning", "Free Wi-Fi", "55\" Smart TV", "Bathtub & Shower", "In-Room Safe", "Minibar", "Tea & Coffee Maker"],
       "features": ["Aravalli View", "Lounge Seating", "Bathtub"],
       "images": []
