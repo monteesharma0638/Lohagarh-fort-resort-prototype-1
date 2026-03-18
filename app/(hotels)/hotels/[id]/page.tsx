@@ -159,7 +159,7 @@ export default async function HotelOverview({
                   {hotel.description}
                 </p>
 
-                {hotel.gallery && hotel.gallery.length > 0 && (
+                {hotel.rooms && hotel.rooms.length > 0 && (
                   <>
                     <h3 className="text-2xl font-serif mb-6 text-foreground">
                       Overview
@@ -170,7 +170,8 @@ export default async function HotelOverview({
                         // This creates a repeating pattern:
                         // Item 2 is tall, then Item 4 is tall, then Item 6 is tall, etc.
                         const isTall = idx % 4 === 1 || idx % 4 === 3;
-
+                        console.log("🚀 ~ HotelOverview ~ isTall:", isTall)
+                        
                         return (
                           <Link
                             href={ele.src}
@@ -216,7 +217,7 @@ export default async function HotelOverview({
       </div>
 
       {/* Section */}
-      <HotelInformationSection />
+      {/* <HotelInformationSection /> */}
 
       {/* Section */}
       <HighlightsSection />

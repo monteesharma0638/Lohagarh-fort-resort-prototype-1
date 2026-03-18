@@ -49,7 +49,7 @@ export default function Home() {
               </p> */}
               <div className="flex flex-col items-left">
                 <p className="text-gray-600 text-sm tracking-widest max-w-2xl text-justify leading-loose mb-10">
-                  Experience the grandeur of exotic Rajasthan with HRH, India's only chain of heritage Palace-hotels and resorts under private ownership, as you wake up to history on your doorstep.
+                  Experience the grandeur of exotic Rajasthan with Lohagarh, India's only chain of heritage Palace-hotels and resorts under private ownership, as you wake up to history on your doorstep.
                 </p>
                 <Link href="/about" className="mx-auto md:mx-0">
                   <span className="bg-primary/10 border border-primary text-primary px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-500">
@@ -59,7 +59,7 @@ export default function Home() {
               </div>
             </MotionDiv>
             <div className="md:col-span-1 py-20 md:py-0">
-              <Image className="rounded-xl" src={"/images/mahalkhas/front.jpg"} alt={""} width={600} height={1200} />
+              <Image className="rounded-xl" src={"https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg"} alt={""} width={600} height={1200} />
             </div>
           </div>
         </div>

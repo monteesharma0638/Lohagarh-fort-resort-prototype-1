@@ -28,11 +28,12 @@ const getNavItems = (hotelId: string, hasWedding: boolean) => [
   ...(hasWedding
     ? [
         { label: "Wedding Venues", href: `/hotels/${hotelId}/wedding-venues` },
-        { label: "Royal Wedding", href: `/hotels/${hotelId}/royal-wedding` },
+        { label: "Royal Wedding", href: `https://pub-97c2b3a01da24f6c8d0bf6cdd0846e8c.r2.dev/WEDDING%20BROCHURE.pdf` },
       ]
     : []),
   { label: "Explore", href: `/hotels/${hotelId}/explore` },
   { label: "Classification", href: `/hotels/${hotelId}/hotel-classification` },
+  { label: "Nidhi & Saathi Certificate", href: `https://pub-97c2b3a01da24f6c8d0bf6cdd0846e8c.r2.dev/nidhi%20certificate.pdf` },
   { label: "Fact Sheet", href: `/hotels/${hotelId}/hotel-fact-sheet` },
   { label: "Testimonials", href: `/about/testimonials` },
 ];

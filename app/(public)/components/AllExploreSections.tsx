@@ -132,7 +132,7 @@ const sections = [
           </ul>
         </MotionDiv>
         <div className="flex justify-center">
-          <Link href="/hotels">
+          <Link href="/experiences/regal-experience">
             <Button>View More</Button>
           </Link>
         </div>
@@ -169,7 +169,7 @@ const sections = [
           </ul>
         </MotionDiv>
         <div className="flex justify-center">
-          <Link href="/hotels">
+          <Link href="/experiences/regal-weddings">
             <Button>View More</Button>
           </Link>
         </div>
@@ -187,7 +187,7 @@ const sections = [
           </p>
         </MotionDiv>
         <div className="flex justify-center">
-          <Link href="/hotels">
+          <Link href="/experiences/spa-and-salon">
             <Button>View More</Button>
           </Link>
         </div>

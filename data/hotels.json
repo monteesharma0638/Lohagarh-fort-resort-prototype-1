@@ -817,6 +817,20 @@
       "/images/mahalkhas/gallery4.jpg",
       "/images/mahalkhas/gallery5.jpg"
     ],
+    "rooms": [
+      {
+        "title": "Heritage Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773814686/lohagarh/mahalkhas/rooms/Heritage%20Room/heritageroom_aazbla.jpg"
+      },
+      {
+        "title": "Maharaja suite",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773814552/lohagarh/mahalkhas/rooms/Maharaja%20suite/banner-4_teapd5.jpg"
+      },
+      {
+        "title": "Deluxe Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773814636/lohagarh/mahalkhas/rooms/Deluxe%20Room/banner-3_gcsv2a.jpg"
+      }
+    ],
     "rating": 4.5,
     "dining": {
       "coverImage": "/images/lohagarhdesertresort/cover.png",
@@ -1316,6 +1330,40 @@
         }
       ]
     },
+    "rooms": [
+      {
+        "title": "Luxury Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773662417/lohagarh/corbett-resort/Luxury-room/Luxury-Room_iuyq0e.jpg"
+      },
+      {
+        "title": "Premium Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773662377/lohagarh/corbett-resort/premium-room/Premium-Room_ui4ept.jpg"
+      },
+      {
+        "title": "Village Theme Family Suite",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773662665/lohagarh/corbett-resort/village-theme-family-suite/Village-Theme-Family-Suite_tggq41.jpg"
+      },
+      {
+        "title": "Village Theme Luxury Room",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773662471/lohagarh/corbett-resort/village-theme-luxury-room/Village-Theme-Luxury-Room_cirbgq.jpg"
+      },
+      {
+        "title": "Village Theme Luxury Room (With Plunge Pool)",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773662560/lohagarh/corbett-resort/village-theme-luxury-room%20%28with%20plunge%20pool%29/Village-theme-luxury-room--Plunge-pool_kwt2lw.jpg"
+      },
+      {
+        "title": "Village theme family suite (With Plunge Pool)",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773812942/lohagarh/corbett-resort/Village-theme-family-suite-with-plunge-pool/Village-Theme-Family-suite-Plunge-pool_wdw8ae.jpg"
+      },
+      {
+        "title": "Jungle view glass suite",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773813182/lohagarh/corbett-resort/Jungle%20view%20glass%20suite/Jungle-view-glass-suite_clpjqw.jpg"
+      },
+      {
+        "title": "Jungle view suite",
+        "src": "https://res.cloudinary.com/drayl5ppi/image/upload/v1773813258/lohagarh/corbett-resort/Jungle%20view%20suite/Jungle-View-Suite_yk5dak.jpg"
+      }
+    ],
     "spa&salon": {
       "title": "Wellness & Rejuvenation",
       "content": "Immerse yourself in ancient Ayurvedic healing traditions at our spa. Our expert therapists blend traditional techniques with modern wellness practices to rejuvenate your body, mind, and soul.",
