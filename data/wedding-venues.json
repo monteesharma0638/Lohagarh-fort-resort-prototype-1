@@ -1,0 +1,302 @@
+{
+  "lohagarh-fort-resort": {
+    "heroTitle": "Best Wedding Resort in Jaipur",
+    "heroSubtitle": "Lohagarh Fort Resort — Where Royal Dreams Take Shape",
+    "intro": "Lohagarh Fort Resort offers an unmatched canvas for the grandest celebrations in Jaipur. Nestled within ancient ramparts and lush gardens, our wedding venues blend the timeless grandeur of Rajputana architecture with impeccable modern hospitality. Whether you envision an intimate ceremony under the stars or a lavish multi-day celebration, we craft every detail to perfection.",
+    "venues": [
+      {
+        "id": "paanipat-sahib",
+        "name": "Paanipat Sahib",
+        "area": "8,500 sq ft",
+        "capacity": 600,
+        "type": "Open Lawn",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/gallery1.webp",
+        "description": "A sprawling open lawn spread across 8,500 sq ft, Paanipat Sahib is our grandest outdoor venue. Flanked by majestic fort walls and ancient trees, this venue provides a dramatic backdrop for baraats, grand receptions, and open-air dinners under the Rajasthani sky.",
+        "features": ["Floodlit Fort Walls", "Baraat Entry Road", "Open Bar Setup", "Floating Stage"],
+        "highlight": "Ideal for grand receptions & baraats"
+      },
+      {
+        "id": "maharana-bagh",
+        "name": "Maharana Bagh",
+        "area": "5,200 sq ft",
+        "capacity": 350,
+        "type": "Garden",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/gallery2.webp",
+        "description": "A beautifully manicured Mughal-style garden with fountains and floral parterre, Maharana Bagh creates a romantic setting for pheras and cocktail soirées. The symmetrical garden pathways and central fountain become focal points for memorable photography.",
+        "features": ["Fountain Court", "Floral Canopy", "Royal Mandap Setup", "Dedicated Bridal Corner"],
+        "highlight": "Perfect for pheras & cocktail events"
+      },
+      {
+        "id": "gulzar-bagh",
+        "name": "Gulzar Bagh",
+        "area": "3,800 sq ft",
+        "capacity": 250,
+        "type": "Garden",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/pool-site.jpg",
+        "description": "Meaning 'Garden of Flowers', Gulzar Bagh is a fragrant, intimate garden ideal for mehendi ceremonies, sangeet nights, and pre-wedding celebrations. The garden is lined with seasonal blooms and lit with warm fairy lights after sundown.",
+        "features": ["Natural Floral Decor", "Mehendi Pavilion", "Live Music Stage", "Fairy Light Canopy"],
+        "highlight": "Best for mehendi & sangeet ceremonies"
+      },
+      {
+        "id": "virasat-sagar",
+        "name": "Virasat Sagar",
+        "area": "6,000 sq ft",
+        "capacity": 400,
+        "type": "Poolside",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/gallery3.jpg",
+        "description": "A grand poolside amphitheatre framed by carved sandstone columns, Virasat Sagar is Lohagarh's most photographed venue. The shimmering pool reflects the glowing lights of the setup — creating a mesmerising effect for evening ceremonies and gala receptions.",
+        "features": ["Infinity Pool Backdrop", "Sandstone Columns", "Candlelit Decor", "Floating Florals"],
+        "highlight": "Stunning poolside amphitheatre"
+      },
+      {
+        "id": "mf-mumtaz",
+        "name": "MF Mumtaz",
+        "area": "4,500 sq ft",
+        "capacity": 300,
+        "type": "Indoor Banquet",
+        "indoor": true,
+        "image": "/images/lohagarhfortresort/gallery4.jpg",
+        "description": "An air-conditioned indoor banquet hall with heritage frescoes, crystal chandeliers, and a grand proscenium stage, MF Mumtaz offers the perfect setting for sangeet performances, gala dinners, and all-weather celebrations with a royal atmosphere.",
+        "features": ["Crystal Chandeliers", "Heritage Frescoes", "Proscenium Stage", "Central Air Conditioning"],
+        "highlight": "Royal indoor banquet for all weather"
+      },
+      {
+        "id": "palace-valley-lawns",
+        "name": "Palace Valley Lawns",
+        "area": "10,000 sq ft",
+        "capacity": 800,
+        "type": "Open Lawn",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/gallery5.webp",
+        "description": "The crown jewel of Lohagarh's wedding venues, Palace Valley Lawns is our largest expanse — a 10,000 sq ft majestic setting for marquee weddings. With a panoramic view of the surrounding Aravalli hills and the fort, it is the quintessential setting for a royal Rajasthani wedding.",
+        "features": ["Panoramic Aravalli View", "Fort Wall Backdrop", "Marquee Tent Compatible", "VIP Procession Path"],
+        "highlight": "Largest venue — marquee weddings"
+      },
+      {
+        "id": "haveli-dalan",
+        "name": "Haveli Dalan",
+        "area": "2,200 sq ft",
+        "capacity": 120,
+        "type": "Heritage Courtyard",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/coridoor.jpg",
+        "description": "A beautifully restored 18th-century haveli courtyard with intricate jaali screens and traditional stone arches. Haveli Dalan is our most intimate venue — perfect for small family gatherings, haldi ceremonies, and exclusive sit-down dinners with a heritage ambience.",
+        "features": ["Jaali Screen Walls", "Stone Arch Entrance", "Intimate Courtyard", "Traditional Oil Diyas"],
+        "highlight": "Intimate heritage courtyard"
+      },
+      {
+        "id": "overallview-gardens",
+        "name": "Overallview Gardens",
+        "area": "7,500 sq ft",
+        "capacity": 500,
+        "type": "Garden",
+        "indoor": false,
+        "image": "/images/lohagarhfortresort/royal-wedding.jpg",
+        "description": "Perched at the highest point of the resort, Overallview Gardens commands sweeping vistas of Jaipur's skyline and the Nahargarh hills. This terraced garden venue is ideal for sunset ceremonies, romantic engagements, and destination wedding receptions.",
+        "features": ["360° Panoramic Views", "Terraced Garden Levels", "Sunset Ceremony Deck", "Natural Ambient Lighting"],
+        "highlight": "Panoramic hilltop wedding gardens"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is Lohagarh Fort Resort a good destination wedding resort in Jaipur?",
+        "a": "Absolutely. Lohagarh Fort Resort is one of Jaipur's premier destination wedding venues, offering 8 distinct venues, on-site luxury accommodation, award-winning catering, and end-to-end wedding coordination."
+      },
+      {
+        "q": "What is the best wedding venue for large gatherings in Jaipur?",
+        "a": "Palace Valley Lawns, with a 10,000 sq ft capacity for 800+ guests, is our largest and most versatile venue for marquee weddings."
+      },
+      {
+        "q": "Does Lohagarh offer wedding planning services?",
+        "a": "Yes. Our dedicated wedding team provides complete planning support — from decor and catering to entertainment, photography, and logistics."
+      },
+      {
+        "q": "Are outdoor venues available year-round?",
+        "a": "Our outdoor venues are at their best from October to March. For summer and monsoon celebrations, we recommend our indoor banquet MF Mumtaz or can arrange climate-controlled tent structures."
+      },
+      {
+        "q": "Can we customise the wedding decor and theme?",
+        "a": "Yes. We work with leading decorators and offer personalised theme consultations — from traditional Rajasthani to contemporary luxury and fusion styles."
+      }
+    ]
+  },
+  "the-lohagarh-palace": {
+    "heroTitle": "Royal Wedding Palace in Bharatpur",
+    "heroSubtitle": "The Lohagarh Palace — A Timeless Celebration",
+    "intro": "The Lohagarh Palace in Bharatpur stands as a testament to royal Rajput heritage. With its magnificent architecture, manicured lawns, and regal interiors, it is the perfect setting for wedding celebrations that echo the grandeur of a bygone royal era.",
+    "venues": [
+      {
+        "id": "darbar-lawn",
+        "name": "Darbar Lawn",
+        "area": "6,000 sq ft",
+        "capacity": 400,
+        "type": "Open Lawn",
+        "indoor": false,
+        "image": "/images/wedding.png",
+        "description": "The centrepiece of the palace grounds, Darbar Lawn is a sweeping open lawn with a stunning palace facade as its backdrop. Ideal for grand ceremonies and receptions under the open sky.",
+        "features": ["Palace Facade Backdrop", "Grand Procession Path", "Illuminated Fountain", "Stage Setup"],
+        "highlight": "Grand outdoor ceremonies"
+      },
+      {
+        "id": "sheesh-mahal-banquet",
+        "name": "Sheesh Mahal Banquet",
+        "area": "3,500 sq ft",
+        "capacity": 250,
+        "type": "Indoor Banquet",
+        "indoor": true,
+        "image": "/images/rooftop-dining.png",
+        "description": "Named after the iconic mirror-work palace tradition, Sheesh Mahal Banquet is an air-conditioned hall adorned with mirror inlay work, ornate ceilings, and royal furnishings — creating a fairytale setting for gala dinners.",
+        "features": ["Mirror Inlay Walls", "Ornate Ceilings", "Central AC", "Royal Furnishings"],
+        "highlight": "Fairytale indoor banquet hall"
+      },
+      {
+        "id": "baradari-gardens",
+        "name": "Baradari Gardens",
+        "area": "4,200 sq ft",
+        "capacity": 300,
+        "type": "Heritage Garden",
+        "indoor": false,
+        "image": "/images/heritage-walk.png",
+        "description": "A classic Rajput Baradari-style garden with 12 arched pavilions surrounding a central water feature. The Baradari Gardens create a romantic, symmetrical setting perfect for pheras and cocktail evenings.",
+        "features": ["12 Stone Pavilions", "Central Water Feature", "Torchlight Path", "Mandap Setup"],
+        "highlight": "Heritage garden for ceremonies"
+      },
+      {
+        "id": "zenana-courtyard",
+        "name": "Zenana Courtyard",
+        "area": "1,800 sq ft",
+        "capacity": 100,
+        "type": "Heritage Courtyard",
+        "indoor": false,
+        "image": "/images/spa-wellness.png",
+        "description": "The intimate Zenana Courtyard, once reserved for royal ladies, is now an exclusive venue for haldi, mehendi, and small bridal events. Its hand-painted walls and floral niches create a uniquely feminine, artistic ambience.",
+        "features": ["Hand-painted Murals", "Floral Niches", "Intimate Setting", "Traditional Decor"],
+        "highlight": "Intimate bridal ceremonies"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What makes The Lohagarh Palace unique for weddings?",
+        "a": "The palace's authentic Rajput architecture, heritage interiors, and lush grounds create an unmistakably royal atmosphere that is unique to a genuine historical property."
+      },
+      {
+        "q": "How far is the palace from Bharatpur city centre?",
+        "a": "The Lohagarh Palace is located within Bharatpur, easily accessible from the railway station and major highways."
+      },
+      {
+        "q": "Does the palace offer on-site guest accommodation?",
+        "a": "Yes. We offer a range of heritage rooms and suites within the palace complex for wedding guests."
+      }
+    ]
+  },
+  "kothi-lohagarh": {
+    "heroTitle": "Heritage Wedding Kothi in Jaipur",
+    "heroSubtitle": "Kothi Lohagarh — Intimate Royal Celebrations",
+    "intro": "Kothi Lohagarh is an intimate boutique property set in a restored colonial-era kothi with lush private gardens. It is the ideal venue for intimate destination weddings and private family celebrations that demand personalised royal service.",
+    "venues": [
+      {
+        "id": "rose-garden",
+        "name": "Rose Garden",
+        "area": "2,800 sq ft",
+        "capacity": 180,
+        "type": "Garden",
+        "indoor": false,
+        "image": "/images/heritage-walk.png",
+        "description": "A charming walled garden filled with heritage roses and seasonal blooms. The Rose Garden is perfectly suited for intimate ceremonies, cocktail evenings, and mehendi functions with a romantic, fragrant ambience.",
+        "features": ["Heritage Rose Collection", "Walled Privacy", "Romantic Lighting", "Fragrant Ambience"],
+        "highlight": "Romantic intimate ceremonies"
+      },
+      {
+        "id": "kothi-terrace",
+        "name": "Kothi Terrace",
+        "area": "1,500 sq ft",
+        "capacity": 80,
+        "type": "Terrace",
+        "indoor": false,
+        "image": "/images/rooftop-dining.png",
+        "description": "A stunning rooftop terrace with 360° views of Jaipur's Pink City skyline. The Kothi Terrace is perfect for intimate sunset ceremonies, rooftop dinners, and exclusive cocktail parties with an unparalleled city backdrop.",
+        "features": ["360° City Views", "Sunset Deck", "Private Bar Setup", "Stargazing Area"],
+        "highlight": "Rooftop sunset ceremonies"
+      },
+      {
+        "id": "durbar-hall",
+        "name": "Durbar Hall",
+        "area": "2,200 sq ft",
+        "capacity": 150,
+        "type": "Indoor Banquet",
+        "indoor": true,
+        "image": "/images/dining-fine.png",
+        "description": "The restored Durbar Hall retains original colonial-era features: high ceilings, period chandeliers, and terrazzo floors. It accommodates intimate wedding dinners and ceremonies with old-world charm.",
+        "features": ["Colonial Architecture", "Period Chandeliers", "Terrazzo Floors", "Central AC"],
+        "highlight": "Heritage colonial indoor venue"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is Kothi Lohagarh suitable for small destination weddings?",
+        "a": "Yes — Kothi Lohagarh specialises in intimate, personalised weddings for up to 180 guests, ensuring every guest receives exclusive royal hospitality."
+      },
+      {
+        "q": "Can we book the entire property exclusively?",
+        "a": "Absolutely. Exclusive buyout packages are available for full privacy and dedicated service throughout your celebration."
+      }
+    ]
+  },
+  "townhall": {
+    "heroTitle": "Premier Wedding Event Venue",
+    "heroSubtitle": "Townhall Restaurant & Events — Celebrations Redefined",
+    "intro": "Townhall Restaurant & Events is Jaipur's premier venue for sophisticated urban celebrations. With contemporary design, award-winning cuisine, and versatile event spaces, it offers a stylish setting for modern weddings and corporate celebrations.",
+    "venues": [
+      {
+        "id": "grand-hall",
+        "name": "The Grand Hall",
+        "area": "5,000 sq ft",
+        "capacity": 500,
+        "type": "Indoor Banquet",
+        "indoor": true,
+        "image": "/images/townhall/gallery1.jpg",
+        "description": "The Grand Hall is a contemporary banquet space with soaring ceilings, state-of-the-art AV systems, and modular flooring. Perfect for large wedding receptions, corporate gala dinners, and themed events.",
+        "features": ["State-of-the-art AV", "Modular Floor Plan", "Full Kitchen Service", "LED Ceiling Ambience"],
+        "highlight": "Versatile large-format events"
+      },
+      {
+        "id": "sky-terrace",
+        "name": "Sky Terrace",
+        "area": "2,500 sq ft",
+        "capacity": 200,
+        "type": "Terrace",
+        "indoor": false,
+        "image": "/images/townhall/gallery2.jpg",
+        "description": "The Sky Terrace is Townhall's signature outdoor event space — a chic rooftop setting with panoramic city views, open bar capability, and a relaxed lounge setup ideal for cocktail receptions and pre-wedding parties.",
+        "features": ["Panoramic City Views", "Open Bar Area", "Lounge Seating", "DJ Setup"],
+        "highlight": "Chic cocktail receptions"
+      },
+      {
+        "id": "private-dining-suite",
+        "name": "Private Dining Suite",
+        "area": "1,200 sq ft",
+        "capacity": 80,
+        "type": "Private Dining",
+        "indoor": true,
+        "image": "/images/townhall/gallery3.jpg",
+        "description": "An exclusive private dining suite ideal for intimate rehearsal dinners, family lunches, and VIP wedding events. The suite features premium furnishings, a dedicated butler, and personalised menu curation.",
+        "features": ["Private Butler", "Menu Curation", "Premium Furnishings", "Acoustic Privacy"],
+        "highlight": "Intimate rehearsal dinners"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does Townhall cater for both weddings and corporate events?",
+        "a": "Yes. Our versatile spaces are designed to accommodate both social weddings and large corporate events with equal sophistication."
+      },
+      {
+        "q": "What catering options are available?",
+        "a": "We offer in-house catering from our award-winning restaurant kitchen, with customisable menus spanning Indian, Continental, and fusion cuisines."
+      }
+    ]
+  }
+}
