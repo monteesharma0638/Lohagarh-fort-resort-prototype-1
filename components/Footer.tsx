@@ -1,7 +1,10 @@
+import { getLohagarhGroupSocials } from "@/lib/queries";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 
-export default function Footer() {
+export default async function Footer() {
+  const lgSocialLinks = await getLohagarhGroupSocials();
+
   return (
     <footer className="bg-[#1E0800] text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
@@ -18,16 +21,16 @@ export default function Footer() {
               Experience the timeless elegance and warm hospitality of The Lohagarh Group, where heritage meets modern luxury across Rajasthan.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
+              <a href={lgSocialLinks.instagram} target="_blank" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
+              <a href={lgSocialLinks.facebook} target="_blank" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
+              <a href={lgSocialLinks.twitter} target="_blank" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
+              <a href={lgSocialLinks.youtube} target="_blank" className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center text-white/70 hover:bg-primary hover:border-primary hover:text-white transition-colors">
                 <Youtube size={18} />
               </a>
             </div>

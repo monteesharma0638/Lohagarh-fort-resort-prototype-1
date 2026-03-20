@@ -1,3 +1,4 @@
+import Locations from "@/models/Locations";
 import Properties from "@/models/Properties";
 import mongoose from "mongoose";
 
@@ -15,6 +16,20 @@ export async function connectDB() {
 export async function getHotel(id: string) {
   await connectDB();
   const result = await Properties.findOne({id}).select("-_id -_v").lean();
+
+  return result;
+}
+
+export async function getLocations(city: string) {
+  await connectDB();
+  const result = await Locations.findOne({city}).select("-_id -_v").lean();
+
+  return result;
+}
+
+export async function getHotels() {
+  await connectDB();
+  const result = await Properties.find().select("-_id -_v").lean();
 
   return result;
 }

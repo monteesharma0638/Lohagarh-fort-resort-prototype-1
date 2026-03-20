@@ -24,7 +24,7 @@ const getNavItems = (hotelId: string, hasWedding: boolean) => [
   { label: "Gallery", href: `/hotels/${hotelId}/gallery` },
   { label: "Contact Us", href: `/hotels/${hotelId}/contact` },
   { label: "Guest Reviews", href: `/hotels/${hotelId}/guest-reviews` },
-  { label: "Offers", href: `/hotels/${hotelId}/offers` },
+  // { label: "Offers", href: `/hotels/${hotelId}/offers` },
   ...(hasWedding
     ? [
         { label: "Wedding Venues", href: `/hotels/${hotelId}/wedding-venues` },

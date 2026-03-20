@@ -1,6 +1,7 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
 import { Star } from "lucide-react";
+import { getHotel } from "@/lib/db";
 
 export default async function GuestReviewsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

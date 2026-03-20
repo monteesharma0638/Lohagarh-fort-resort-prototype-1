@@ -7,6 +7,7 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { CLOUDFLARE_DEV_URL } from "@/lib/constants";
 
 const highlights = [
   {
@@ -22,16 +23,16 @@ const highlights = [
     image: "/images/lohagarhfortresort/gallery1.webp",
   },
   {
-    title: "RUSTIC PRIVATE MACHANS",
-    image: "/images/lohagarhfortresort/gallery2.webp",
+    title: "JEEP SAFARI",
+    image: CLOUDFLARE_DEV_URL + "/lohagarh-fort-resort/activities/Jeep_safari.jpg",
   },
   {
     title: "LUXURY JUNGLE EXPERIENCE",
     image: "/images/lohagarhfortresort/gallery3.jpg",
   },
   {
-    title: "RUSTIC PRIVATE MACHANS",
-    image: "/images/lohagarhfortresort/gallery2.webp",
+    title: "OUTDOOR GAMES",
+    image: CLOUDFLARE_DEV_URL + "/lohagarh-fort-resort/activities/Games.jpg",
   },
 ];
 

@@ -1,6 +1,7 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { getHotel } from "@/lib/db";
 
 export default async function HotelContactPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

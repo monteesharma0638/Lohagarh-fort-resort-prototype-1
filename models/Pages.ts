@@ -26,7 +26,7 @@ const PagesSchema = new Schema(
     metadata: [MetadataSchema],
     sections: [SectionSchema]
   },
-  { timestamps: false }
+  { timestamps: false, strict: false }
 );
 
 export default mongoose.models.Pages ||

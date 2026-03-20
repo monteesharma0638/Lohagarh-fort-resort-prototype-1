@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Facebook, Twitter, Instagram } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import TopHeaderSocialLinks from "./TopHeaderSocialLinks";
 
 export default function TopHeader() {
   const pathname = usePathname();
@@ -30,17 +31,7 @@ export default function TopHeader() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4 ml-auto">
-          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Facebook">
-            <Facebook size={14} />
-          </a>
-          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Twitter">
-            <Twitter size={14} />
-          </a>
-          <a href="#" className="hover:text-white/70 transition-colors" aria-label="Instagram">
-            <Instagram size={14} />
-          </a>
-        </div>
+        <TopHeaderSocialLinks />
       </div>
     </div>
   );

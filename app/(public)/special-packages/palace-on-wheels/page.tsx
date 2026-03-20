@@ -1,24 +1,36 @@
 import SectionHeading from "@/components/SectionHeading";
 import MotionDiv from "@/components/MotionDiv";
+import RouteMap from "./components/RouteMap";
+import PalaceDetails from "./components/PalaceDetails";
+import { CLOUDFLARE_DEV_URL } from "@/lib/constants";
+import Hero from "@/components/Hero";
 
 export default function PalaceOnWheels() {
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="relative h-[60vh] flex items-center justify-center bg-secondary/30">
-        <div className="absolute inset-0 bg-black/40" />
+      <Hero imageUrl={`${CLOUDFLARE_DEV_URL}/palace-on-wheels/images/train_cover.jpeg`} restrictVideoOnMobile videoUrl="https://www.youtube.com/embed/VtxWYAwAGwY?autoplay=1&controls=0&start=0&loop=0&mute=1&rel=0">
+        <div className="absolute inset-0" />
         <div className="relative z-10 text-center text-white px-4">
-          <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <MotionDiv 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: [0, 1, 1, 0], // Start -> Visible -> Stay Visible -> Hide
+              display: ["block", "block", "block", "none"], // Completely remove from layout at the end
+              y: [20, 0, 0, 0]
+            }}
+            transition={{ 
+              duration: 6, // Total time (1s fade + 5s wait)
+              times: [0, 0.1, 0.9, 1] // Percentages of the duration (0s, 0.6s, 5.4s, 6s)
+            }}
+          >
             <span className="block text-sm tracking-[0.3em] uppercase mb-4 text-primary">Special Packages</span>
             <h1 className="text-5xl md:text-8xl font-serif">Palace on Wheels</h1>
           </MotionDiv>
         </div>
-      </div>
-      <section className="py-24 container mx-auto px-6 max-w-5xl">
-        <SectionHeading title="Royal Train Journey" subtitle="Travel Like Royalty" />
-        <p className="text-gray-400 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-          Embark on a majestic journey through the heart of Rajasthan aboard the Palace on Wheels, where luxury meets the romance of rail travel.
-        </p>
-      </section>
+      </Hero>
+       <RouteMap />
+       <PalaceDetails />
     </div>
   );
 }

@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import HotelSubPage from "@/components/HotelSubPage";
 import WeddingVenuesFAQ from "@/components/WeddingVenuesFAQ";
-import { getHotel, hasWeddingPages } from "../helpers";
+import {  hasWeddingPages } from "../helpers";
 import venuesData from "@/data/wedding-venues.json";
 import { Users, Maximize2, Building2, CheckCircle2, Phone } from "lucide-react";
+import { getHotel } from "@/lib/db";
 
 type VenueData = typeof venuesData;
 type HotelVenues = VenueData[keyof VenueData];

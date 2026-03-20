@@ -1,9 +1,10 @@
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import HotelCard from './HotelCard';
-import hotels from '@/data/hotels.json';
+import { getHotels } from '@/lib/db';
 
-export default function HotelCarousel() {
+export default async function HotelCarousel() {
+  const hotels = await getHotels();
   const featuredHotels = hotels.filter(hotel => hotel.featured);
 
   return (

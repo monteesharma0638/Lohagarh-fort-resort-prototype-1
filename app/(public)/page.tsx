@@ -1,28 +1,24 @@
 import { ArrowRight, Globe, Sparkles } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
-import HotelCard from "@/components/HotelCard";
 import Link from "next/link";
 import MotionDiv from "@/components/MotionDiv";
-import hotels from "@/data/hotels.json";
-import Hero2 from "@/components/Hero2";
 import Image from "next/image";
 import RevealImage from "@/components/motion/RevealImage";
 import Hero from "@/components/Hero";
-import { Swiper } from "swiper/react";
 import ResortExplorer from "./components/ResortExplorer";
-import ExploreSection from "./components/ExploreSection";
 import AllExploreSections from "./components/AllExploreSections";
+import { getHotels } from "@/lib/db";
 
 
   const stats = [
-    { label: "Heritage Properties", value: "25+" },
-    { label: "Years of Royalty", value: "100" },
-    { label: "Global Awards", value: "150+" },
+    { label: "Heritage Properties", value: "5" },
+    { label: "Years of Royalty", value: "20+" },
+    { label: "Global Awards", value: "100+" },
     { label: "Happy Guests", value: "1M+" }
   ];
 
-export default function Home() {
-  const featuredHotels = hotels.filter(hotel => hotel.featured);
+export default async function Home() {
+  const hotels = await getHotels();
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">

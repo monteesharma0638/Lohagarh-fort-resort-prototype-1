@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
         category: "",
         items: [
           { label: "About Lohagarh", href: "/about" },
-          { label: "Letter from Chairman", href: "/about/chairman-letter" },
+          // { label: "Letter from Chairman", href: "/about/chairman-letter" },
           { label: "Management", href: "/about/management" },
           { label: "Our Mission", href: "/about/mission" },
           { label: "Code of Conduct", href: "/about/code-of-conduct" },
@@ -128,7 +128,7 @@ const navItems: NavItem[] = [
         items: [
           { label: "Marketing & Sales", href: "/contact/marketing-and-sales" },
           { label: "Feedback", href: "/contact/feedback" },
-          { label: "Career", href: "/contact?dept=career" },
+          // { label: "Career", href: "/contact?dept=career" },
         ],
       },
     ],

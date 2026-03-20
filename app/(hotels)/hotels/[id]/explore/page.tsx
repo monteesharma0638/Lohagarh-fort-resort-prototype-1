@@ -1,20 +1,24 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
-import { MapPin } from "lucide-react";
+import {  hasWeddingPages } from "../helpers";
+import Image from "next/image";
+import { getHotel, getLocations } from "@/lib/db";
 
-export default async function ExplorePage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ExplorePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const hotel = await getHotel(id);
-  if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
+  const city = await getLocations(hotel.location);
+  if (!hotel)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Hotel not found
+      </div>
+    );
 
   const cityName = hotel.location.split(",")[0].trim();
-
-  const attractions = [
-    { name: `${cityName} City Palace`, distance: "12 km", description: "A magnificent blend of Rajasthani and Mughal architecture." },
-    { name: "Local Heritage Market", distance: "8 km", description: "Explore traditional handicrafts, textiles, and jewelry." },
-    { name: "Ancient Fort", distance: "15 km", description: "A historic fort offering panoramic views of the surrounding landscape." },
-    { name: "Wildlife Sanctuary", distance: "20 km", description: "Home to diverse flora and fauna, ideal for nature walks and safaris." },
-  ];
 
   return (
     <HotelSubPage
@@ -26,29 +30,59 @@ export default async function ExplorePage({ params }: { params: Promise<{ id: st
       pageSubtitle={hotel.name}
       hasWedding={hasWeddingPages(id)}
     >
-      <div>
-        <h2 className="text-3xl font-serif text-foreground mb-6">Discover {cityName}</h2>
-        <p className="text-foreground/70 text-lg leading-relaxed mb-12">
-          Beyond the walls of {hotel.name}, a world of heritage, culture, and natural beauty awaits.
-          Explore the best that {cityName} has to offer.
-        </p>
-        <div className="space-y-6">
-          {attractions.map((attraction, idx) => (
-            <div key={idx} className="flex items-start gap-6 border border-border p-6 hover:border-primary/30 transition-colors">
-              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">
-                <MapPin size={20} className="text-primary" />
+      <section className="py-16 px-4 max-w-7xl mx-auto bg-[#F9F7F2]">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif text-[#4A3728] mb-4">
+            Discover {hotel.location}
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+           {city.title}
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {city?.locations?.map((loc: any, index: number) => (
+            <div
+              key={index}
+              className={`flex flex-col md:flex-row items-stretch bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image Section */}
+              <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-[300px]">
+                <Image
+                  src={loc.image}
+                  alt={loc.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-serif text-foreground">{attraction.name}</h3>
-                  <span className="text-primary text-xs font-bold tracking-wider">{attraction.distance}</span>
+
+              {/* Content Section */}
+              <div className="w-full md:w-1/2 p-8 flex flex-col justify-center relative">
+                <div className="mb-4">
+                  {/* Location Icon Placeholder */}
+                  <div className="w-8 h-8 bg-orange-100 rounded flex items-center justify-center mb-4">
+                    <svg
+                      className="w-4 h-4 text-orange-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-serif text-[#4A3728] mb-3">
+                    {loc.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {loc.description}
+                  </p>
                 </div>
-                <p className="text-foreground/60 text-sm">{attraction.description}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </HotelSubPage>
   );
 }

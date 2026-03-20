@@ -8,6 +8,7 @@ import { getHotel } from "@/lib/db";
 import HighlightsSection from "@/sections/HighlightsSection";
 import HotelInformationSection from "@/sections/HotelInformationSection";
 import Link from "next/link";
+import React from "react";
 
 export default async function HotelOverview({
   params,
@@ -156,7 +157,12 @@ export default async function HotelOverview({
                   {hotel.title || "About the Hotel"}
                 </h2>
                 <p className="text-foreground/70 text-lg leading-relaxed mb-12 font-light">
-                  {hotel.description}
+                  {hotel?.description?.split('\n').map((line: string, index: number) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
 
                 {hotel.rooms && hotel.rooms.length > 0 && (
