@@ -12,7 +12,7 @@ export default function TopHeader() {
   const links = [
     ...(isHome ? [] : [{ label: "Home", href: "/" }]),
     { label: "Rajasthan", href: "#" },
-    { label: "Media", href: "/media" },
+    // { label: "Media", href: "/media" },
     { label: "Special Packages", href: "/special-packages" },
     { label: "Reservations", href: "/reservations" },
   ];

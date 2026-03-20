@@ -1,0 +1,309 @@
+[
+  {
+    "propertyName": "Lohagarh Fort Resort",
+    "salesContact": {
+      "address": "NH-8, Kachera Wala, Kukas, Jaipur, Rajasthan 303805, India",
+      "telephone": ["8003395964", "8003395965"],
+      "email": "bookings@lohagarhfortresort.com"
+    },
+    "airportTransport": {
+      "name": "Sanganer, Airport",
+      "distance": "29 km",
+      "note": "Daily flights from New Delhi and Mumbai to Jaipur."
+    },
+    "railTransport": {
+      "name": "Jaipur Junction",
+      "distance": "21 km",
+      "note": "Convenient daily and overnight trains from New Delhi, Mumbai, and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "307 km" },
+      { "location": "Mumbai", "distance": "1180 km" },
+      { "location": "Jaipur", "distance": "0 km" },
+      { "location": "Ahmedabad", "distance": "693 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": ["Laundry/dry-cleaning/pressing", "24*7 Medical facilities", "Restaurant(s)"],
+      "complimentary": ["2 Bottles of packaged drinking water", "Soap", "Shampoo", "Shower Gel", "Toilet Rolls – 2 nos", "Moisturiser", "Comb", "Dental Kit", "Shaving Kit", "Bathroom Slippers", "Tea/Coffee Maker", "Newspapers", "Hair Dryer", "Safety Locker", "Makeup mirror", "Wi-Fi usage", "Twice daily housekeeping services", "Television"]
+    },
+    "recreation": [
+      { "title": "Naturopathy spa", "img": "" },
+      { "title": "Jeep safari", "img": "" },
+      { "title": "Horse riding", "img": "" },
+      { "title": "Indoor/Outdoor Games", "img": "" },
+      { "title": "Bird Watching", "img": "" },
+      { "title": "Archery", "img": "" },
+      { "title": "Balloon Shooting", "img": "" },
+      { "title": "Flower Valley visit", "img": "" }
+    ],
+    "resAndBars": [
+      { "type": "Restaurant", "name": "Sikargah", "img": "", "description": "Breakfast - go to website" },
+      { "type": "Restaurant", "name": "Darbar Hall", "img": "", "description": "Lunch and dinner - go to website" }
+    ],
+    "checkInPolicy": {
+      "checkInTime": "2:00 PM",
+      "earlyCheckIn": "Subject to availability",
+      "checkOutTime": "11:00 AM",
+      "note": "If you wish to extend your stay, subject to availability of room, you will be charged 25% the normal room tariff till 2 pm; 50% from 2 pm to 6 pm; and 100 % after 6 pm.",
+      "description": ""
+    },
+    "cancellationPolicy": {
+      "description": "Booking will be considered confirmed on receipt of 100% advance of the total reservation amount. Cancellation must be received... at least 7 days before scheduled date (Apr-Sept) and 30 days (Oct-Mar)."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  },
+  {
+    "propertyName": "Lohagarh Corbett Resort",
+    "salesContact": {
+      "address": "Village-Shivlalpur Joshi, Bailpokhara, Ramnagar (Nainital, Uttarakhand) 263140",
+      "telephone": ["09368842055", "07819990616"],
+      "email": "sales.lohagarhcorbettresort@gmail.com"
+    },
+    "airportTransport": {
+      "name": "Pantnagar, Airport",
+      "distance": "64.8 km",
+      "note": "Daily flights from New Delhi and Mumbai to Pantnagar."
+    },
+    "railTransport": {
+      "name": "Kathgodam Railway Station",
+      "distance": "42.7 km",
+      "note": "Convenient daily and overnight trains from New Delhi, Mumbai, and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "300 km" },
+      { "location": "Dehradun", "distance": "285 km" },
+      { "location": "Jaipur", "distance": "534 km" },
+      { "location": "Lucknow", "distance": "380 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": ["24*7 Medical facilities", "Restaurant(s)", "Mini-theater", "Swimming pool"],
+      "complimentary": ["2 Bottles of packaged drinking water", "Soap", "Shampoo", "Shower Gel", "Toilet Rolls – 2 nos", "Moisturiser", "Dental Kit", "Tea/Coffee Maker", "Safety Locker", "Makeup mirror", "Wi-Fi usage", "Twice daily housekeeping services", "Television"]
+    },
+    "recreation": [
+      { "title": "Common swimming pool", "img": "" },
+      { "title": "Mini Theatre", "img": "" }
+    ],
+    "resAndBars": [
+      { "type": "Restaurant & Bar", "name": "Main Restaurant", "img": "", "description": "1 Restaurant and Bar available" },
+      { "type": "Banquet", "name": "Banquet 1", "img": "", "description": "Lawn Area available" }
+    ],
+    "checkInPolicy": {
+      "checkInTime": "2:00 PM",
+      "earlyCheckIn": "Subject to availability",
+      "checkOutTime": "11:00 AM",
+      "note": "If you wish to extend your stay... 25% till 2 pm; 50% 2-6 pm; 100% after 6 pm.",
+      "description": ""
+    },
+    "cancellationPolicy": {
+      "description": "Booking confirmed on 100% advance. Cancellation policy applies based on seasonal windows (7 or 30 days)."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  },
+  {
+    "propertyName": "Kothi Lohagarh",
+    "salesContact": {
+      "address": "Plot no 46,47,48 lohagarh Kothi, village ballu pura , Jamdoli - 302031",
+      "telephone": ["9251683088"],
+      "email": "bookings@kothilohagarh.com"
+    },
+    "airportTransport": {
+      "name": "Sanganer, Airport",
+      "distance": "29 km",
+      "note": "Daily flights from New Delhi and Mumbai to Jaipur."
+    },
+    "railTransport": {
+      "name": "Jaipur Junction",
+      "distance": "12.7 km",
+      "note": "Convenient daily and overnight trains from New Delhi, Mumbai, and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "289 km" },
+      { "location": "Mumbai", "distance": "1181 km" },
+      { "location": "Jaipur", "distance": "14.3 km" },
+      { "location": "Ahmedabad", "distance": "671 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": ["Laundry/dry-cleaning/pressing", "24*7 Medical facilities", "Restaurant(s)"],
+      "complimentary": ["2 Bottles of packaged drinking water", "Soap", "Shampoo", "Shower Gel", "Toilet Rolls – 2 nos", "Moisturiser", "Comb", "Dental Kit", "Shaving Kit", "Bathroom Slippers", "Tea/Coffee Maker", "Newspapers", "Hair Dryer", "Safety Locker", "Makeup mirror", "Wi-Fi usage", "Twice daily housekeeping services", "Television"]
+    },
+    "recreation": [],
+    "resAndBars": [
+      { "type": "Restaurant", "name": "Family Restaurant", "img": "", "description": "12:00 PM - 11:00 PM Restaurant Services" },
+      { "type": "Banquet", "name": "Banquet Hall", "img": "", "description": "Events & Parties" }
+    ],
+    "checkInPolicy": {
+      "checkInTime": "N/A",
+      "earlyCheckIn": "N/A",
+      "checkOutTime": "N/A",
+      "note": "N/A",
+      "description": ""
+    },
+    "cancellationPolicy": {
+      "description": "Booking confirmed on 100% advance."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  },
+  {
+    "propertyName": "Mahal Khas",
+    "salesContact": {
+      "address": "Maharaja Surajmal Road, Lohagarh Fort, Gopalgarh, Bharatpur, Rajasthan 321001",
+      "telephone": ["7357000700"],
+      "email": "sales@mahalkhaspalace.in"
+    },
+    "airportTransport": {
+      "name": "Agra Airport (AGR)",
+      "distance": "56 km",
+      "note": "Daily flights from New Delhi and Mumbai to Agra."
+    },
+    "railTransport": {
+      "name": "Bharatpur Junction",
+      "distance": "2.3 km",
+      "note": "Convenient daily and overnight trains from New Delhi, Mumbai, and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "210 km" },
+      { "location": "Mumbai", "distance": "1262 km" },
+      { "location": "Jaipur", "distance": "196 km" },
+      { "location": "Ahmedabad", "distance": "886 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": ["24*7 Medical facilities", "Restaurant(s)", "Mini-theater", "Swimming pool"],
+      "complimentary": ["2 Bottles of packaged drinking water", "Soap", "Shampoo", "Shower Gel", "Toilet Rolls – 2 nos", "Moisturiser", "Dental Kit", "Tea/Coffee Maker", "Safety Locker", "Makeup mirror", "Wi-Fi usage", "Twice daily housekeeping services", "Television"]
+    },
+    "recreation": [],
+    "resAndBars": [
+      { "type": "Coffee Shop", "name": "Sheesh Mahal", "img": "", "description": "" },
+      { "type": "Restaurant", "name": "Gulab Mahal", "img": "", "description": "" },
+      { "type": "Bar", "name": "Rang Mahal", "img": "", "description": "" },
+      { "type": "Banquet", "name": "Maharaja Jawahar Singh", "img": "", "description": "" }
+    ],
+    "checkInPolicy": {
+      "checkInTime": "2:00 PM",
+      "earlyCheckIn": "Subject to availability",
+      "checkOutTime": "11:00 AM",
+      "note": "If you wish to extend your stay... 25% till 2 pm; 50% 2-6 pm; 100% after 6 pm.",
+      "description": ""
+    },
+    "cancellationPolicy": {
+      "description": "Booking confirmed on 100% advance."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  },
+  {
+    "propertyName": "Lohagarh Desert Resort",
+    "salesContact": {
+      "address": "Lohagarh Desert Resort, Barna Village Khuri, Jaisalmer, Rajasthan 345034",
+      "telephone": ["9783099996"],
+      "email": "bookings@lohagarhdesertresort.com"
+    },
+    "airportTransport": {
+      "name": "Jaisalmer Airport (JSA)",
+      "distance": "40 km",
+      "note": "Daily flights from New Delhi and Mumbai to Agra."
+    },
+    "railTransport": {
+      "name": "Jaisalmer Railway Station (JSM)",
+      "distance": "40 km",
+      "note": "Convenient daily and overnight trains from New Delhi; Weekly/overnight from Mumbai and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "811 km" },
+      { "location": "Mumbai", "distance": "1067 km" },
+      { "location": "Jaipur", "distance": "610 km" },
+      { "location": "Ahmedabad", "distance": "541 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": [],
+      "complimentary": []
+    },
+    "recreation": [
+      { "title": "Camel Safari", "img": "" },
+      { "title": "Rajasthani Culture Program", "img": "" }
+    ],
+    "resAndBars": [
+      { "type": "Restaurant", "name": "Main Restaurant", "img": "", "description": "Size & Capacities: 40 covers (40' * 23')" }
+    ],
+    "checkInPolicy": {
+      "checkInTime": "N/A",
+      "earlyCheckIn": "N/A",
+      "checkOutTime": "N/A",
+      "note": "N/A",
+      "description": ""
+    },
+    "cancellationPolicy": {
+      "description": "Booking confirmed on 100% advance."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  },
+  {
+    "propertyName": "Townhall Restaurant & Events",
+    "salesContact": {
+      "address": "Townhall Restaurant and Events, Maharaja Surajmal Rd, Lohagarh Fort, Gopalgarh, Bharatpur, Rajasthan 321001",
+      "telephone": ["9257809997"],
+      "email": "booking@townhallrestaurantandevents.com"
+    },
+    "airportTransport": {
+      "name": "Agra Airport (AGR)",
+      "distance": "56 km",
+      "note": "Daily flights from New Delhi and Mumbai to Agra."
+    },
+    "railTransport": {
+      "name": "Bharatpur Junction",
+      "distance": "2.3 km",
+      "note": "Convenient daily and overnight trains  from New Delhi, Mumbai, and Udaipur."
+    },
+    "surfaceTransport": {
+      "note": "Air-conditioned coaches from New Delhi, Mumbai, Ahmedabad, Jodhpur, and Udaipur"
+    },
+    "distanceFrom": [
+      { "location": "New Delhi", "distance": "210 km" },
+      { "location": "Mumbai", "distance": "1262 km" },
+      { "location": "Jaipur", "distance": "196 km" },
+      { "location": "Ahmedabad", "distance": "886 km" }
+    ],
+    "servicesAmenities": {
+      "atTheHotel": [],
+      "complimentary": []
+    },
+    "recreation": [
+      { "title": "Camel Safari", "img": "" },
+      { "title": "Rajasthani Culture Program", "img": "" }
+    ],
+    "resAndBars": [
+      { "type": "Restaurant", "name": "Family Restaurant", "img": "", "description": "Family Restaurant" },
+      { "type": "Banquet Hall", "name": "Banquet Hall", "img": "", "description": "Banquet Hall" },
+      { "type": "Events & Parties", "name": "Events & Parties", "img": "", "description": "Events & Parties" }
+    ],
+    "cancellationPolicy": {
+      "description": "Booking confirmed on 100% advance."
+    },
+    "payment": {
+      "description": "All major credit cards accepted"
+    }
+  }
+]

@@ -3,10 +3,11 @@ import HotelBreadcrumb from "@/components/HotelBreadcrumb";
 import HotelNavbar from "@/components/HotelNavbar";
 import RoomsFilter from "@/components/RoomsFilter";
 import MotionDiv from "@/components/MotionDiv";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
 import { MapPin } from "lucide-react";
 import roomsData from "@/data/rooms.json";
 import type { RoomsData } from "@/types/rooms";
+import { getHotel } from "@/lib/db";
 
 export default async function RoomsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

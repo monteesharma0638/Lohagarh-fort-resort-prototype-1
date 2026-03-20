@@ -1,4 +1,5 @@
 import Locations from "@/models/Locations";
+import Pages from "@/models/Pages";
 import Properties from "@/models/Properties";
 import mongoose from "mongoose";
 
@@ -30,6 +31,13 @@ export async function getLocations(city: string) {
 export async function getHotels() {
   await connectDB();
   const result = await Properties.find().select("-_id -_v").lean();
+
+  return result;
+}
+
+export async function getPageDataByRoute (route: string) {
+  await connectDB();
+  const result = await Pages.findOne({route}).select("-_id -_v").lean();
 
   return result;
 }

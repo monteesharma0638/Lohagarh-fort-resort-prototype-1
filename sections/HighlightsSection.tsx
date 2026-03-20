@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { CLOUDFLARE_DEV_URL } from "@/lib/constants";
 
-const highlights = [
+const highlights1 = [
   {
     title: "RUSTIC PRIVATE MACHANS",
     image: "/images/lohagarhfortresort/gallery3.jpg",
@@ -36,7 +36,7 @@ const highlights = [
   },
 ];
 
-export default function HighlightsSection() {
+export default function HighlightsSection({highlights, description}: {highlights: any[], description: string}) {
   return (
     <section className="bg-muted/40 py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -51,7 +51,7 @@ export default function HighlightsSection() {
           </div>
 
           <p className="text-muted-foreground leading-relaxed max-w-xl">
-            A special place that provides a perfect natural setting, fosters spiritual growth, and helps you explore your inner self from the very beginning
+            {description}
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function HighlightsSection() {
           }}
           className="highlightSwiper"
         >
-          {highlights.map((item, i) => (
+          {highlights?.map((item, i) => (
             <SwiperSlide key={i} className="!overflow-visible">
               {" "}
               {/* Allow zoom to spill out */}
@@ -82,8 +82,8 @@ export default function HighlightsSection() {
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-lg shadow-md group-hover:shadow-2xl transition-shadow duration-500">
                   <Image
-                    src={item.image}
-                    alt={item.title}
+                    src={item.src}
+                    alt={item.caption}
                     width={600}
                     height={700}
                     className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
@@ -93,7 +93,7 @@ export default function HighlightsSection() {
 
                 {/* Title */}
                 <h3 className="mt-6 text-center font-serif text-lg tracking-wide text-foreground transition-colors duration-500 group-hover:text-[hsl(var(--gold))]">
-                  {item.title}
+                  {item.caption}
                 </h3>
               </div>
             </SwiperSlide>

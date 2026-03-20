@@ -195,9 +195,8 @@ export default function RegalExperience() {
             ))}
           </div>
         </MotionDiv>
-
+        <div id="events"></div>
         <SectionDivider />
-
         {/* ── Events ──────────────────────────────────────────── */}
         <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <h2 className="text-4xl font-serif text-foreground mb-3">Events</h2>

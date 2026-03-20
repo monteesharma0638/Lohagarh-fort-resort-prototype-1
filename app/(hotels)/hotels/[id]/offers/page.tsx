@@ -1,5 +1,6 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
+import { getHotel } from "@/lib/db";
 
 export default async function OffersPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

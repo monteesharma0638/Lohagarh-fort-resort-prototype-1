@@ -226,7 +226,10 @@ export default async function HotelOverview({
       {/* <HotelInformationSection /> */}
 
       {/* Section */}
-      <HighlightsSection />
+      {
+        hotel?.highlights && hotel.highlights.description && hotel.highlights.images &&
+        <HighlightsSection description={hotel.highlights.description} highlights={hotel.highlights.images} />
+      }
     </div>
   );
 }

@@ -77,8 +77,8 @@ const navItems: NavItem[] = [
       {
         category: "Special Packages",
         items: [
-          { label: "Wedding", href: "/special-packages/wedding" },
-          { label: "Events", href: "/special-packages/events" },
+          { label: "Wedding", href: "/experiences/regal-weddings" },
+          { label: "Events", href: "/experiences/regal-experience/#events" },
           { label: "Palace on Wheels", href: "/special-packages/palace-on-wheels" },
         ],
       },

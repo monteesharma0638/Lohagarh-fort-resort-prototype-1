@@ -1,7 +1,8 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { getHotel, hasWeddingPages } from "../helpers";
+import { hasWeddingPages } from "../helpers";
 import Image from "next/image";
 import { Dot } from "lucide-react";
+import { getHotel } from "@/lib/db";
 
 export default async function HotelFactSheetPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
