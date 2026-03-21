@@ -26,7 +26,8 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
         hotelId={id}
         pageTitle="Wedding Venues"
         pageSubtitle={hotel.name}
-        hasWedding={hasWeddingPages(id)}
+        hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
       >
         <div className="py-20 text-center">
           <h2 className="text-3xl font-serif text-foreground mb-4">Wedding Venues</h2>
@@ -52,7 +53,8 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
       hotelId={id}
       pageTitle="Wedding Venues"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div className="space-y-16">
 

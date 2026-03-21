@@ -19,7 +19,8 @@ export default async function DiningPage({ params }: { params: Promise<{ id: str
       hotelId={id}
       pageTitle="Dining"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       {/* <div className="prose max-w-none">
         <h2 className="text-3xl font-serif text-foreground mb-6">Culinary Heritage</h2>
@@ -46,7 +47,7 @@ export default async function DiningPage({ params }: { params: Promise<{ id: str
       {/* <SignatureDishesSection /> */}
 
       {/* <DiningJourneySection /> */}
-      <DiningRestaurantsSection />
+      <DiningRestaurantsSection hotel={hotel} />
       <DiningExperiencesSection />
     </HotelSubPage>
   );

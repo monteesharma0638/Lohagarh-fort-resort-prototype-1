@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import MotionDiv from "./MotionDiv";
+import Image from "next/image";
 
 type SubMenuItem = {
   label: string;
@@ -199,7 +200,7 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
           onClick={() => setActiveSubmenu(null)}
           className="flex flex-col items-center group"
         >
-          <span className={cn(
+          {/* <span className={cn(
             "font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold transition-all",
             isScrolled || activeSubmenu ? "text-primary" : "text-white"
           )}>
@@ -210,7 +211,14 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
             isScrolled || activeSubmenu ? "text-primary/70" : "text-white/80"
           )}>
             ROYAL HERITAGE
-          </span>
+          </span> */}
+          <Image 
+            src="/logo/website-logo.png" 
+            alt="Lohagarh Group Of Companies"
+            width={200}
+            height={50} 
+            priority
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

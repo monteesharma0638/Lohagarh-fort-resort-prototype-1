@@ -16,7 +16,8 @@ export default async function SpaSalonPage({ params }: { params: Promise<{ id: s
       hotelId={id}
       pageTitle="Spa & Salon"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div>
         <SpaDetailsSection />

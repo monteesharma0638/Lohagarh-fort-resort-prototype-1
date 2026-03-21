@@ -12,6 +12,7 @@ interface HotelSubPageProps {
   pageTitle: string;
   pageSubtitle?: string;
   hasWedding?: boolean;
+  hasSpa?: boolean;
   children: React.ReactNode;
 }
 
@@ -23,6 +24,7 @@ export default function HotelSubPage({
   pageTitle,
   pageSubtitle,
   hasWedding = false,
+  hasSpa = false,
   children,
 }: HotelSubPageProps) {
   
@@ -63,7 +65,7 @@ export default function HotelSubPage({
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-10 items-start">
-          <HotelNavbar hotelId={hotelId} hotelName={hotelName} hasWedding={hasWedding} />
+          <HotelNavbar hotelId={hotelId} hotelName={hotelName} hasWedding={hasWedding} hasSpa={hasSpa} />
           <div className="flex-1 min-w-0">
             {children}
           </div>

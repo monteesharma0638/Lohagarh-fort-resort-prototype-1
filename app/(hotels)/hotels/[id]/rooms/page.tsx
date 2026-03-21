@@ -75,7 +75,7 @@ export default async function RoomsPage({ params }: { params: Promise<{ id: stri
       {/* ── Sidebar + Content ─────────────────────────────── */}
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-10 items-start">
-          <HotelNavbar hotelId={id} hotelName={hotel.name} hasWedding={hasWedding} />
+          <HotelNavbar hotelId={id} hotelName={hotel.name} hasWedding={hasWedding} hasSpa={!!hotel?.spa} />
 
           <div className="flex-1 min-w-0">
             {/* Intro */}

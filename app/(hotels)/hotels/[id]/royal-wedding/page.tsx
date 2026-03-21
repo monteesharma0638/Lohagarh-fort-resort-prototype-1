@@ -15,7 +15,8 @@ export default async function RoyalWeddingPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Royal Wedding"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">A Wedding Fit for Royalty</h2>

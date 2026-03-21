@@ -3,11 +3,13 @@ import MotionDiv from "@/components/MotionDiv";
 import { WeddingGallery } from "@/sections/WeddingGallery";
 import { WeddingContent } from "@/sections/WeddingContent";
 import { WeddingFAQ } from "@/sections/WeddingFAQ";
+import Image from "next/image";
 
 export default function RegalWeddings() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="relative h-[60vh] flex items-center justify-center bg-secondary/30">
+        <Image src="https://www.lohagarhfortresort.in/wp-content/uploads/2023/05/4-10.jpg" alt="Royal Wedding" fill style={{objectFit: "cover"}} />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4">
           <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

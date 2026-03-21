@@ -28,7 +28,8 @@ export default async function ExplorePage({
       hotelId={id}
       pageTitle={`Explore ${cityName}`}
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <section className="py-16 px-4 max-w-7xl mx-auto bg-[#F9F7F2]">
         <div className="text-center mb-12">

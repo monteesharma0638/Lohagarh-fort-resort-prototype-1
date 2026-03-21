@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 const itinerary = [
   { day: "Day 1", city: "New Delhi", desc: "Ceremonial welcome at Safdarjung Station.", icon: "🏛️" },
   { day: "Day 2", city: "Jaipur", desc: "The Pink City—visit Hawa Mahal and Amber Fort.", icon: "🐘" },
-  { day: "Day 3", city: "Ranthambore", desc: "Wild safari and the historic Chittorgarh Fort.", icon: "🐅" },
-  { day: "Day 4", city: "Udaipur", desc: "The City of Lakes—Jag Niwas and Lake Pichola.", icon: "🛶" },
+  { day: "Day 3", city: "Sawai Madhopur", desc: "Wild safari and the historic Chittorgarh Fort.", icon: "🐅" },
+  { day: "Day 4", city: "Chittorgarh/Udaipur", desc: "The City of Lakes—Jag Niwas and Lake Pichola.", icon: "🛶" },
   { day: "Day 5", city: "Jaisalmer", desc: "Golden City—camel rides in the Sam Sand Dunes.", icon: "🏜️" },
   { day: "Day 6", city: "Jodhpur", desc: "The Blue City—Mehrangarh Fort exploration.", icon: "🏰" },
-  { day: "Day 7", city: "Bharatpur", desc: "Bird sanctuary visits and the iconic Taj Mahal.", icon: "🕊️" },
+  { day: "Day 7", city: "Bharatpur/Agra", desc: "Bird sanctuary visits and the iconic Taj Mahal.", icon: "🕊️" },
   { day: "Day 8", city: "Delhi", desc: "Return journey and farewell breakfast.", icon: "🚉" },
 ];
 

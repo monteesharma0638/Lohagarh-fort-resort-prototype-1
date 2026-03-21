@@ -35,7 +35,7 @@ const experiences = [
 export default function DiningExperiencesSection() {
   return (
     <section className="pt-10 bg-background relative">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto md:px-6">
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="font-serif text-5xl mb-4">Dining Experiences</h2>
@@ -47,7 +47,7 @@ export default function DiningExperiencesSection() {
         </div>
 
         {/* Slider */}
-        <div className="relative px-16 overflow-visible">
+        <div className="relative md:px-16 overflow-visible">
             <button className="nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
            <MoveLeft />
         </button>

@@ -1,5 +1,6 @@
 import { getLohagarhGroupSocials } from "@/lib/queries";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Footer() {
@@ -12,10 +13,18 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Link href="/">
-              <span className="block mb-8">
+              {/* <span className="block mb-8">
                 <span className="block font-serif text-3xl tracking-widest font-bold text-white">LOHAGARH</span>
                 <span className="block text-[0.6rem] tracking-[0.4em] uppercase text-primary mt-1">Group of Hotels</span>
-              </span>
+              </span> */}
+              <Image 
+                src="/logo/website-logo.png" 
+                alt="Lohagarh Group Of Companies"
+                width={200} 
+                className="mb-5"
+                height={50} 
+                priority
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-8">
               Experience the timeless elegance and warm hospitality of The Lohagarh Group, where heritage meets modern luxury across Rajasthan.
@@ -74,7 +83,7 @@ export default async function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
-          <p>&copy; 2025 The Lohagarh Group. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} The Lohagarh Group. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-evenly gap-6 mt-4 md:mt-0">
             <Link href="/accessibility" className="hover:text-primary transition-colors">Accessibility Statement</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>

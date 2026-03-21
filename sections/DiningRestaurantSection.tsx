@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { MoveLeft, MoveRight } from "lucide-react";
+import { useState } from "react";
 
 const restaurants = [
   {
@@ -49,13 +50,21 @@ const restaurants = [
   },
 ];
 
-export default function DiningRestaurantsSection() {
+interface IDiningRestaurant {
+  hotel: any
+}
+
+export default function DiningRestaurantsSection({hotel}: IDiningRestaurant) {
+  const {resAndBars} = hotel ?? {};
+  const [isBeginning, setIsBeginning] = useState<boolean>(true);
+  const [isEnd, setIsEnd] = useState<boolean>(false);
+  
   return (
     <section className="">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto md:px-6">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="font-serif text-4xl mb-3">Restaurants at Lohagarh</h2>
+          <h2 className="font-serif text-4xl mb-3">Restaurants at {hotel.name}</h2>
 
           <p className="text-muted-foreground max-w-xl mx-auto text-sm">
             Discover extraordinary dining experiences crafted with authentic
@@ -64,8 +73,10 @@ export default function DiningRestaurantsSection() {
         </div>
 
         {/* Carousel */}
-        <div className="relative px-16 overflow-visible">
-          <button className="nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
+        <div className="relative md:px-16 overflow-visible">
+          <button className={`nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl ${
+            isBeginning ? "opacity-0 pointer-events-none" : ""
+          }`}>
             <MoveLeft />
           </button>
           <Swiper
@@ -73,6 +84,14 @@ export default function DiningRestaurantsSection() {
             navigation={{
               prevEl: ".nav-prev",
               nextEl: ".nav-next",
+            }}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            onSwiper={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
             }}
             spaceBetween={24}
             slidesPerView={1}
@@ -83,17 +102,17 @@ export default function DiningRestaurantsSection() {
             breakpoints={{
               640: { slidesPerView: 1 },
               900: { slidesPerView: 2 },
-              1200: { slidesPerView: 3 },
+              // 1200: { slidesPerView: 3 },
             }}
           >
-            {restaurants.map((item, i) => (
+            {resAndBars?.length && resAndBars.map((item: any, i: number) => (
               <SwiperSlide key={i}>
                 <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-500 overflow-hidden">
                   {/* Image */}
                   <div className="relative">
                     <Image
-                      src={item.image}
-                      alt={item.title}
+                      src={item.img}
+                      alt={item.name}
                       width={600}
                       height={400}
                       className="w-full h-[200px] object-cover transition duration-700 hover:scale-105"
@@ -102,14 +121,14 @@ export default function DiningRestaurantsSection() {
 
                   {/* Content */}
                   <div className="p-5">
-                    <h3 className="font-serif text-lg mb-2">{item.title}</h3>
+                    <h3 className="font-serif text-lg mb-2">{item.name}</h3>
 
                     <p className="text-muted-foreground text-xs mb-4 leading-relaxed">
-                      {item.description}
+                      {item.description.split("\n")[0]}
                     </p>
 
                     {/* Info */}
-                    <div className="flex justify-between text-xs mb-4">
+                    {/* <div className="flex justify-between text-xs mb-4">
                       <div>
                         <p className="text-muted-foreground uppercase text-[10px]">
                           Cuisine
@@ -123,14 +142,14 @@ export default function DiningRestaurantsSection() {
                         </p>
                         <p>{item.hours}</p>
                       </div>
-                    </div>
+                    </div> */}
 
                     <p className="text-[hsl(var(--gold))] text-xs mb-4">
                       {item.phone}
                     </p>
 
                     {/* Actions */}
-                    <div className="flex justify-between items-center border-t pt-3">
+                    {/* <div className="flex justify-between items-center border-t pt-3">
                       <button className="text-xs text-muted-foreground hover:text-black">
                         Book Table
                       </button>
@@ -138,13 +157,15 @@ export default function DiningRestaurantsSection() {
                       <button className="text-xs text-[hsl(var(--gold))] uppercase tracking-wider">
                         Details →
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <button className="nav-next absolute right-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
+          <button className={`nav-next absolute right-0 top-1/2 -translate-y-1/2 z-20 shadow-xl ${
+            isEnd ? "opacity-0 pointer-events-none" : ""
+          }`}>
             <MoveRight />
           </button>
         </div>

@@ -11,7 +11,7 @@ import { getHotels } from "@/lib/db";
 
 
   const stats = [
-    { label: "Heritage Properties", value: "5" },
+    { label: "Heritage Properties", value: "6" },
     { label: "Years of Royalty", value: "20+" },
     { label: "Global Awards", value: "100+" },
     { label: "Happy Guests", value: "1M+" }

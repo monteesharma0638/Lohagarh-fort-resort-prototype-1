@@ -14,13 +14,18 @@ interface HotelNavbarProps {
   hotelId: string;
   hotelName: string;
   hasWedding?: boolean;
+  hasSpa?: boolean;
 }
 
-const getNavItems = (hotelId: string, hasWedding: boolean) => [
+const getNavItems = (hotelId: string, hasWedding: boolean, hasSpa: boolean) => [
   { label: "Overview", href: `/hotels/${hotelId}` },
   // { label: "Rooms & Suites", href: `/hotels/${hotelId}/rooms` },
   { label: "Dining", href: `/hotels/${hotelId}/dining` },
-  { label: "Spa & Salon", href: `/hotels/${hotelId}/spa-salon` },
+  ...(hasSpa
+    ? [
+        { label: "Spa", href: `/hotels/${hotelId}/spa-salon` },
+      ]
+    : []),
   { label: "Gallery", href: `/hotels/${hotelId}/gallery` },
   { label: "Contact Us", href: `/hotels/${hotelId}/contact` },
   { label: "Guest Reviews", href: `/hotels/${hotelId}/guest-reviews` },
@@ -38,10 +43,10 @@ const getNavItems = (hotelId: string, hasWedding: boolean) => [
   { label: "Testimonials", href: `/about/testimonials` },
 ];
 
-export default function HotelNavbar({ hotelId, hotelName, hasWedding = true }: HotelNavbarProps) {
+export default function HotelNavbar({ hotelId, hotelName, hasWedding = true, hasSpa = false }: HotelNavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const navItems = getNavItems(hotelId, hasWedding);
+  const navItems = getNavItems(hotelId, hasWedding, hasSpa);
 
   const isActive = (href: string) => {
     if (href === `/hotels/${hotelId}`) return pathname === `/hotels/${hotelId}`;

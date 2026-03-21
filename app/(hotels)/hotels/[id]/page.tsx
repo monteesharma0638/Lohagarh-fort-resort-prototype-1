@@ -45,6 +45,7 @@ export default async function HotelOverview({
               hotelId={id}
               hotelName={hotel.name}
               hasWedding={hasWedding}
+               hasSpa={!!hotel?.spa}
             />
             <HotelBreadcrumb
               items={[

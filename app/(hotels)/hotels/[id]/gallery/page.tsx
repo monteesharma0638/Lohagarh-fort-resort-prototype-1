@@ -19,7 +19,8 @@ export default async function HotelGalleryPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Gallery"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Photo Gallery</h2>

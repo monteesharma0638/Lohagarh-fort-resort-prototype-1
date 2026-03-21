@@ -146,7 +146,7 @@ export default function RegalExperience() {
           </div>
 
           {/* Conference capacities */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-10">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-10">
             {[
               { venue: "Grand Durbar Hall", capacity: "500+", style: "Theatre / Banquet" },
               { venue: "Sheesh Mahal Room", capacity: "120", style: "Board / U-Shape" },
@@ -159,7 +159,7 @@ export default function RegalExperience() {
                 <p className="text-foreground/50 text-xs tracking-wider uppercase">{v.style}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </MotionDiv>
 
         <SectionDivider />
@@ -181,11 +181,11 @@ export default function RegalExperience() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg", title: "Private Heritage Trail", desc: "An exclusive behind-the-scenes guided walk through centuries of Rajput history." },
-              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg", title: "Royal Polo & Sports", desc: "Engage your team in ceremonial polo, archery, and traditional sporting spectacles." },
-              { image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg", title: "Desert Safari & Camp", desc: "Sunset camel rides, folk performances, and a private starlit dinner under Rajasthan skies." },
-            ].map((item) => (
-              <div key={item.title} className="border border-border overflow-hidden group">
+              { image: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/explore/private_trail.jpg", title: "Private Heritage Trail", desc: "An exclusive behind-the-scenes guided walk through centuries of Rajput history." },
+              { image: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/activities/outdoor-games-1.jpeg", title: "Royal Polo & Sports", desc: "Engage your team in ceremonial polo, archery, and traditional sporting spectacles." },
+              { image: "https://lohagarhdesertresortjaisalmer.com/wp-content/uploads/2025/10/l6.png", title: "Desert Safari & Camp", desc: "Sunset camel rides, folk performances, and a private starlit dinner under Rajasthan skies." },
+            ].map((item, i) => (
+              <div key={i} className="border border-border overflow-hidden group">
                 <Image src={item.image} alt="some alternative text" width={100} height={100} className="w-full h-44 group-hover:opacity-90 transition-opacity" />
                 <div className="p-5">
                   <h4 className="font-serif text-lg text-foreground mb-2">{item.title}</h4>
@@ -211,10 +211,10 @@ export default function RegalExperience() {
 
           {/* Large image strip */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
-            <ImagePlaceholder className="aspect-video col-span-2 md:col-span-2" />
-            <ImagePlaceholder className="aspect-video" />
-            <ImagePlaceholder className="aspect-video" />
-            <ImagePlaceholder className="aspect-video col-span-2 md:col-span-2" />
+            <Image src="https://www.lohagarhfortresort.in/wp-content/uploads/2023/07/9.jpg" alt="Lohagarh Fort Resort" width={1200} height={300} className="aspect-video col-span-2 md:col-span-2" />
+            <Image src="https://www.lohagarhfortresort.in/wp-content/uploads/2022/07/11-1.jpg" alt="Lohagarh Fort Resort" width={400} height={100} className="aspect-video" />
+            <Image src="https://www.lohagarhfortresort.in/wp-content/uploads/2025/12/18.jpg" alt="Lohagarh Fort Resort" width={400} height={100} className="aspect-video" />
+            <Image src="https://lohagarhdesertresortjaisalmer.com/wp-content/uploads/2025/11/bg.png" alt="Lohagarh Desert Resort" width={1200} height={300} className="aspect-video col-span-2 md:col-span-2" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -265,12 +265,12 @@ export default function RegalExperience() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: "Durbar Dining Hall", desc: "Grand banquet hall for up to 500 guests with royal décor and live music." },
-              { name: "Courtyard Terrace", desc: "Open-air dining beneath stars with folk performances and authentic Rajasthani cuisine." },
-              { name: "Royal Lounge Bar", desc: "Curated spirits, heritage cocktails, and small plates in an intimate setting." },
-              { name: "Heritage Café", desc: "Casual daytime dining with views over manicured gardens and heritage architecture." },
-              { name: "Poolside Grill", desc: "Contemporary grills and light fare by the infinity pool, open all day." },
-              { name: "Private Dining Suite", desc: "Exclusive tasting menus for up to 12 guests in a fully private setting." },
-            ].map((v) => (
+              { name: "Sikargah", desc: "For a unique and immersive forest dining experience, Shikargah Restaurant is the perfect choice." },
+              { name: "Townhall Restaurant", desc: "Curated spirits, heritage cocktails, and small plates in an intimate setting." },
+              { name: "Sheesh Mahal", desc: "Casual daytime dining with views over manicured gardens and heritage architecture." },
+              { name: "Gulab Mahal", desc: "Contemporary grills and light fare by the infinity pool, open all day." },
+              { name: "Kothi Restaurant", desc: "Exclusive tasting menus for up to 12 guests in a fully private setting." },
+            ].map((v) => ( 
               <div key={v.name} className="border-l-2 border-primary pl-5 py-1">
                 <h4 className="font-serif text-lg text-foreground mb-1">{v.name}</h4>
                 <p className="text-foreground/60 text-sm leading-relaxed">{v.desc}</p>
@@ -291,9 +291,18 @@ export default function RegalExperience() {
           </p>
 
           {/* Event photos grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <ImagePlaceholder key={i} className="aspect-video" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-12">
+            {[
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/events.jpg", 
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/meeting_mahalkhas.jpg", 
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/meetings.jpg", 
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/meetings2.jpg", 
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/meetings_pow.jpg", 
+              "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/rewards.jpg"
+            ].map((img, i) => (
+              <div  className="relative aspect-video w-[100%] h-60">
+                <Image src={img} alt="Meeting & Conferences" fill key={i} style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
             ))}
           </div>
 

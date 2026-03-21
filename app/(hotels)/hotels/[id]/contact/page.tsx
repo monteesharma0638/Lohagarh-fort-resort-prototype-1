@@ -15,7 +15,8 @@ export default async function HotelContactPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Contact Us"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
@@ -29,21 +30,21 @@ export default async function HotelContactPage({ params }: { params: Promise<{ i
               <MapPin className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <h4 className="font-bold text-foreground text-sm uppercase tracking-wider mb-1">Address</h4>
-                <p className="text-foreground/60">{hotel.location}</p>
+                <p className="text-foreground/60">{hotel?.salesContact?.address || hotel.location}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Phone className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <h4 className="font-bold text-foreground text-sm uppercase tracking-wider mb-1">Phone</h4>
-                <p className="text-foreground/60">+91 XXXX XXXXXX</p>
+                <p className="text-foreground/60">{hotel?.salesContact?.telephone?.join?.(',') || "N/A"}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Mail className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <h4 className="font-bold text-foreground text-sm uppercase tracking-wider mb-1">Email</h4>
-                <p className="text-foreground/60">reservations@lohagarh.com</p>
+                <p className="text-foreground/60">{hotel?.salesContact?.email || "N/A"}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

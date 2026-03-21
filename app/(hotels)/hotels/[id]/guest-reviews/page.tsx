@@ -22,7 +22,8 @@ export default async function GuestReviewsPage({ params }: { params: Promise<{ i
       hotelId={id}
       pageTitle="Guest Reviews"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div>
         <div className="flex items-center gap-4 mb-8">

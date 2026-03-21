@@ -21,7 +21,8 @@ export default async function OffersPage({ params }: { params: Promise<{ id: str
       hotelId={id}
       pageTitle="Offers"
       pageSubtitle={hotel.name}
-      hasWedding={hasWeddingPages(id)}
+      hasWedding={hotel.hasWedding}
+      hasSpa={!!hotel.spa}
     >
       <div>
         <h2 className="text-3xl font-serif text-foreground mb-6">Special Offers & Packages</h2>
