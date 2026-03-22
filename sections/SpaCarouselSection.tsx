@@ -70,7 +70,7 @@ const spaExperiences = [
 export default function SpaCarouselSection() {
   return (
     <section className="py-28 bg-[#f7f5f2]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto md:px-6">
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="uppercase tracking-[0.35em] text-xs text-[hsl(var(--gold))] mb-4">
@@ -87,7 +87,7 @@ export default function SpaCarouselSection() {
 
         {/* Carousel */}
         {/* Slider */}
-        <div className="relative px-16 overflow-visible">
+        <div className="relative px-6 md:px-16 overflow-visible">
           <button className="nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
             <MoveLeft />
           </button>

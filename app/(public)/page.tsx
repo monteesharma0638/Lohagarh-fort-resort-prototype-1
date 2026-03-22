@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
       <Hero />
-      <section className="py-32 px-4 relative overflow-hidden">
+      <section className="pt-20 md:py-32 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
            <div className="h-full w-full" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")' }} />
         </div>
@@ -54,7 +54,7 @@ export default async function Home() {
                 </Link>
               </div>
             </MotionDiv>
-            <div className="md:col-span-1 py-20 md:py-0">
+            <div className="md:col-span-1 pt-20 md:pt-0">
               <Image className="rounded-xl" src={"https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg"} alt={""} width={600} height={1200} />
             </div>
           </div>

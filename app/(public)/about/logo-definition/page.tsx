@@ -30,8 +30,13 @@ export default function LogoDefinition() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="mb-16">
-              <h2 className="text-7xl md:text-9xl font-serif gold-text-gradient opacity-30 select-none mb-8">LOHAGARH</h2>
+            <div className="mb-16 flex justify-center">
+              <Image
+                src="/logo/website-logo.png"
+                alt="Lohagarh Group Of Companies"
+                height={200}
+                width={600}
+              />
             </div>
             <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-serif italic mb-12">
               "Every element of our logo carries the weight of centuries of tradition and the promise of timeless luxury."

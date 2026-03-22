@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function MissionSection() {
   return (
     <section className="py-28 bg-[#f7f5f2]">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
 
         {/* Left Content */}
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
 
           <h2 className="font-serif text-4xl mb-6 relative inline-block">
             Our Mission
@@ -52,7 +52,7 @@ export default function MissionSection() {
         </div>
 
         {/* Right Image */}
-        <div className="relative col-span-1">
+        <div className="relative lg:col-span-1 w-full">
 
           {/* Frame */}
           <div className="absolute top-[-15] right-[-15] left-[-15] bottom-[-15] inset-0 border-[8px] border-[#e8dcc7] translate-x-0 translate-y-0"></div>

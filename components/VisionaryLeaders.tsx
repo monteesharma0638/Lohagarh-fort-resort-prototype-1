@@ -80,7 +80,7 @@ export default function VisionaryLeaders() {
               }`}
             >
               {/* Image */}
-              <div className="relative h-[500px] w-[95vw] md:w-[50vw] lg:w-auto mb-10 md:mb-0 rounded-xl col-span-1 overflow-hidden shadow-lg">
+              <div className="relative h-[500px]  mb-10 md:mb-0 rounded-xl lg:col-span-1 overflow-hidden shadow-lg">
                 <Image
                   src={leader.image}
                   alt={leader.name}
@@ -90,7 +90,7 @@ export default function VisionaryLeaders() {
               </div>
 
               {/* Content */}
-              <div className="col-span-2 md:px-4">
+              <div className="lg:col-span-2 md:px-4">
                 <h3 className="font-serif  text-center md:text-left text-2xl mb-2">{leader.name}</h3>
 
                 <p className="text-[hsl(var(--gold))] text-center md:text-left text-sm mb-6 uppercase tracking-widest">

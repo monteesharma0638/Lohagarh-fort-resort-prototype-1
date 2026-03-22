@@ -6,7 +6,7 @@ import HotelCard from "@/components/HotelCard";
 import MotionDiv from "@/components/MotionDiv";
 import Image from "next/image";
 
-const categories = ["All", "Jaipur, Rajasthan", "Bharatpur, Rajasthan", "Corbett, Uttarakhand", "Jaisalmer, Rajasthan"];
+const categories = ["All", "Jaipur, Rajasthan", "Bharatpur, Rajasthan", "Nainital, Uttarakhand", "Jaisalmer, Rajasthan"];
 
 export default function Hotels({hotels}: {hotels: any[]}) {
   const [activeCategory, setActiveCategory] = useState("All");

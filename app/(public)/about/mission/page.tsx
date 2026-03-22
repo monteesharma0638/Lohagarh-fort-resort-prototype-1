@@ -22,7 +22,7 @@ export default function OurMission() {
         </div>
       </div>
 
-      <div className="py-24 px-4">
+      <div className="md:py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <MotionDiv
             initial={{ opacity: 0, y: 40 }}

@@ -144,11 +144,22 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+useEffect(() => {
+  let ticking = false;
+
+  const handleScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -184,7 +195,7 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
   const headerClasses =  cn(
     `${noTopHeader? "top-0": "top-9"} ${noTopHeader? "hidden md:block": ""} fixed left-0 right-0 z-50 transition-all duration-500`,
     isScrolled || activeSubmenu
-      ? "bg-white/97 backdrop-blur-md py-4 border-b border-primary/15 shadow-lg"
+      ? "bg-white py-4 border-b border-primary/15 shadow-lg"
       : "bg-gradient-to-b from-black/60 to-transparent py-8"
   );
 
