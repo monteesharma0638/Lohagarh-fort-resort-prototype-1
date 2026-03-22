@@ -32,7 +32,13 @@ const experiences = [
   },
 ];
 
-export default function DiningExperiencesSection() {
+interface IDiningExperiences {
+  diningExperiences: any;
+}
+
+export default function DiningExperiencesSection({
+  diningExperiences,
+}: IDiningExperiences) {
   return (
     <section className="pt-10 bg-background relative">
       <div className="max-w-7xl mx-auto md:px-6">
@@ -48,32 +54,32 @@ export default function DiningExperiencesSection() {
 
         {/* Slider */}
         <div className="relative md:px-16 overflow-visible">
-            <button className="nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
-           <MoveLeft />
-        </button>
+          <button className="nav-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
+            <MoveLeft />
+          </button>
           <Swiper
             modules={[Navigation, Pagination]}
             navigation={{
-                prevEl: ".nav-prev",
-                nextEl: ".nav-next",
+              prevEl: ".nav-prev",
+              nextEl: ".nav-next",
             }}
             spaceBetween={40}
             pagination={{
-                clickable: true,
-                dynamicBullets: true, // Optional: makes bullets smaller as they get further from active
+              clickable: true,
+              dynamicBullets: true, // Optional: makes bullets smaller as they get further from active
             }} // Enable dots
             slidesPerView={1.2}
             breakpoints={{
-                768: { slidesPerView: 2.2 },
-                1200: { slidesPerView: 3 },
+              768: { slidesPerView: 2.2 },
+              1200: { slidesPerView: 3 },
             }}
           >
-            {experiences.map((item, i) => (
-                <SwiperSlide key={i}>
+            {diningExperiences.map((item: any, i: number) => (
+              <SwiperSlide key={i}>
                 <div className="group relative h-[460px] overflow-hidden rounded-xl shadow-lg">
                   {/* Image */}
                   <Image
-                    src={item.image}
+                    src={item.img}
                     alt={item.title}
                     width={700}
                     height={600}
@@ -87,26 +93,31 @@ export default function DiningExperiencesSection() {
                   <div className="absolute top-6 left-6 w-12 h-[2px] bg-[hsl(var(--gold))] transition-all duration-500 group-hover:w-24"></div>
 
                   {/* Content */}
-                  <div className="absolute bottom-0 p-8 text-white">
-                    <h3 className="font-serif text-2xl mb-3 tracking-wide">
+                  <div className="absolute bottom-0 left-0 p-8 w-full text-white flex flex-col justify-end">
+                    <h3 className="font-serif text-2xl mb-1 tracking-wide transition-transform duration-500 group-hover:-translate-y-2">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-white/80 leading-relaxed opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
-                      {item.desc}
-                    </p>
+                    {/* The Animated Description */}
+                    <div className="grid transition-all duration-500 ease-in-out grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100">
+                      <div className="overflow-hidden">
+                        <p className="text-sm text-white/80 leading-relaxed translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                          {item.description}
+                        </p>
 
-                    <span className="mt-4 inline-block text-[hsl(var(--gold))] text-xs tracking-[0.25em] uppercase opacity-0 group-hover:opacity-100 transition delay-100">
-                      Discover Experience
-                    </span>
+                        {/* <span className="mt-4 inline-block text-[hsl(var(--gold))] text-xs tracking-[0.25em] uppercase">
+                          Discover Experience
+                        </span> */}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-            <button className="nav-next absolute right-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
-                <MoveRight />
-            </button>
+          <button className="nav-next absolute right-0 top-1/2 -translate-y-1/2 z-20 shadow-xl">
+            <MoveRight />
+          </button>
         </div>
       </div>
 

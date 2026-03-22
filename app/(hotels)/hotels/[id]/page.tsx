@@ -6,7 +6,6 @@ import Image from "next/image";
 import { hasWeddingPages } from "./helpers";
 import { getHotel } from "@/lib/db";
 import HighlightsSection from "@/sections/HighlightsSection";
-import HotelInformationSection from "@/sections/HotelInformationSection";
 import Link from "next/link";
 import React from "react";
 
@@ -45,7 +44,7 @@ export default async function HotelOverview({
               hotelId={id}
               hotelName={hotel.name}
               hasWedding={hasWedding}
-               hasSpa={!!hotel?.spa}
+              hasSpa={!!hotel?.spa}
             />
             <HotelBreadcrumb
               items={[
@@ -172,12 +171,12 @@ export default async function HotelOverview({
                       Overview
                     </h3>
                     {/* 1. Added grid-flow-dense to fill gaps and increased to 3 columns for better asymmetry */}
-                    <div className="grid grid-cols-2 gap-4 auto-rows-[200px] md:auto-rows-[300px] grid-flow-dense">
-                      {hotel.rooms.map((ele: any, idx: number) => {
+                    <div className="grid md:grid-cols-2 gap-4 auto-rows-[200px] md:auto-rows-[300px] grid-flow-dense">
+                      {hotel.rooms.map((ele: any, idx: number, arr: any) => {
                         // This creates a repeating pattern:
                         // Item 2 is tall, then Item 4 is tall, then Item 6 is tall, etc.
-                        const isTall = idx % 4 === 1 || idx % 4 === 3;
-                        console.log("🚀 ~ HotelOverview ~ isTall:", isTall)
+                        const isTall = arr.length >= 3 && (idx % 4 === 1 || idx % 4 === 3);
+                        console.log("🚀 ~ HotelOverview ~ isTall:", isTall);
                         
                         return (
                           <Link
@@ -185,21 +184,21 @@ export default async function HotelOverview({
                             target="__blank"
                             key={idx}
                             className={`relative overflow-hidden group rounded-xl ${
-                              isTall ? "row-span-2" : "row-span-1"
+                              isTall ? "md:row-span-2" : "md:row-span-1"
                             }`}
                           >
                             <Image
                               src={ele.src}
                               alt={`${hotel.name} gallery ${idx + 1}`}
                               fill
-                              className="object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:blur-[1.5px] group-hover:brightness-75"
+                              className="object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:blur-[1.5px] brightness-55 md:brightness-100 md:group-hover:brightness-75"
                             />
 
                             {/* Content Overlay */}
                             <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4">
-                              <span className="text-white text-center text-lg tracking-[0.2em] font-serif opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                              <span className="text-white text-center text-lg tracking-[0.2em] font-serif md:opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                                 {ele.title || hotel.name}
                               </span>
                             </div>

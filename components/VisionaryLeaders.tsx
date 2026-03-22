@@ -61,7 +61,7 @@ Bhagat Singh welcomes opportunities for collaboration, networking, and mutual gr
 export default function VisionaryLeaders() {
   return (
     <section className="py-20 bg-[#f7f5f2]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-2 md:px-6">
         {/* <div className="text-center mb-20">
           <h2 className="font-serif text-4xl mb-4">
             Meet Our Visionary Leadership
@@ -75,12 +75,12 @@ export default function VisionaryLeaders() {
           {leaders.map((leader, i) => (
             <div
               key={i}
-              className={`grid lg:grid-cols-3 gap-14 items-center ${
+              className={`grid lg:grid-cols-3 lg:gap-14 items-center ${
                 i % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
               {/* Image */}
-              <div className="relative h-[500px] rounded-xl col-span-1 overflow-hidden shadow-lg">
+              <div className="relative h-[500px] w-[95vw] md:w-[50vw] lg:w-auto mb-10 md:mb-0 rounded-xl col-span-1 overflow-hidden shadow-lg">
                 <Image
                   src={leader.image}
                   alt={leader.name}
@@ -90,14 +90,14 @@ export default function VisionaryLeaders() {
               </div>
 
               {/* Content */}
-              <div className="col-span-2">
-                <h3 className="font-serif text-2xl mb-2">{leader.name}</h3>
+              <div className="col-span-2 md:px-4">
+                <h3 className="font-serif  text-center md:text-left text-2xl mb-2">{leader.name}</h3>
 
-                <p className="text-[hsl(var(--gold))] text-sm mb-6 uppercase tracking-widest">
+                <p className="text-[hsl(var(--gold))] text-center md:text-left text-sm mb-6 uppercase tracking-widest">
                   {leader.role}
                 </p>
 
-                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                <p className="text-muted-foreground text-justify md:text-left leading-relaxed whitespace-pre-line">
                   {leader.bio}
                 </p>
               </div>

@@ -48,7 +48,10 @@ export default async function DiningPage({ params }: { params: Promise<{ id: str
 
       {/* <DiningJourneySection /> */}
       <DiningRestaurantsSection hotel={hotel} />
-      <DiningExperiencesSection />
+      {
+        hotel?.diningExperiences?.length &&
+        <DiningExperiencesSection diningExperiences={hotel.diningExperiences} />
+      }
     </HotelSubPage>
   );
 }
