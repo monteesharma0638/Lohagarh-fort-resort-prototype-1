@@ -4,28 +4,29 @@ import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import MotionDiv from "@/components/MotionDiv";
 import Image from "next/image";
+import React from "react";
 
 const restaurants = [
   {
-    name: "Suvarna Mahal",
+    name: "Sikargah Restaurant",
     cuisine: "Royal Indian",
-    image: "/images/dining-fine.png",
-    description: "Dining at Suvarna Mahal is a culinary journey through the royal kitchens of India. With gold-plated cutlery and live classical music, it offers an experience fit for kings.",
-    features: ["Formal Attire", "Dinner Only", "Live Music"]
+    image: "https://www.lohagarhfortresort.in/wp-content/uploads/2025/12/5-min.webp",
+    description: "For a unique and immersive forest dining experience, Shikargah Restaurant is the perfect choice. This rustic two-story restaurant, made entirely of wood, captures the essence of the wilderness. With seating for 100+ people, Shikargah Restaurant offers a spacious and inviting atmosphere while maintaining an intimate and cozy vibe.\nStep into the forest-inspired interior, where the wooden decor, comfortable furniture, and captivating ambiance transport you to another world. As you settle into your seat, be prepared to indulge in an array of mouth-watering dishes that showcase both international flavors and local Rajasthani cuisine.",
+    features: ["Breakfast"]
   },
   {
-    name: "The Roof Top",
+    name: "Raj Darbar Restaurant",
     cuisine: "Mediterranean & Grills",
-    image: "/images/rooftop-dining.png",
-    description: "Enjoy breathtaking views of the city skyline while savoring authentic Mediterranean delicacies and grilled specialties under the stars.",
-    features: ["Outdoor Seating", "Sunset View", "Cocktails"]
+    image: "https://www.lohagarhfortresort.in/wp-content/uploads/2025/12/2-min-1.webp",
+    description: "At Lohagarh, we’re known for our unique approach to Indian cuisine. We take pride in producing and using our own organic ingredients for most of our dishes. Whether you prefer traditional favorites or contemporary creations, our kitchen offers a wide variety of delicious dining options",
+    features: ["Lunch", "Dinner"]
   },
   {
-    name: "Verandah Café",
+    name: "Townhall Family Restaurant",
     cuisine: "Global Cuisine",
-    image: "/images/hero-main.png",
+    image: "https://townhallrestaurantandevents.com/wp-content/uploads/2025/12/bookseat.jpg",
     description: "An all-day dining restaurant overlooking the palace gardens, serving a curated selection of international favorites and local comforts.",
-    features: ["All Day Dining", "Breakfast Buffet", "Garden View"]
+    features: ["All Day Dining", "Breakfast Buffet"]
   }
 ];
 
@@ -72,12 +73,18 @@ export default function Dining() {
                 </div>
                 
                 <div className="flex-1 text-center md:text-left">
-                  <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4 block">
+                  {/* <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4 block">
                     {restaurant.cuisine}
-                  </span>
+                  </span> */}
                   <h2 className="text-4xl md:text-5xl font-serif mb-6">{restaurant.name}</h2>
                   <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-                    {restaurant.description}
+                    {restaurant.description?.split("\n").map((desc, i) => (
+                      <React.Fragment key={i}>
+                        {desc}
+                        <br />
+                        <br />
+                      </React.Fragment>
+                    ))}
                   </p>
                   
                   <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
@@ -88,9 +95,9 @@ export default function Dining() {
                     ))}
                   </div>
                   
-                  <button className="border-b border-black pb-1 text-sm tracking-widest uppercase hover:text-primary hover:border-primary transition-colors">
+                  {/* <button className="border-b border-black pb-1 text-sm tracking-widest uppercase hover:text-primary hover:border-primary transition-colors">
                     Reserve a Table
-                  </button>
+                  </button> */}
                 </div>
               </MotionDiv>
             ))}
