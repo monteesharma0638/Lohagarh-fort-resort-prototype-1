@@ -56,13 +56,13 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
       hasWedding={hotel.hasWedding}
       hasSpa={!!hotel.spa}
     >
-      <div className="space-y-16">
+      <div className="space-y-5">
 
         {/* ── Page intro ── */}
         <div>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-2">{heroTitle}</h2>
           <p className="text-primary text-sm tracking-widest uppercase font-semibold mb-6">{heroSubtitle}</p>
-          <p className="text-foreground/70 leading-relaxed max-w-3xl">{intro}</p>
+          <p className="text-foreground/70 leading-relaxed">{intro.split("\n").map(item => <>{item}<br /><br /></>)}</p>
         </div>
 
         {/* ── Venue Cards — alternating layout ── */}
@@ -96,7 +96,7 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
                   <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-between gap-6">
                     <div>
                       <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-1">{venue.name}</h3>
-                      <p className="text-primary text-xs tracking-widest uppercase font-semibold mb-4">{venue.highlight}</p>
+                      {/* <p className="text-primary text-xs tracking-widest uppercase font-semibold mb-4">{venue.highlight}</p> */}
                       <p className="text-foreground/70 leading-relaxed mb-6">{venue.description}</p>
 
                       {/* Stats row */}
@@ -123,14 +123,14 @@ export default async function WeddingVenuesPage({ params }: { params: Promise<{ 
                       </div>
 
                       {/* Features */}
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {/* <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {venue.features.map((feat) => (
                           <li key={feat} className="flex items-start gap-2 text-sm text-foreground/70">
                             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                             {feat}
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
                     </div>
 
                     {/* CTA */}

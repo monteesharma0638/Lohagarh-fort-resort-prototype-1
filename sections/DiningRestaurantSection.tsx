@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 
 import { MoveLeft, MoveRight } from "lucide-react";
 import { useState } from "react";
+import MotionDiv from "@/components/MotionDiv";
+import { useMediaQuery } from "@/hooks/useUtils";
 
 const restaurants = [
   {
@@ -58,6 +60,20 @@ export default function DiningRestaurantsSection({hotel}: IDiningRestaurant) {
   const {resAndBars} = hotel ?? {};
   const [isBeginning, setIsBeginning] = useState<boolean>(true);
   const [isEnd, setIsEnd] = useState<boolean>(false);
+
+    const isMobile = useMediaQuery("(max-width: 768px)");
+  
+    const SwiperContainer = isMobile
+      ? ({ children }: any) => (
+          <MotionDiv
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {children}
+          </MotionDiv>
+        )
+      : SwiperSlide;
   
   return (
     <section className="">
@@ -106,8 +122,8 @@ export default function DiningRestaurantsSection({hotel}: IDiningRestaurant) {
             }}
           >
             {resAndBars?.length && resAndBars.map((item: any, i: number) => (
-              <SwiperSlide key={i}>
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-500 overflow-hidden">
+              <SwiperContainer key={i}>
+                <div className="bg-white my-2 rounded-lg shadow-md hover:shadow-xl transition duration-500 overflow-hidden">
                   {/* Image */}
                   <div className="relative">
                     <Image
@@ -160,7 +176,7 @@ export default function DiningRestaurantsSection({hotel}: IDiningRestaurant) {
                     </div> */}
                   </div>
                 </div>
-              </SwiperSlide>
+              </SwiperContainer>
             ))}
           </Swiper>
           <button className={`nav-next absolute right-0 top-1/2 -translate-y-1/2 z-20 shadow-xl ${

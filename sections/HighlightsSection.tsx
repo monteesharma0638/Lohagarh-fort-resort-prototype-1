@@ -7,36 +7,30 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { CLOUDFLARE_DEV_URL } from "@/lib/constants";
+import { useMediaQuery } from "@/hooks/useUtils";
+import MotionDiv from "@/components/MotionDiv";
 
-const highlights1 = [
-  {
-    title: "RUSTIC PRIVATE MACHANS",
-    image: "/images/lohagarhfortresort/gallery3.jpg",
-  },
-  {
-    title: "ENCOUNTERS WITH A RANGE OF WILDLIFE",
-    image: "/images/lohagarhfortresort/coridoor.jpg",
-  },
-  {
-    title: "COLONIAL BUNGALOWS WITH VERANDAHS",
-    image: "/images/lohagarhfortresort/gallery1.webp",
-  },
-  {
-    title: "JEEP SAFARI",
-    image: CLOUDFLARE_DEV_URL + "/lohagarh-fort-resort/activities/Jeep_safari.jpg",
-  },
-  {
-    title: "LUXURY JUNGLE EXPERIENCE",
-    image: "/images/lohagarhfortresort/gallery3.jpg",
-  },
-  {
-    title: "OUTDOOR GAMES",
-    image: CLOUDFLARE_DEV_URL + "/lohagarh-fort-resort/activities/Games.jpg",
-  },
-];
+export default function HighlightsSection({
+  highlights,
+  description,
+}: {
+  highlights: any[];
+  description: string;
+}) {
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
-export default function HighlightsSection({highlights, description}: {highlights: any[], description: string}) {
+  const SwiperContainer = isMobile
+    ? ({ children }: any) => (
+        <MotionDiv
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {children}
+        </MotionDiv>
+      )
+    : SwiperSlide;
+
   return (
     <section className="bg-muted/40 py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -60,8 +54,9 @@ export default function HighlightsSection({highlights, description}: {highlights
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
           navigation
-          autoplay={{ delay: 4000 }}
+          autoplay={{ delay: 3000 }}
           spaceBetween={30}
+          tabIndex={-1}
           slidesPerView={3}
           pagination={{
             clickable: true,
@@ -75,7 +70,11 @@ export default function HighlightsSection({highlights, description}: {highlights
           className="highlightSwiper"
         >
           {highlights?.map((item, i) => (
-            <SwiperSlide key={i} className="!overflow-visible">
+            <SwiperContainer
+              tabIndex={-1}
+              key={i}
+              className="!overflow-visible"
+            >
               {" "}
               {/* Allow zoom to spill out */}
               <div className="group cursor-pointer transition-all duration-500 hover:scale-105 hover:z-50 relative">
@@ -92,11 +91,11 @@ export default function HighlightsSection({highlights, description}: {highlights
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-6 text-center font-serif text-lg tracking-wide text-foreground transition-colors duration-500 group-hover:text-[hsl(var(--gold))]">
+                <h3 className="my-6 md:mb-0 text-center font-serif text-xl md:text-lg tracking-wide text-foreground transition-colors duration-500 group-hover:text-[hsl(var(--gold))]">
                   {item.caption}
                 </h3>
               </div>
-            </SwiperSlide>
+            </SwiperContainer>
           ))}
         </Swiper>
       </div>
