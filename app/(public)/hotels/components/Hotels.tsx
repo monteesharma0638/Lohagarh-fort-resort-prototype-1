@@ -36,7 +36,7 @@ export default function Hotels({hotels}: {hotels: any[]}) {
       </div>
 
 {/* Filter Dropdown */}
-<div className="bg-white border-b border-gray-100 sticky top-20 z-30 shadow-sm">
+<div className="bg-white border-b border-gray-100 z-30 shadow-sm">
   <div className="container mx-auto px-4 py-4">
     <div className="max-w-xs flex justify-center md:justify-left"> {/* Adjust max-width as needed */}
       <label htmlFor="category-select" className="sr-only">

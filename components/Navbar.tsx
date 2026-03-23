@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { usePathname, useSelectedLayoutSegments } from "next/navigation";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
@@ -137,6 +137,12 @@ const navItems: NavItem[] = [
 ];
 
 export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
+  const segments = useSelectedLayoutSegments();
+
+  if(segments?.length >= 2 && segments?.[0] === "hotels") {
+    noTopHeader = true;
+  }
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<NavItem | null>(null);
@@ -192,8 +198,14 @@ useEffect(() => {
           : "text-white/80 hover:text-white"
     );
 
-  const headerClasses =  cn(
-    `${noTopHeader? "top-0": "top-9"} ${noTopHeader? "hidden md:block": ""} fixed left-0 right-0 z-50 transition-all duration-500`,
+  const headerClasses = cn(
+    // 1. Static/Non-transitioned Positioning
+    "fixed left-0 right-0 z-50",
+    noTopHeader ? "top-0" : "top-9",
+    noTopHeader && "hidden md:block",
+    
+    // 2. Transitioned Properties (Colors & Padding)
+    "transition-[background-color,padding,border,box-shadow] duration-500",
     isScrolled || activeSubmenu
       ? "bg-white py-4 border-b border-primary/15 shadow-lg"
       : "bg-gradient-to-b from-black/60 to-transparent py-8"
@@ -265,7 +277,7 @@ useEffect(() => {
                 </Link>
               )}
             </div>
-          ))}
+          ))} 
         </nav>
 
         <div className={`hidden ${!noTopHeader ? "lg:flex invisible": ""} items-center gap-6`}>

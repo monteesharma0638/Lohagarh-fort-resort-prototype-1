@@ -1,12 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSelectedLayoutSegments } from "next/navigation";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import TopHeaderSocialLinks from "./TopHeaderSocialLinks";
 
 export default function TopHeader() {
   const pathname = usePathname();
+  const segments = useSelectedLayoutSegments();
+
+  const hidden = segments?.length >= 2 && segments?.[0] === "hotels"
+  
   const isHome = pathname === "/";
 
   const links = [
@@ -18,7 +22,7 @@ export default function TopHeader() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-white text-[0.65rem] tracking-[0.15em] uppercase font-medium">
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-white text-[0.65rem] tracking-[0.15em] uppercase font-medium" style={{display: hidden ? "none": "inherit"}}>
       <div className="container mx-auto px-6 flex items-center justify-between h-9">
         <nav className="hidden sm:flex items-center gap-6">
           {links.map((link) => (
