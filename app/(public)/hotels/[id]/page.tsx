@@ -16,7 +16,7 @@ export default async function HotelOverview({
 }) {
   const id = (await params).id;
   const hotel = await getHotel(id);
-    await new Promise(r => setTimeout(r, 1000));
+    // await new Promise(r => setTimeout(r, 1000));
 
   if (!hotel) {
     return (
