@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 const galleryData = [
   {
-    id: "fort-resort",
+    id: "lohagarh-fort-resort",
     property: "Lohagarh Fort Resort",
     location: "Jaipur",
     images: [
@@ -22,7 +23,7 @@ const galleryData = [
     ],
   },
   {
-    id: "desert-resort",
+    id: "lohagarh-desert-resort",
     property: "Lohagarh Desert Resort",
     location: "Jaisalmer",
     images: [
@@ -63,7 +64,22 @@ const galleryData = [
     ],
   },
   {
-    id: "corbett",
+    id: "kothi-lohagarh",
+    property: "Kothi Lohagarh",
+    location: "Jaipur",
+    images: [
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/front-facing.png", alt: "Kothi Enterance" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/Movie-theater-copy-0.png", alt: "Mini Theater" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/Movie-theater.png", alt: "Mini Theater" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/front-facing-2.png", alt: "Front Facing" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/hall.png", alt: "Hall" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/hall-2.png", alt: "Hall" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/lawn-area.png", alt: "Lawn Area" },
+      { src: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/kothi-lohagarh/roof.png", alt: "Roof" },
+    ],
+  },
+  {
+    id: "corbett-resort",
     property: "Lohagarh Corbett Resort",
     location: "Nainital",
     images: [
@@ -137,7 +153,7 @@ function PropertySection({ property, index }: { property: typeof galleryData[0];
         />
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[200px] gap-3">
         {property.images.map((image, imgIndex) => (
           <GalleryCard
             key={image.src}
@@ -307,7 +323,19 @@ function FilterBar({ activeFilter, onFilterChange }: { activeFilter: string; onF
 }
 
 export default function Gallery() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const { replace } = useRouter();
+  const searchParams = useSearchParams();
+  const property = searchParams.get('property');
+  const activeFilter = useMemo(() => property ?? "all", [property]);
+  const pathname = usePathname();
+
+  const setActiveFilter = (newFilter: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set('property', newFilter);
+
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  }
+
 
   const filteredData = activeFilter === "all"
     ? galleryData

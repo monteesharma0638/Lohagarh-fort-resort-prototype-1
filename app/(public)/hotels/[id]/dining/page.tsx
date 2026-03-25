@@ -1,9 +1,6 @@
 import HotelSubPage from "@/components/HotelSubPage";
-import { hasWeddingPages } from "../helpers";
 import { getHotel } from "@/lib/db";
-import SignatureDishesSection from "@/sections/SignatureDishesSection";
 import DiningExperiencesSection from "@/sections/DiningExperiences";
-import DiningJourneySection from "@/sections/DiningJourneySection";
 import DiningRestaurantsSection from "@/sections/DiningRestaurantSection";
 
 export default async function DiningPage({ params }: { params: Promise<{ id: string }> }) {

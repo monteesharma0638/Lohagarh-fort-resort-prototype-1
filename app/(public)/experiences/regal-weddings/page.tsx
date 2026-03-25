@@ -18,12 +18,29 @@ export default function RegalWeddings() {
           </MotionDiv>
         </div>
       </div>
-      {/* <section className="py-24 container mx-auto px-6 max-w-5xl">
-        <SectionHeading title="A Fairy Tale Affair" subtitle="Royal Weddings" />
-        <p className="text-gray-400 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-          Exchange vows in the splendor of our heritage palaces. Our wedding specialists craft every detail to create a celebration worthy of royalty.
+      <section className="py-24 container mx-auto px-6 max-w-7xl">
+        <SectionHeading title="" subtitle="Royal Weddings" />
+        <p className="text-gray-400 leading-relaxed italic text-lg">
+          "Experience the magic of a royal union where heritage meets modern luxury. 
+          From grand mandaps to intimate celebrations, we curate every detail to perfection."
         </p>
-      </section> */}
+        <br/>
+        <p className="text-gray-600 text-md leading-relaxed text-left max-w-6xl mx-auto">
+          At Lohagarh Fort Resort and Spa, we believe in creating unforgettable experiences for our guests, and one couple's wedding with us was truly magical. From the moment they arrived, they were treated like royalty, and their experience was no less than that of a king and queen.
+        </p>
+        <br/>
+        <p className="text-gray-600 text-md leading-relaxed text-left max-w-6xl mx-auto">
+          We went above and beyond to ensure that every aspect of their wedding was perfect. The couple exchanged vows in a breathtaking ceremony within the majestic fort, surrounded by the awe-inspiring beauty of our resort. The ambiance was fit for a fairy tale, with impeccable decorations and enchanting floral arrangements.
+        </p>
+        <br/>
+        <p className="text-gray-600 text-md leading-relaxed text-left max-w-6xl mx-auto">
+          Our dedicated team made sure that every guest felt special and pampered. From luxurious accommodations to exquisite cuisine, we left no stone unturned in creating an atmosphere of luxury and indulgence.
+        </p>
+        <br/>
+        <p className="text-gray-600 text-md leading-relaxed text-left max-w-6xl mx-auto">
+          The couple and their loved ones danced the night away under the starlit sky, creating memories that will last a lifetime. At Lohagarh Fort Resort and Spa, we take pride in being the perfect destination for a royal, luxury, and fairy tale wedding. Let us make your dreams come true and ensure that your special day is nothing short of extraordinary.
+        </p>
+      </section>
       <WeddingGallery />
       <WeddingContent />
       <WeddingFAQ />

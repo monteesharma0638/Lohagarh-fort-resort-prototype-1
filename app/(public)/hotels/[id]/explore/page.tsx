@@ -31,7 +31,7 @@ export default async function ExplorePage({
       hasWedding={hotel.hasWedding}
       hasSpa={!!hotel.spa}
     >
-      <section className="py-16 px-4 max-w-7xl mx-auto bg-[#F9F7F2]">
+      <section className="md:py-16 md:px-4 max-w-7xl mx-auto bg-[#F9F7F2]">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif text-[#4A3728] mb-4">
             Discover {hotel.location}
@@ -41,7 +41,7 @@ export default async function ExplorePage({
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-4 md:space-y-8">
           {city?.locations?.map((loc: any, index: number) => (
             <div
               key={index}

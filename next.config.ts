@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     "*.replit.dev",
     "*.repl.co",
     "*.worf.replit.dev",
-    "127.0.0.1",
+    "127.0.0.1"
   ],
   images: {
     remotePatterns: [

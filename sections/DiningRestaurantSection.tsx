@@ -12,45 +12,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import { useState } from "react";
 import MotionDiv from "@/components/MotionDiv";
 import { useMediaQuery } from "@/hooks/useUtils";
-
-const restaurants = [
-  {
-    title: "Private Dinner",
-    description:
-      "Cherish a magical dining experience with a loved one. Our staff ensures an unforgettable evening.",
-    cuisine: "Indian",
-    hours: "Dinner, on request",
-    phone: "+91 14123 85700",
-    image: "/images/lohagarhfortresort/food-item-1.jpg",
-  },
-  {
-    title: "Bonnet Breakfast",
-    description:
-      "Enjoy a lavish breakfast set up on your safari vehicle bonnet deep in the jungle.",
-    cuisine: "Multi-Cuisine",
-    hours: "Breakfast, as requested",
-    phone: "+91 97704 29399",
-    image: "/images/lohagarhfortresort/dine_in.jpg",
-  },
-  {
-    title: "Private Dinner",
-    description:
-      "Cherish a magical dining experience with a loved one. Our staff ensures an unforgettable evening.",
-    cuisine: "Indian",
-    hours: "Dinner, on request",
-    phone: "+91 14123 85700",
-    image: "/images/lohagarhfortresort/food-item-1.jpg",
-  },
-  {
-    title: "Bonnet Breakfast",
-    description:
-      "Enjoy a lavish breakfast set up on your safari vehicle bonnet deep in the jungle.",
-    cuisine: "Multi-Cuisine",
-    hours: "Breakfast, as requested",
-    phone: "+91 97704 29399",
-    image: "/images/lohagarhfortresort/dine_in.jpg",
-  },
-];
+import Link from "next/link";
 
 interface IDiningRestaurant {
   hotel: any
@@ -165,15 +127,15 @@ export default function DiningRestaurantsSection({hotel}: IDiningRestaurant) {
                     </p>
 
                     {/* Actions */}
-                    {/* <div className="flex justify-between items-center border-t pt-3">
-                      <button className="text-xs text-muted-foreground hover:text-black">
+                    <div className="flex justify-end items-center border-t pt-3">
+                      {/* <button className="text-xs text-muted-foreground hover:text-black">
                         Book Table
-                      </button>
+                      </button> */}
 
-                      <button className="text-xs text-[hsl(var(--gold))] uppercase tracking-wider">
+                      <Link href="#" className="text-xs text-[hsl(var(--gold))] uppercase tracking-wider cursor-pointer">
                         Details →
-                      </button>
-                    </div> */}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </SwiperContainer>

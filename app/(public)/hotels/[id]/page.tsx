@@ -16,6 +16,7 @@ export default async function HotelOverview({
 }) {
   const id = (await params).id;
   const hotel = await getHotel(id);
+    await new Promise(r => setTimeout(r, 1000));
 
   if (!hotel) {
     return (
@@ -171,11 +172,11 @@ export default async function HotelOverview({
                       Overview
                     </h3>
                     {/* 1. Added grid-flow-dense to fill gaps and increased to 3 columns for better asymmetry */}
-                    <div className="grid md:grid-cols-2 gap-4 auto-rows-[200px] md:auto-rows-[300px] grid-flow-dense">
+                    <div className="grid md:grid-cols-2 gap-4 auto-rows-[300px] md:auto-rows-[300px] grid-flow-dense">
                       {hotel.rooms.map((ele: any, idx: number, arr: any) => {
                         // This creates a repeating pattern:
                         // Item 2 is tall, then Item 4 is tall, then Item 6 is tall, etc.
-                        const isTall = arr.length >= 3 && (idx % 4 === 1 || idx % 4 === 3);
+                        const isTall = arr.length > 3 ? (idx % 4 === 1 || idx % 4 === 3): true;
                         console.log("🚀 ~ HotelOverview ~ isTall:", isTall);
                         
                         return (

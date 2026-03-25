@@ -2,6 +2,7 @@ import Locations from "@/models/Locations";
 import Pages from "@/models/Pages";
 import Properties from "@/models/Properties";
 import mongoose from "mongoose";
+import weddings from "@/data/wedding-experiences.json";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 const DB_NAME = process.env.DB_NAME!;
@@ -40,4 +41,12 @@ export async function getPageDataByRoute (route: string) {
   const result = await Pages.findOne({route}).select("-_id -_v").lean();
 
   return result;
+}
+
+export async function getWeddings() {
+  return weddings;
+}
+
+export async function getWeddingGallery(id: number) {
+  return weddings.find(wedding => wedding.id == id);
 }

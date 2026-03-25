@@ -42,7 +42,7 @@ export default function HotelGallery({ gallery, hotelName }: Props) {
         {/* The Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {gallery.map((img, idx) => (
-              <PhotoView src={img} height={100} width={100} overlay={<OverLayIcon />}>
+              <PhotoView key={idx} src={img} height={100} width={100} overlay={<OverLayIcon />}>
                   <Image
                     src={img}
                     alt={`${hotelName} gallery ${idx + 1}`}

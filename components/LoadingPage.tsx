@@ -1,18 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 export default function LoadingPage() {
-  const [visible, setVisible] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
-
-  useEffect(() => {
-    const t1 = setTimeout(() => setFadeOut(true), 2800);
-    const t2 = setTimeout(() => setVisible(false), 3600);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, []);
-
-  if (!visible) return null;
 
   return (
     <>
@@ -73,8 +59,7 @@ export default function LoadingPage() {
         }
       `}</style>
 
-      <div className={`lhg-overlay${fadeOut ? " out" : ""}`}>
-
+      <div className={`lhg-overlay`}>
         <div className="lhg-name">LOHAGARH</div>
 
         <div className="lhg-divider">
