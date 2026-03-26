@@ -3,6 +3,7 @@ import "./globals.css";
 import TopHeader from "@/components/TopHeader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Lohagarh Hotels - A Legacy of Indian Royalty",
@@ -19,7 +20,9 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <TopHeader />
         <Navbar />
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>

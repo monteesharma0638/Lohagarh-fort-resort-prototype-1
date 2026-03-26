@@ -3,6 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import MotionDiv from '@/components/MotionDiv';
 
 const cabins = [
@@ -10,134 +12,173 @@ const cabins = [
     title: "Deluxe Cabins",
     desc: "Hand-woven textiles, ensuite bathrooms, and antique furniture.",
     img: "https://palaceonwheels.rajasthan.gov.in/public/admin/images/cabins/351cfb0933784814ea0c1293b5cda97917c07cea4.jpg",
-    path:"deluxe-cabin"
+    path: "deluxe-cabin",
+    icon: "👑"
   },
   {
     title: "Super Deluxe Cabin",
     desc: "King size Suites, Private Lounges, Panoramic windows.",
-    img: "https://palaceonwheels.rajasthan.gov.in/public/admin/images/cabins/8d6390650793d1d0af96f688dedb8ff2ccfbec263.jpg", 
-    path: "super-deluxe-cabin"
+    img: "https://palaceonwheels.rajasthan.gov.in/public/admin/images/cabins/8d6390650793d1d0af96f688dedb8ff2ccfbec263.jpg",
+    path: "super-deluxe-cabin",
+    icon: "✨"
   },
   {
     title: "Suite Cabin",
     desc: "Hand-woven textiles, ensuite bathrooms, and antique furniture.",
     img: "https://palaceonwheels.rajasthan.gov.in/public/admin/images/cabins/e1a3a942d373fcf4e96445f472c9396c3ef3f1872.png",
-    path: "suite-cabin"
+    path: "suite-cabin",
+    icon: "🏰"
   },
   {
     title: "Presidential Suite",
     desc: "Hand-woven textiles, ensuite bathrooms, and antique furniture.",
     img: "https://palaceonwheels.rajasthan.gov.in/public/admin/images/cabins/d0c3251e901ddb2da7fbc01b2bdf2346e81cb4a91.png",
-    path: "presidential-suite"
+    path: "presidential-suite",
+    icon: "💎"
   },
 ];
 
 const PalaceDetails = () => {
-  return (
-    <section className="bg-white py-20 px-6 md:px-12 border-l border-gold/10">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Section 1: Cabin & Suite Categories */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-3xl font-serif text-maroon italic">Cabin & Suite Categories</h3>
-            <div className="flex-1 h-px bg-gold/30"></div>
-          </div>
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {cabins.map((cabin, idx) => (
-              <MotionDiv
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group border border-gold/10 p-4 bg-[#FAF9F6] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <Link href={"/special-packages/palace-on-wheels/" + cabin.path}>
-                  <div className={`aspect-video ${cabin.img} mb-4 flex items-center justify-center relative overflow-hidden`}>
-                    {/* <span className="text-[10px] uppercase font-bold text-maroon/30 tracking-widest italic font-serif">
-                      {cabin.title} View
-                    </span> */}
-                    <Image src={cabin.img} fill alt="" />
-                    <div className="absolute inset-0 border-[0.5px] border-gold/20 m-2"></div>
+  return (
+    <section ref={ref} className="bg-gradient-to-b z-10 from-white via-[#FFFCF7] to-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-5xl md:text-6xl font-serif text-maroon mb-4 italic">
+            Royal Accommodations
+          </h2>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-gold"></div>
+            <p className="text-gold font-sans uppercase tracking-widest text-sm">Elevate Your Journey</p>
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-gold"></div>
+          </div>
+        </motion.div>
+
+        {/* Cabin Grid - 4 Column Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
+          {cabins.map((cabin, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="group"
+            >
+              <Link href={"/special-packages/palace-on-wheels/" + cabin.path}>
+                <div className="relative overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gold/10">
+                  {/* Image Container */}
+                  <div className="aspect-video relative overflow-hidden bg-maroon/5">
+                    <Image 
+                      src={cabin.img} 
+                      fill 
+                      alt={cabin.title}
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-maroon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
-                  <h4 className="text-lg font-serif text-maroon mb-2">{cabin.title}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed font-sans uppercase tracking-tight">
-                    {cabin.desc}
-                  </p>
-                </Link>
-              </MotionDiv>
+
+                  {/* Icon Badge */}
+                  <div className="absolute top-3 right-3 text-3xl bg-white/90 backdrop-blur w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+                    {cabin.icon}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <h4 className="text-lg font-serif text-maroon mb-2 group-hover:text-gold transition-colors">
+                      {cabin.title}
+                    </h4>
+                    <p className="text-xs text-gray-500 leading-relaxed font-sans">
+                      {cabin.desc}
+                    </p>
+                    <div className="mt-4 flex items-center text-gold text-xs font-semibold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                      Explore →
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Amenities Showcase */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {[
+            { icon: "🍽️", title: "Fine Dining", desc: "Multi-course gourmet experiences" },
+            { icon: "🛎️", title: "Butler Service", desc: "24/7 personalized assistance" },
+            { icon: "🚂", title: "Scenic Routes", desc: "Panoramic journey through Rajasthan" }
+          ].map((amenity, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.15 }}
+              className="text-center p-8 rounded-lg bg-gradient-to-br from-gold/5 to-transparent border border-gold/20 hover:border-gold/50 transition-colors"
+            >
+              <div className="text-4xl mb-4">{amenity.icon}</div>
+              <h3 className="text-xl font-serif text-maroon mb-2">{amenity.title}</h3>
+              <p className="text-sm text-gray-600">{amenity.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Dining Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-maroon/5 to-gold/5 rounded-xl p-12 border border-gold/20"
+        >
+          <h3 className="text-4xl font-serif text-maroon mb-12 text-center">Culinary Excellence</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {[
+              {
+                name: "The Maharaja",
+                subtitle: "Gourmet International",
+                desc: "Elaborate multi-course meals with classic desserts and fine wine pairings."
+              },
+              {
+                name: "The Maharani",
+                subtitle: "Authentic Rajasthani",
+                desc: "Flavors of Rajasthan prepared by award-winning chefs for glorious meals."
+              }
+            ].map((restaurant, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white p-8 rounded-lg shadow-md border-l-4 border-gold"
+              >
+                <h4 className="text-2xl font-serif text-maroon mb-2">{restaurant.name}</h4>
+                <p className="text-gold font-bold text-xs uppercase tracking-widest mb-4">{restaurant.subtitle}</p>
+                <p className="text-gray-600 leading-relaxed italic">{restaurant.desc}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Section 2: Interactive Amenities (The Black Highlight Box) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-          <div className="relative border border-gold/30 p-2 group overflow-hidden">
-             <div className="aspect-square bg-maroon/5 flex items-center justify-center text-xs italic text-maroon/30">
-               Butler Service Feature
-             </div>
-             <div className="absolute top-0 right-0 p-3 bg-gold text-maroon rotate-0 group-hover:rotate-12 transition-transform">
-                <span className="text-[10px] font-bold">ROYAL</span>
-             </div>
-          </div>
-
-          <div className="bg-[#1A1A1A] p-10 text-white relative shadow-2xl">
-            {/* Design accents */}
-            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-gold"></div>
-            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-gold"></div>
-            
-            <span className="text-gold font-sans uppercase tracking-[0.4em] text-[10px] font-bold block mb-3">
-              Interactive Amenities
-            </span>
-            <h4 className="text-2xl font-serif mb-6">Amenity Highlight</h4>
-            <ul className="space-y-4">
-              {["Personalized Butler service", "Modern ensuite bathrooms", "24/7 Dining"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-300">
-                  <span className="w-1.5 h-1.5 bg-gold rotate-45"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Section 3: Dining & Gastronomy */}
-        <div>
-          <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-3xl font-serif text-maroon italic">Dining & Gastronomy</h3>
-            <div className="flex-1 h-px bg-gold/30"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-             <div className="space-y-4">
-               <h4 className="text-2xl font-serif text-maroon">The Maharaja</h4>
-               <p className="text-bhagwa font-bold text-[10px] uppercase tracking-widest">Gourmet International</p>
-               <p className="text-sm text-gray-600 leading-relaxed font-sans italic">
-                 "Elaborate multi-course meals, classic desserts, multi-sensory experiences—a gastronomic journey as memorable as the route."
-               </p>
-             </div>
-
-             <div className="space-y-4">
-               <h4 className="text-2xl font-serif text-maroon">The Maharani</h4>
-               <p className="text-bhagwa font-bold text-[10px] uppercase tracking-widest">Authentic Rajasthani</p>
-               <p className="text-sm text-gray-600 leading-relaxed font-sans italic">
-                 "Flavors of Rajasthan—elaborate and fine wine pairings for your glorious meals."
-               </p>
-             </div>
-          </div>
-
-          <div className="mt-12 grid grid-cols-3 gap-4">
-             {[1,2,3].map(i => (
-               <div key={i} className="aspect-square bg-maroon/5 border border-gold/10 hover:border-gold/40 transition-colors"></div>
-             ))}
-          </div>
-          
-          <button className="mt-12 text-[10px] font-bold uppercase tracking-[0.3em] text-bhagwa border-b-2 border-bhagwa pb-1 hover:text-maroon hover:border-maroon transition-all">
-            Show more details →
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <button className="px-10 py-3 bg-gradient-to-r from-maroon to-bhagwa text-white font-serif text-lg rounded-lg hover:shadow-lg transition-shadow uppercase tracking-wider">
+            Explore Full Experience →
           </button>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
