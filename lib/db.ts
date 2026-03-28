@@ -31,7 +31,7 @@ export async function getLocations(city: string) {
 
 export async function getHotels() {
   await connectDB();
-  const result = await Properties.find().select("-_id -_v").lean();
+  const result = await Properties.find().sort("priority").select("-_id -_v").lean();
 
   return result;
 }

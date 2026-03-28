@@ -110,6 +110,7 @@ const navItems: NavItem[] = [
       {
         category: "Properties",
         items: [
+          { label: "All Properties", href: "/gallery?property=all" },
           { label: "Lohagarh Fort Resort", href: "/gallery?property=lohagarh-fort-resort" },
           { label: "Kothi Lohagarh", href: "/gallery?property=kothi-lohagarh" },
           { label: "Lohagarh Desert Resort", href: "/gallery?property=lohagarh-desert-resort" },

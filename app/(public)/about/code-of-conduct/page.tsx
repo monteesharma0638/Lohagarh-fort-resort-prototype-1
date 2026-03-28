@@ -253,9 +253,9 @@ export default function CodeOfConduct() {
                     <h3 className="text-xl font-serif text-primary mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 group-hover:text-gray-700 transition-colors">
+                    <div className="text-gray-500 group-hover:text-gray-700 transition-colors">
                       {item.description}
-                    </p>
+                    </div>
                   </div>
                 </div>
               ))}

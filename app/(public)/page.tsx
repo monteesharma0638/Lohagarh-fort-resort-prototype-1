@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import ResortExplorer from "./components/ResortExplorer";
 import AllExploreSections from "./components/AllExploreSections";
 import { getHotels } from "@/lib/db";
+import PalaceTrainSection from "./components/PalaceTrainSection";
 
 
   const stats = [
@@ -116,6 +117,8 @@ export default async function Home() {
       </section>
 
       <AllExploreSections />
+
+      <PalaceTrainSection />
 
       {/* 2. Stats Section */}
       <section className="py-10 bg-secondary/10 border-y border-primary/10">

@@ -158,7 +158,7 @@ const MobileCard = ({ item }: { item: typeof itinerary[0] }) => {
   const opacity = useTransform(scrollYProgress, [0,.4,.85,1], [0,1,1,.75]);
   const y       = useTransform(scrollYProgress, [0,.5], [20,0]);
   return (
-    <motion.div ref={ref} style={{ opacity, y }} className="relative flex items-center min-h-[72vh] py-10 pl-16 pr-4">
+    <motion.div ref={ref} style={{ opacity, y }} className="relative flex items-center min-h-[30vh] py-10 pl-16 pr-4">
       <StationDot mobile={true}/>
       <div className="w-full"><CardInner item={item} imgHeight="h-40" titleSize="text-xl" padding="p-4"/></div>
     </motion.div>
@@ -189,8 +189,8 @@ const DesktopCard = ({ item }: { item: typeof itinerary[0] }) => {
     <motion.div ref={ref} style={{ opacity, x, scale }}
       className={`relative flex items-center min-h-[85vh] py-16 ${isLeft ? "justify-start pl-10 xl:pl-20 pr-[53%]" : "justify-end pr-10 xl:pr-20 pl-[53%]"}`}>
       <StationDot isLeft={isLeft}/>
-      <div className="w-full" style={{ maxWidth:400 }}>
-        <CardInner item={item} imgHeight="h-52" titleSize="text-2xl" padding="p-5"/>
+      <div className="w-full" style={{ maxWidth:600 }}>
+        <CardInner item={item} imgHeight="h-70" titleSize="text-2xl" padding="p-5"/>
       </div>
     </motion.div>
   );

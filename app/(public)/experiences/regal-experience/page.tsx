@@ -137,10 +137,10 @@ export default function RegalExperience() {
               </p>
             </div>
             <div className="space-y-4">
-              <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212409/lohagarh/images/hero/DSC03810_a2obbz.jpg" alt="first image" width={400} height={200} className="w-full h-56" />
+              <Image src="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/decoration.jpg" alt="first image" width={400} height={200} className="w-full h-56 object-cover" />
               <div className="grid grid-cols-2 gap-3">
-                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg" alt="second image" width={300} height={300} className="aspect-[4/3]" />
-                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212406/lohagarh/images/hero/DSC01586_qdlvzv.jpg" alt="second image" width={300} height={300} className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212408/lohagarh/images/hero/edit8_spadua.jpg" alt="second image" width={300} height={300} className="aspect-[4/3] object-cover" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212406/lohagarh/images/hero/DSC01586_qdlvzv.jpg" alt="second image" width={300} height={300} className="aspect-[4/3] object-cover" />
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function RegalExperience() {
               { image: "https://lohagarhdesertresortjaisalmer.com/wp-content/uploads/2025/10/l6.png", title: "Desert Safari & Camp", desc: "Sunset camel rides, folk performances, and a private starlit dinner under Rajasthan skies." },
             ].map((item, i) => (
               <div key={i} className="border border-border overflow-hidden group">
-                <Image src={item.image} alt="some alternative text" width={100} height={100} className="w-full h-44 group-hover:opacity-90 transition-opacity" />
+                <Image src={item.image} alt="some alternative text" width={100} height={100} className="w-full h-44 object-cover group-hover:opacity-90 transition-opacity" />
                 <div className="p-5">
                   <h4 className="font-serif text-lg text-foreground mb-2">{item.title}</h4>
                   <p className="text-foreground/60 text-sm leading-relaxed">{item.desc}</p>
@@ -253,10 +253,10 @@ export default function RegalExperience() {
               </p>
             </div>
             <div className="space-y-3">
-              <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307031/lohagarh/images/dining/DSC02330_yyau8v.jpg" alt="Dining 1" width={500} height={300} className="w-full h-56" />
+              <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307031/lohagarh/images/dining/DSC02330_yyau8v.jpg" alt="Dining 1" width={500} height={300} className="w-full h-56 cover" />
               <div className="grid grid-cols-2 gap-3">
-                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC05329_iimkd5.jpg" alt="Dining 2" width={300} height={300} className="aspect-[4/3]" />
-                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC02346_bf8sho.jpg" alt="Dining 3" width={300} height={300} className="aspect-[4/3]" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC05329_iimkd5.jpg" alt="Dining 2" width={300} height={300} className="aspect-[4/3] cover" />
+                <Image src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773307030/lohagarh/images/dining/DSC02346_bf8sho.jpg" alt="Dining 3" width={300} height={300} className="aspect-[4/3] cover" />
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function RegalExperience() {
               "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/meetings_pow.jpg", 
               "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/meetings/rewards.jpg"
             ].map((img, i) => (
-              <div  className="relative aspect-video w-[100%] h-60">
+              <div key={i} className="relative aspect-video w-[100%] h-60">
                 <Image src={img} alt="Meeting & Conferences" fill key={i} style={{ objectFit: 'cover', objectPosition: 'center' }} />
               </div>
             ))}

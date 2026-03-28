@@ -101,9 +101,9 @@ export default function AboutIntroSection() {
 
             <div>
               <h3 className="text-3xl font-serif text-[hsl(var(--gold))]">
-                5+
+                6
               </h3>
-              <p className="text-sm text-muted-foreground">Luxury Resorts</p>
+              <p className="text-sm text-muted-foreground">Luxury Properties</p>
             </div>
 
             <div>

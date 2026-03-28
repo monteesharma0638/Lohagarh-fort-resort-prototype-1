@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 import ExploreSection from "./ExploreSection";
 import { Button } from "@/components/ui/button";
+import MotionButtonPrimary from "@/components/motion/MotionButtonPrimary";
 
 const itemVariants: Variants = {
   hidden: { x: -30, opacity: 0 },
@@ -77,7 +78,7 @@ const sections = [
         </MotionDiv>
         <div className="flex justify-center">
           <Link href="/hotels">
-            <Button>View More</Button>
+            <MotionButtonPrimary>View More</MotionButtonPrimary>
           </Link>
         </div>
       </div>
@@ -89,7 +90,7 @@ const sections = [
     content: (
       <div className="space-y-10 min-h-6xl flex justify-center">
         <Link href="/dining">
-          <Button>View More</Button>
+          <MotionButtonPrimary>View More</MotionButtonPrimary>
         </Link>
       </div>
     ),
@@ -133,7 +134,7 @@ const sections = [
         </MotionDiv>
         <div className="flex justify-center">
           <Link href="/experiences/regal-experience">
-            <Button>View More</Button>
+            <MotionButtonPrimary>View More</MotionButtonPrimary>
           </Link>
         </div>
       </div>
@@ -170,7 +171,7 @@ const sections = [
         </MotionDiv>
         <div className="flex justify-center">
           <Link href="/experiences/regal-weddings">
-            <Button>View More</Button>
+            <MotionButtonPrimary>View More</MotionButtonPrimary>
           </Link>
         </div>
       </div>
@@ -188,7 +189,7 @@ const sections = [
         </MotionDiv>
         <div className="flex justify-center">
           <Link href="/experiences/spa-and-salon">
-            <Button>View More</Button>
+            <MotionButtonPrimary>View More</MotionButtonPrimary>
           </Link>
         </div>
       </div>

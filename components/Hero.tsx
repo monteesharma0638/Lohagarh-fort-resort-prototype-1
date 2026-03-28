@@ -1,9 +1,9 @@
 "use client";
 import { useMediaQuery } from "@/hooks/useUtils";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 interface IHero {
   videoUrl?: string;
@@ -16,16 +16,36 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
   const { scrollY } = useScroll();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  console.log("🚀 ~ Hero ~ isMobile:", isMobile)
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { damping: 20, mass: 0.5 });
+  const springY = useSpring(mouseY, { damping: 20, mass: 0.5 });
 
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const scale = useTransform(scrollY, [0, 300], [1, 1.1]);
+  
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    mouseX.set((e.clientX - rect.left - centerX) * 0.05);
+    mouseY.set((e.clientY - rect.top - centerY) * 0.05);
+  };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
+    >
       {/* Parallax Background */}
       <motion.div 
-        style={{ y: y1 }}
+        style={{ y: y1, scale }}
         className="absolute inset-0 z-0"
       >
         {!videoLoaded && (
@@ -63,13 +83,15 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
           )
         }
         <div className="absolute inset-0 bg-black/40" />
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background/30" /> */}
       </motion.div>
 
       {/* Content */}
       {
         children ||
-        <div className="relative z-10 container mx-auto px-4 text-center">
+        <motion.div 
+          className="relative z-10 container mx-auto px-4 text-center"
+          style={{ x: springX, y: springY }}
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -116,7 +138,7 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
               </p>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       }
 
       {/* Scroll Indicator */}
@@ -128,9 +150,6 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
       >
         <ChevronDown size={32} strokeWidth={1} />
       </motion.div>
-
-      {/* Decorative Borders */}
-      {/* <div className="absolute inset-8 border border-white/10 pointer-events-none z-20 hidden md:block" /> */}
     </section>
   );
 }
