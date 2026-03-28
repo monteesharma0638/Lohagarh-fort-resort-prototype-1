@@ -85,7 +85,7 @@ const sections = [
   },
   {
     heading: "Regal Dining",
-    image: "https://res.cloudinary.com/drayl5ppi/image/upload/v1773470890/lohagarh/images/dining/3-min-1_guyrve.webp",
+    image: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/raj-darbar.jpg",
     content: (
       <div className="space-y-10 min-h-6xl flex justify-center">
         <Link href="/dining">
@@ -96,7 +96,7 @@ const sections = [
   },
   {
     heading: "Regal Experience",
-    image: "/images/lohagarhfortresort/gallery1.webp",
+    image: "https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/flower-valley.jpg",
     content: (
       <div className="space-y-10">
         <MotionDiv variants={itemVariants}>

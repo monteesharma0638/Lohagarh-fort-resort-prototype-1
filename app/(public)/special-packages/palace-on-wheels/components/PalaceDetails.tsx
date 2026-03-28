@@ -175,9 +175,9 @@ const PalaceDetails = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <button className="px-10 py-3 bg-gradient-to-r from-maroon to-bhagwa text-white font-serif text-lg rounded-lg hover:shadow-lg transition-shadow uppercase tracking-wider">
-            Explore Full Experience →
-          </button>
+          <Link href="palace-on-wheels/history" className="px-10 py-3 bg-gradient-to-r from-maroon to-bhagwa text-white font-serif text-lg rounded-lg hover:shadow-lg transition-shadow uppercase tracking-wider">
+            Know More →
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,0 +1,74 @@
+[
+  {
+    "day": "Day 1",
+    "city": "New Delhi",
+    "desc": "Ceremonial welcome at Safdarjung Station. Begin your royal odyssey amidst the grandeur of India's capital.",
+    "icon": "🏛️",
+    "color": "#c48b36",
+    "img": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+    "side": "right"
+  },
+  {
+    "day": "Day 2",
+    "city": "Jaipur",
+    "desc": "The Pink City — visit the majestic Hawa Mahal and the fortress of Amber, draped in rose-hued splendour.",
+    "icon": "🐘",
+    "color": "#e07b54",
+    "img": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80",
+    "side": "left"
+  },
+  {
+    "day": "Day 3",
+    "city": "Sawai Madhopur",
+    "desc": "Wild safari through tiger territory and the ancient Chittorgarh Fort rising from the Rajasthani plains.",
+    "icon": "🐅",
+    "color": "#7a9e5f",
+    "img": "https://media-cdn.tripadvisor.com/media/photo-s/16/e1/64/b3/ranthambore-national.jpg",
+    "side": "right"
+  },
+  {
+    "day": "Day 4",
+    "city": "Udaipur",
+    "desc": "The City of Lakes — drift across Lake Pichola, past the legendary Jag Niwas floating palace.",
+    "icon": "🛶",
+    "color": "#5f8fae",
+    "img": "https://s7ap1.scene7.com/is/image/incredibleindia/lake-pichola-udaipur-rajasthan-2-attr-hero?qlt=82&ts=1742161994371",
+    "side": "left"
+  },
+  {
+    "day": "Day 5",
+    "city": "Jaisalmer",
+    "desc": "Golden City at dusk — camel silhouettes against amber skies over the Sam Sand Dunes.",
+    "icon": "🏜️",
+    "color": "#d4a83a",
+    "img": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepo4cNdwddk6o5cQYJtXE-NBzr2h7-rRjC7-U71JhvrGWKCRcqOeffMFp3GZSqYkZpD16HKqjlJgzy4vgqb197p7yOKLw25Lu-IqXTIzfWq5rm3f8gYWH6sUU68Wew0cTFkmhUn=w675-h390-n-k-no",
+    "side": "right"
+  },
+  {
+    "day": "Day 6",
+    "city": "Jodhpur",
+    "desc": "The Blue City — Mehrangarh Fort commands the horizon above a sea of cobalt rooftops.",
+    "icon": "🏰",
+    "color": "#4e7db5",
+    "img": "https://lh3.googleusercontent.com/gps-cs-s/AHVAweozfcbPtDNrDmbMq2GyObmmrvS0RzbiXP8ydMgjH8acEcMoTCvex63ZXpm5-BFSv6KKsKVCxiKQkR1N8UlYA_XcdqCj6-_zhwxNDoCnr1GFvTVx0szD-fvx8ko873CT1nrrL45v1FuzJzHb=w675-h390-n-k-no",
+    "side": "left"
+  },
+  {
+    "day": "Day 7",
+    "city": "Agra",
+    "desc": "Bird sanctuary serenity and the Taj Mahal at dawn — a monument to eternal devotion.",
+    "icon": "🕊️",
+    "color": "#c4a882",
+    "img": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80",
+    "side": "right"
+  },
+  {
+    "day": "Day 8",
+    "city": "New Delhi",
+    "desc": "Return to Safdarjung for a grand farewell breakfast. Your royal journey draws to a close.",
+    "icon": "🚉",
+    "color": "#c48b36",
+    "img": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+    "side": "left"
+  }
+]

@@ -21,7 +21,7 @@ export default function Awards() {
       <AwardsShowcase />
       <GuestChoiceSection />
       <LegacyTimeline />
-      <AwardStats />
+      {/* <AwardStats /> */}
       {/* <section className="py-24 container mx-auto px-6 max-w-5xl">
         <SectionHeading title="Our Accolades" subtitle="Celebrated Worldwide" />
         <p className="text-gray-400 text-lg leading-relaxed text-center max-w-3xl mx-auto">

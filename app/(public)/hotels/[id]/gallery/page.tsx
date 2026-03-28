@@ -6,10 +6,11 @@ import { getHotel } from "@/lib/db";
 export default async function HotelGalleryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const hotel = await getHotel(id);
+  console.log("🚀 ~ HotelGalleryPage ~ hotel:", hotel)
   
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
-  const gallery = hotel.gallery || [];
+  const gallery = hotel?.gallery || [];
 
   return (
     <HotelSubPage

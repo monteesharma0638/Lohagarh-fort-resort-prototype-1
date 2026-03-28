@@ -176,7 +176,7 @@ export default async function HotelOverview({
                       {hotel.rooms.map((ele: any, idx: number, arr: any) => {
                         // This creates a repeating pattern:
                         // Item 2 is tall, then Item 4 is tall, then Item 6 is tall, etc.
-                        const isTall = arr.length > 3 ? (idx % 4 === 1 || idx % 4 === 3): true;
+                        const isTall = arr.length > 2 ? (idx % 4 === 1 || idx % 4 === 3): true;
                         console.log("🚀 ~ HotelOverview ~ isTall:", isTall);
                         
                         return (

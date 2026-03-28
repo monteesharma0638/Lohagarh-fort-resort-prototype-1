@@ -1,6 +1,5 @@
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 
 export default function page() {
   return (
@@ -65,7 +64,7 @@ export default function page() {
             </ul>
         </div>
       </section>
-      <section className="max-w-6xl mx-auto">
+      {/* <section className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12">
           {[
             "Royal Suites",
@@ -88,7 +87,7 @@ export default function page() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Decorative Header */}

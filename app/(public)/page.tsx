@@ -107,7 +107,7 @@ export default async function Home() {
             </div>
             <div className="lg:w-1/2 relative">
               <div className="aspect-[4/5] bg-secondary/20 border border-primary/10 p-4">
-                <RevealImage src="/images/mahalkhas/front.jpg" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Concierge" />
+                <RevealImage src="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/banner.jpeg" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Concierge" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             </div>

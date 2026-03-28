@@ -1,6 +1,5 @@
 "use client";
 
-import { title } from "process";
 import { useState } from "react";
 
 type Testimonial = {
@@ -200,6 +199,48 @@ const lohagarhDesertResort: Testimonial[] = [
   },
 ];
 
+const townhall: Testimonial[] = [
+  {
+    name: "Mr. Lalit Shah",
+    date: "December 29, 2019",
+    message: "Very good and quiet environment, classic ambiance.",
+  },
+  {
+    name: "Mr. Mandakini Kumari Singh",
+    date: "December 13, 2019",
+    message: "Pleasure staying with Karni Bhawan Palace.",
+  },
+  {
+    name: "Ms. Latha R.",
+    date: "November 30, 2019",
+    message: "Wanted to help !! best service I've seen in Rajasthan.",
+  },
+  {
+    name: "Brig. Lehti Lekha MK (Retd.)",
+    date: "November 21, 2019",
+    message:
+      "Excellent stay, polite staff, pleasant and serene atmosphere. I had a comfortable stay.",
+  },
+  {
+    name: "Ms. Maria Ivey",
+    date: "November 06, 2019",
+    message:
+      "Beautiful surroundings and architecture with a vintage charm.",
+  },
+  {
+    name: "Ms. Christiane Dielite",
+    date: "November 02, 2019",
+    message:
+      "Wonderful attention to the small things that make travelling special.",
+  },
+  {
+    name: "Sloan",
+    date: "September 26, 2017",
+    message:
+      "It was like stepping back in time. A great vintage experience.",
+  },
+];
+
 const testimonials = {
     lohagarhFortResort: {
         title: "Lohagarh Fort Resort, Jaipur",
@@ -220,6 +261,10 @@ const testimonials = {
     lohagarhDesertResort: {
         title: "Lohagarh Desert Resort, Jaiselmer",
         data: lohagarhDesertResort
+    },
+    townhall: {
+      title: "Townhall Restaurant & Events",
+      data: townhall
     }
 }
 

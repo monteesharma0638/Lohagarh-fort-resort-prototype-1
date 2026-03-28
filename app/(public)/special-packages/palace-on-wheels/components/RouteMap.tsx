@@ -2,76 +2,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import itinerary from "@/data/train-iternary.json";
 
-/* ══════════════════════
-   TRAIN SVG
-══════════════════════ */
-const TrainSVG = ({ width = 220 }) => (
-  <svg width={width} viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block", overflow: "visible" }}>
-    {/* Carriage 2 (tail) */}
-    <rect x="4" y="18" width="80" height="34" rx="5" fill="#1a120a" stroke="#c48b36" strokeWidth="1.2"/>
-    <rect x="10" y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.65"/>
-    <rect x="30" y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.65"/>
-    <rect x="50" y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.6"/>
-    <rect x="70" y="23" width="9"  height="10" rx="2" fill="#f0c060" opacity="0.55"/>
-    <rect x="6"  y="38" width="76" height="2.5" rx="1" fill="#c48b36" opacity="0.5"/>
-    <circle cx="20" cy="54" r="8" fill="#111" stroke="#c48b36" strokeWidth="1.8"/>
-    <circle cx="20" cy="54" r="4" fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <circle cx="68" cy="54" r="8" fill="#111" stroke="#c48b36" strokeWidth="1.8"/>
-    <circle cx="68" cy="54" r="4" fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <rect x="80" y="34" width="10" height="4" rx="1" fill="#c48b36" opacity="0.7"/>
-    {/* Carriage 1 */}
-    <rect x="88" y="18" width="78" height="34" rx="5" fill="#1a120a" stroke="#c48b36" strokeWidth="1.2"/>
-    <rect x="94"  y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.7"/>
-    <rect x="114" y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.7"/>
-    <rect x="134" y="23" width="14" height="10" rx="2" fill="#f0c060" opacity="0.65"/>
-    <rect x="154" y="23" width="8"  height="10" rx="2" fill="#f0c060" opacity="0.6"/>
-    <rect x="90"  y="38" width="74" height="2.5" rx="1" fill="#c48b36" opacity="0.55"/>
-    <circle cx="104" cy="54" r="8" fill="#111" stroke="#c48b36" strokeWidth="1.8"/>
-    <circle cx="104" cy="54" r="4" fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <circle cx="150" cy="54" r="8" fill="#111" stroke="#c48b36" strokeWidth="1.8"/>
-    <circle cx="150" cy="54" r="4" fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <rect x="164" y="34" width="8" height="4" rx="1" fill="#c48b36" opacity="0.7"/>
-    {/* Engine */}
-    <rect x="170" y="14" width="100" height="38" rx="6" fill="#1a120a" stroke="#c48b36" strokeWidth="1.5"/>
-    <rect x="238" y="6"  width="32" height="46" rx="5" fill="#221508" stroke="#c48b36" strokeWidth="1.5"/>
-    <rect x="242" y="11" width="12" height="10" rx="2" fill="#f0c060" opacity="0.85"/>
-    <ellipse cx="271" cy="35" rx="4" ry="4" fill="#ffe066" opacity="0.9"/>
-    <ellipse cx="271" cy="35" rx="8" ry="8" fill="#ffe066" opacity="0.15"/>
-    <rect x="180" y="4"  width="10" height="12" rx="3" fill="#2a1a08" stroke="#c48b36" strokeWidth="1"/>
-    <rect x="172" y="18" width="64" height="3"  rx="1" fill="#c48b36" opacity="0.5"/>
-    <rect x="172" y="42" width="64" height="3"  rx="1" fill="#c48b36" opacity="0.5"/>
-    <circle cx="190" cy="54" r="10" fill="#111" stroke="#c48b36" strokeWidth="2"/>
-    <circle cx="190" cy="54" r="5"  fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <circle cx="218" cy="54" r="10" fill="#111" stroke="#c48b36" strokeWidth="2"/>
-    <circle cx="218" cy="54" r="5"  fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <circle cx="250" cy="54" r="8"  fill="#111" stroke="#c48b36" strokeWidth="2"/>
-    <circle cx="250" cy="54" r="4"  fill="#1e1408" stroke="#c48b36" strokeWidth="1"/>
-    <circle cx="268" cy="54" r="6"  fill="#111" stroke="#c48b36" strokeWidth="1.5"/>
-    <line x1="190" y1="54" x2="250" y2="54" stroke="#c48b36" strokeWidth="2" opacity="0.7"/>
-    <polygon points="270,52 280,58 270,58" fill="#c48b36" opacity="0.8"/>
-    {/* Shadow */}
-    <ellipse cx="140" cy="66" rx="128" ry="4" fill="#000" opacity="0.3"/>
-  </svg>
-);
-
-/* ══════════════════════
-   ITINERARY
-══════════════════════ */
-const itinerary = [
-  { day:"Day 1", city:"New Delhi",      desc:"Ceremonial welcome at Safdarjung Station. Begin your royal odyssey amidst the grandeur of India's capital.",       icon:"🏛️", color:"#c48b36", img:"https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80", side:"right" },
-  { day:"Day 2", city:"Jaipur",          desc:"The Pink City — visit the majestic Hawa Mahal and the fortress of Amber, draped in rose-hued splendour.",          icon:"🐘", color:"#e07b54", img:"https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80", side:"left"  },
-  { day:"Day 3", city:"Sawai Madhopur",  desc:"Wild safari through tiger territory and the ancient Chittorgarh Fort rising from the Rajasthani plains.",          icon:"🐅", color:"#7a9e5f", img:"https://images.unsplash.com/photo-1561948955-570b270e7c36?w=800&q=80", side:"right" },
-  { day:"Day 4", city:"Udaipur",         desc:"The City of Lakes — drift across Lake Pichola, past the legendary Jag Niwas floating palace.",                    icon:"🛶", color:"#5f8fae", img:"https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&q=80", side:"left"  },
-  { day:"Day 5", city:"Jaisalmer",       desc:"Golden City at dusk — camel silhouettes against amber skies over the Sam Sand Dunes.",                            icon:"🏜️", color:"#d4a83a", img:"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80", side:"right" },
-  { day:"Day 6", city:"Jodhpur",         desc:"The Blue City — Mehrangarh Fort commands the horizon above a sea of cobalt rooftops.",                            icon:"🏰", color:"#4e7db5", img:"https://images.unsplash.com/photo-1581820624879-1a0e49a90ef5?w=800&q=80", side:"left"  },
-  { day:"Day 7", city:"Agra",            desc:"Bird sanctuary serenity and the Taj Mahal at dawn — a monument to eternal devotion.",                             icon:"🕊️", color:"#c4a882", img:"https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80", side:"right" },
-  { day:"Day 8", city:"New Delhi",       desc:"Return to Safdarjung for a grand farewell breakfast. Your royal journey draws to a close.",                        icon:"🚉", color:"#c48b36", img:"https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80", side:"left"  },
-];
-
-/* ══════════════════════
-   useMediaQuery
-══════════════════════ */
 function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
   useEffect(() => {
@@ -84,9 +16,6 @@ function useMediaQuery(query: string): boolean {
   return matches;
 }
 
-/* ══════════════════════
-   TRACK SVG
-══════════════════════ */
 const TrackLine = ({ leftEdge }: { leftEdge: boolean }) => (
   <svg
     style={{
@@ -109,19 +38,6 @@ const TrackLine = ({ leftEdge }: { leftEdge: boolean }) => (
   </svg>
 );
 
-/* ══════════════════════════════════════════════
-   THE TRAIN — position:fixed, clamped to section
-
-   How it works:
-   1. We use an IntersectionObserver on the section to know when
-      the section is in view → show/hide the fixed train.
-   2. We use getBoundingClientRect on scroll to compute exact
-      progress (0→1) of the section through the viewport.
-   3. That progress drives the train's top position from
-      ~8vh to ~88vh via a spring.
-
-   This is 100% reliable — no sticky quirks, no broken transforms.
-══════════════════════════════════════════════ */
 const FixedTrain = ({ sectionRef, leftEdge }: any) => {
   const [visible, setVisible] = useState(false);
 
@@ -133,7 +49,7 @@ const FixedTrain = ({ sectionRef, leftEdge }: any) => {
       ([entry]) => setVisible(entry.isIntersecting),
       {
         root: null,
-        rootMargin: "-100px 0px -100px 0px",
+        rootMargin: "-50% 0px -50% 0px"
       }
     );
 
@@ -143,7 +59,7 @@ const FixedTrain = ({ sectionRef, leftEdge }: any) => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
   // ✅ Responsive vertical movement
@@ -153,12 +69,12 @@ const FixedTrain = ({ sectionRef, leftEdge }: any) => {
     ["12vh", "88vh"] // more natural for tall screens
   );
 
-  const trainWidth = leftEdge ? 80 : 120; // mobile : desktop
+  const trainWidth = leftEdge ? 60 : 60; // mobile : desktop
 
 
   // ✅ Correct alignment with track
   const leftStyle = leftEdge
-    ? -5 // mobile (left track)
+    ? 15 // mobile (left track)
     : "50%"; // desktop (center track)
 
   if (!visible) return null;
@@ -187,9 +103,7 @@ const FixedTrain = ({ sectionRef, leftEdge }: any) => {
     </motion.div>
   );
 };
-/* ══════════════════════
-   CARD INNER
-══════════════════════ */
+
 const CardInner = ({ item, imgHeight = "h-44", titleSize = "text-2xl", padding = "p-5" }: { item: typeof itinerary[0]; imgHeight?: string; titleSize?: string; padding?: string }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 90%", "end 20%"] });
@@ -220,9 +134,6 @@ const CardInner = ({ item, imgHeight = "h-44", titleSize = "text-2xl", padding =
   );
 };
 
-/* ══════════════════════
-   STATION DOT
-══════════════════════ */
 const StationDot = ({ isLeft, mobile }: { isLeft?: boolean; mobile?: boolean }) => {
   if (mobile) return (
     <>
@@ -241,7 +152,6 @@ const StationDot = ({ isLeft, mobile }: { isLeft?: boolean; mobile?: boolean }) 
   );
 };
 
-/* ── Mobile Card ── */
 const MobileCard = ({ item }: { item: typeof itinerary[0] }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target:ref, offset:["start 88%","start 28%"] });
@@ -255,7 +165,6 @@ const MobileCard = ({ item }: { item: typeof itinerary[0] }) => {
   );
 };
 
-/* ── Tablet Card ── */
 const TabletCard = ({ item }: { item: typeof itinerary[0] }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target:ref, offset:["start 88%","start 25%"] });
@@ -269,7 +178,6 @@ const TabletCard = ({ item }: { item: typeof itinerary[0] }) => {
   );
 };
 
-/* ── Desktop Card ── */
 const DesktopCard = ({ item }: { item: typeof itinerary[0] }) => {
   const ref = useRef(null);
   const isLeft = item.side === "left";
@@ -288,9 +196,6 @@ const DesktopCard = ({ item }: { item: typeof itinerary[0] }) => {
   );
 };
 
-/* ══════════════════════
-   ROOT
-══════════════════════ */
 const RouteMap = () => {
   const sectionRef = useRef(null);
   const isMobile   = useMediaQuery("(max-width: 639px)");
@@ -298,7 +203,7 @@ const RouteMap = () => {
   const leftEdge   = isMobile || isTablet;
 
   return (
-    <section ref={sectionRef} style={{ position:"relative", fontFamily:"'Georgia', serif", overflowX:"hidden" }}>
+    <section  style={{ position:"relative", fontFamily:"'Georgia', serif", overflowX:"hidden" }}>
 
       {/* Train */}
       <div style={{
@@ -334,7 +239,7 @@ const RouteMap = () => {
       </div>
 
       {/* ── JOURNEY ── */}
-      <div style={{ position:"relative", zIndex:10 }}>
+      <div ref={sectionRef} style={{ position:"relative", zIndex:10 }}>
         <TrackLine leftEdge={leftEdge}/>
 
         {itinerary.map((item, i) => (

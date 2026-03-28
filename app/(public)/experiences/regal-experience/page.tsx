@@ -89,8 +89,8 @@ export default function RegalExperience() {
               "Heritage & Nature Trails",
               "Traditional Art Workshops",
               "Destination Weddings",
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-3">
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full shrink-0" />
                 {item}
               </li>
@@ -270,8 +270,8 @@ export default function RegalExperience() {
               { name: "Sheesh Mahal", desc: "Casual daytime dining with views over manicured gardens and heritage architecture." },
               { name: "Gulab Mahal", desc: "Contemporary grills and light fare by the infinity pool, open all day." },
               { name: "Kothi Restaurant", desc: "Exclusive tasting menus for up to 12 guests in a fully private setting." },
-            ].map((v) => ( 
-              <div key={v.name} className="border-l-2 border-primary pl-5 py-1">
+            ].map((v, i) => ( 
+              <div key={i} className="border-l-2 border-primary pl-5 py-1">
                 <h4 className="font-serif text-lg text-foreground mb-1">{v.name}</h4>
                 <p className="text-foreground/60 text-sm leading-relaxed">{v.desc}</p>
               </div>
