@@ -5,6 +5,9 @@ import PalaceDetails from "./components/PalaceDetails";
 import { CLOUDFLARE_DEV_URL } from "@/lib/constants";
 import Hero from "@/components/Hero";
 import PalaceGallerySection from "./components/PalaceGallerySection";
+import RouteExperience from "./components/RouteExperience";
+import TrainJourney from "./components/TrainJourney";
+import TrainRouteMap from "./components/TrainRouteMap";
 
 export default function PalaceOnWheels() {
 
@@ -30,7 +33,10 @@ export default function PalaceOnWheels() {
           </MotionDiv>
         </div>
       </Hero>
-       <RouteMap />
+      {/* <TrainJourney /> */}
+       {/* <RouteMap /> */}
+       <TrainRouteMap />
+       {/* <RouteExperience /> */}
        <PalaceGallerySection />
        <PalaceDetails />
     </div>
