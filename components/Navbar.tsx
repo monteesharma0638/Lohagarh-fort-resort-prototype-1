@@ -143,6 +143,10 @@ export default function Navbar({noTopHeader}: {noTopHeader?: boolean}) {
   if(segments?.length >= 2 && segments?.[0] === "hotels") {
     noTopHeader = true;
   }
+  let powLogo = false;
+  if(segments?.[1] === "palace-on-wheels") {
+    powLogo = true;
+  }
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -222,20 +226,27 @@ useEffect(() => {
         <Link
           href="/"
           onClick={() => setActiveSubmenu(null)}
-          className="flex flex-col items-center group"
+          className="flex flex-row items-center space-x-5 group"
         >
-          {/* <span className={cn(
-            "font-serif text-2xl md:text-3xl tracking-[0.3em] font-bold transition-all",
-            isScrolled || activeSubmenu ? "text-primary" : "text-white"
-          )}>
-            LOHAGARH
-          </span>
-          <span className={cn(
-            "text-[0.5rem] tracking-[0.6em] uppercase font-bold mt-1 transition-all",
-            isScrolled || activeSubmenu ? "text-primary/70" : "text-white/80"
-          )}>
-            ROYAL HERITAGE
-          </span> */}
+          {
+            powLogo?
+            <>
+              <Image 
+                src="/logo/pow-logo.png" 
+                alt="Lohagarh Group Of Companies"
+                width={50}
+                height={50} 
+                priority
+              />
+              <Image 
+                src="/logo/icon_lgf.png" 
+                alt="Lohagarh Group Of Companies"
+                width={50}
+                height={50} 
+                priority
+              />
+            </> 
+            :
           <Image 
             src="/logo/website-logo.png" 
             alt="Lohagarh Group Of Companies"
@@ -243,6 +254,7 @@ useEffect(() => {
             height={50} 
             priority
           />
+          }
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
