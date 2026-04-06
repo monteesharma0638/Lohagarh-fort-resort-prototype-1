@@ -4,19 +4,22 @@ import { WeddingGallery } from "@/sections/WeddingGallery";
 import { WeddingContent } from "@/sections/WeddingContent";
 import { WeddingFAQ } from "@/sections/WeddingFAQ";
 import Image from "next/image";
+import Hero from "@/components/Hero";
 
 export default function RegalWeddings() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="relative h-[100vh] flex items-center justify-center bg-secondary/30">
-        <Image src="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/Celebration.jpg" alt="Royal Wedding" fill style={{objectFit: "cover"}} />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 text-center text-white px-4">
-          <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="block text-sm tracking-[0.3em] uppercase mb-4 text-white">Experiences</span>
-            <h1 className="text-5xl md:text-8xl font-serif">Regal Weddings</h1>
-          </MotionDiv>
-        </div>
+        {/* <Image src="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/Celebration.jpg" alt="Royal Wedding" fill style={{objectFit: "cover"}} /> */}
+        <Hero localUri="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/hero-royal-wedding.mp4" imageUrl="https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/Celebration.jpg" altText="Royal Wedding">
+          <div className="absolute inset-0" />
+          <div className="relative z-10 text-center text-white px-4">
+            <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <span className="block text-sm tracking-[0.3em] uppercase mb-4 text-white">Experiences</span>
+              <h1 className="text-5xl md:text-8xl font-serif">Regal Weddings</h1>
+            </MotionDiv>
+          </div>
+        </Hero>
       </div>
       <section className="py-24 container mx-auto px-6 max-w-7xl">
         <SectionHeading title="" subtitle="Royal Weddings" />

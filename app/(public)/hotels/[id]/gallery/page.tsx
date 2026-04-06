@@ -6,7 +6,6 @@ import { getHotel } from "@/lib/db";
 export default async function HotelGalleryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const hotel = await getHotel(id);
-  console.log("🚀 ~ HotelGalleryPage ~ hotel:", hotel)
   
   if (!hotel) return <div className="min-h-screen flex items-center justify-center">Hotel not found</div>;
 
@@ -23,7 +22,7 @@ export default async function HotelGalleryPage({ params }: { params: Promise<{ i
       hasWedding={hotel.hasWedding}
       hasSpa={!!hotel.spa}
     >
-      <div>
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-serif text-foreground mb-6">Photo Gallery</h2>
         <p className="text-foreground/70 text-lg leading-relaxed mb-12">
           Explore the beauty and grandeur of {hotel.name} through our curated photo gallery.

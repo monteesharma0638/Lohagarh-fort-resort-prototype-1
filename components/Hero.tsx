@@ -7,12 +7,14 @@ import { useState, useRef } from "react";
 
 interface IHero {
   videoUrl?: string;
+  localUri?: string;
   imageUrl?: string;
   restrictVideoOnMobile?: boolean;
   children?: React.ReactNode;
+  altText?: string;
 }
 
-export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobile = false}: IHero) {
+export default function Hero({videoUrl, imageUrl, localUri = "https://res.cloudinary.com/drayl5ppi/video/upload/v1773225725/lohagarh/Mahal_Khas_Website_Video_fzmu7h.mp4", altText = "Luxury Palace", children, restrictVideoOnMobile = false}: IHero) {
   const { scrollY } = useScroll();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -51,7 +53,7 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
         {!videoLoaded && (
           <Image
             src={imageUrl ?? "/lohagarhfort/room1.jpg"}
-            alt="Luxury Palace"
+            alt={altText}
             fill
             priority
             className="object-cover"
@@ -67,7 +69,7 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
               allow="autoplay; encrypted-media"
               className="w-full h-full"
               style={{ border: 'none' }}
-              title="Background Video"
+              title={altText}
             />
             </div>:
             <video
@@ -78,7 +80,7 @@ export default function Hero({videoUrl, imageUrl, children, restrictVideoOnMobil
               className="absolute inset-0 w-full h-full object-cover"
               onCanPlay={() => setVideoLoaded(true)}
             >
-              <source src={"https://res.cloudinary.com/drayl5ppi/video/upload/v1773225725/lohagarh/Mahal_Khas_Website_Video_fzmu7h.mp4"} type="video/webm" />
+              <source src={localUri} type="video/webm" />
             </video>
           )
         }

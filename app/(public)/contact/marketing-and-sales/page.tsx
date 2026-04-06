@@ -2,16 +2,6 @@ import React from 'react';
 import { Phone, Mail, MapPin, Smartphone } from 'lucide-react'; // Using lucide-react for icons
 import { getPageDataByRoute } from '@/lib/db';
 
-const contactOffices = [
-  {
-    title: "Mumbai Sales Office",
-    location: "Mumbai",
-    phones: ["+91 22 23535648", "+91 22 23514649"],
-    fax: "+91 22 23526348",
-    email: "sales.mumbai@hrhhotels.com"
-  }
-];
-
 const SalesMarketing = async () => {
   const pageData = await getPageDataByRoute("/contact/marketing-and-sales");
 

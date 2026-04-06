@@ -11,6 +11,7 @@ interface HotelSubPageProps {
   hotelId: string;
   pageTitle: string;
   pageSubtitle?: string;
+  hero?: boolean;
   hasWedding?: boolean;
   hasSpa?: boolean;
   children: React.ReactNode;
@@ -25,12 +26,12 @@ export default function HotelSubPage({
   pageSubtitle,
   hasWedding = false,
   hasSpa = false,
-  children,
+  children
 }: HotelSubPageProps) {
   
   return (
     <div className="min-h-screen bg-background">
-      <div className="relative h-[70vh] min-h-[350px]">
+      <div className={`relative h-[60vh] min-h-[350px]`}>
         <Image src={hotelImage} alt={hotelName} className="object-cover" fill priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
         <div className="absolute top-28 left-0 right-0 px-8 md:px-16">
@@ -44,7 +45,7 @@ export default function HotelSubPage({
             />
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+        <div className={`absolute bottom-0 left-0 right-0 p-8 md:p-16`}>
           <div className="container mx-auto">
             <MotionDiv
               initial={{ opacity: 0, y: 20 }}
@@ -63,7 +64,7 @@ export default function HotelSubPage({
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto px-4 py-12">
         <div className="flex gap-10 items-start">
           <HotelNavbar hotelId={hotelId} hotelName={hotelName} hasWedding={hasWedding} hasSpa={hasSpa} />
           <div className="flex-1 min-w-0">

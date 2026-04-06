@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import PeopleSVG from "./trainrouteassets/PeopleSVG";
 import { STATIONS, TAG_COLORS } from "./trainrouteassets/constant_assets";
 import Image from "next/image";
 
@@ -13,16 +12,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ─── SCROLL BUDGET ────────────────────────────────────────────────────────────
 // Total = 48000px  |  8 stations × 6000px each
-const TOTAL_SCROLL = 12000;
+const TOTAL_SCROLL = 8000;
 const STATIONS_COUNT = 8;
 
 const T = {
-  ARRIVED: 0.15, // train arrives          — 15% of station scroll
-  DOOR_OPEN: 0.22, // door opens             —  7%
-  PEOPLE_OUT: 0.3, // people walk out        —  8%
-  PEOPLE_IN: 0.7, // cards done, board      — 40% for cards (was 62%)
-  DOOR_CLOSED: 0.8, // door closes            — 10%
-  DEPARTED: 0.92, // tracks move, departs   — 12%
+  ARRIVED: 0.15, // train enters
+  CARDS_END: 0.8, // cards reveal window
+  DEPARTED: 0.92, // train exits
 };
 
 // ─── PROGRESS DOTS ────────────────────────────────────────────────────────────
@@ -46,9 +42,12 @@ const ProgressDots = ({ total, active }: { total: number; active: number }) => (
 // ─── LOCATION SLIDER ─────────────────────────────────────────────────────────
 // FIX: uses height: "100%" so it fills its flex wrapper entirely (no blank space)
 const LocationSlider = ({ cards, visibleCount, stationKey }: any) => {
- const activeCard = useMemo(() => Math.min(Math.max(0, visibleCount - 1), cards.length - 1), [visibleCount, cards]);
- const card = cards[activeCard];
- if (!card) return null;
+  const activeCard = useMemo(
+    () => Math.min(Math.max(0, visibleCount - 1), cards.length - 1),
+    [visibleCount, cards],
+  );
+  const card = cards[activeCard];
+  if (!card) return null;
 
   return (
     <div
@@ -61,13 +60,13 @@ const LocationSlider = ({ cards, visibleCount, stationKey }: any) => {
         background: "#1a1208",
       }}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <motion.div
-          key={`${stationKey}-${visibleCount}`}
-          initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0.6 }}
-          animate={{ clipPath: "inset(0 0% 0 0)", opacity: 1 }}
-          exit={{ clipPath: "inset(0 0 0 100%)", opacity: 0 }}
-          transition={{ duration: 0.25, ease: [0.76, 0, 0.24, 1] }}
+          key={`${stationKey}-${activeCard}`}
+initial={{ x: "100%" }}
+animate={{ x: "0%" }}
+exit={{ x: "-100%" }}
+transition={{ duration: 0.12, ease: "easeOut" }}
           style={{ position: "absolute", inset: 0, display: "flex" }}
         >
           {/* Gradient background placeholder */}
@@ -82,7 +81,13 @@ const LocationSlider = ({ cards, visibleCount, stationKey }: any) => {
               )`,
             }}
           >
-            <Image src={card.img} className="object-cover" alt={card.title} fill sizes="(max-width:768px) 100vw, 33vw" />
+            <Image
+              src={card.img}
+              className="object-cover"
+              alt={card.title}
+              fill
+              sizes="(max-width:768px) 100vw, 33vw"
+            />
             <div
               style={{
                 position: "absolute",
@@ -132,7 +137,7 @@ const LocationSlider = ({ cards, visibleCount, stationKey }: any) => {
                 marginBottom: 12,
               }}
             >
-              {cards.tag}
+              {card.tag}
             </motion.span>
 
             <motion.h2
@@ -231,6 +236,29 @@ const LocationSlider = ({ cards, visibleCount, stationKey }: any) => {
   );
 };
 
+const stationWeights = STATIONS.map((s, i) => {
+  const hasCards = (s.cards?.length ?? 0) > 1;
+
+  // first & last station → very small weight
+  if (i === 0 || i === STATIONS.length - 1) {
+    return 0.4;
+  }
+
+  return hasCards ? 1 : 0.25;
+});
+
+const totalWeight = stationWeights.reduce((a, b) => a + b, 0);
+
+const normalized = stationWeights.map((w) => w / totalWeight);
+
+const ranges = normalized.map((w, i) => {
+  const start = normalized.slice(0, i).reduce((a, b) => a + b, 0);
+  return {
+    start,
+    end: start + w,
+  };
+});
+
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 export default function InvertedTrainJourney() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -238,11 +266,9 @@ export default function InvertedTrainJourney() {
   const trainWrapRef = useRef<HTMLDivElement>(null);
   const journeyDoneRef = useRef(false);
   const cardCountRef = useRef(8);
+  const visibleCardsRef = useRef(0);
 
   const [activeIdx, setActiveIdx] = useState(0);
-  const [doorOpen, setDoorOpen] = useState(false);
-  const [peoplePhase, setPeoplePhase] = useState("hidden");
-  // "hidden" | "exiting" | "outside" | "boarding" | "gone"
   const [visibleCards, setVisibleCards] = useState(0);
   const [showEnd, setShowEnd] = useState(false);
   const [trainExited, setTrainExited] = useState(false);
@@ -258,22 +284,29 @@ export default function InvertedTrainJourney() {
       if (journeyDoneRef.current) return;
 
       const totalProgress = self.progress;
-      const stIdx = Math.min(
-        Math.floor(totalProgress * STATIONS_COUNT),
-        STATIONS_COUNT - 1,
-      );
-      const raw = totalProgress * STATIONS_COUNT;
-      const spLocal = raw - Math.floor(raw); // 0→1 within current station
+      let stIdx = 0;
+      let spLocal = 0;
+
+      for (let i = 0; i < ranges.length; i++) {
+        if (totalProgress >= ranges[i].start && totalProgress < ranges[i].end) {
+          stIdx = i;
+
+          const localProgress =
+            (totalProgress - ranges[i].start) /
+            (ranges[i].end - ranges[i].start);
+
+          spLocal = Math.min(Math.max(localProgress, 0), 1);
+          break;
+        }
+      }
 
       // ── Reset on new station ──────────────────────────────────────────────
       if (stIdx !== stateRef.current?.activeIdx) {
         stateRef.current = { activeIdx: stIdx };
         setActiveIdx(stIdx);
-        cardCountRef.current = STATIONS[stIdx]?.cards?.length;
-        console.log("🚀 ~ InvertedTrainJourney ~ STATIONS[stIdx]?.cards?.length:", STATIONS[stIdx]?.cards?.length)
+        cardCountRef.current = STATIONS[stIdx]?.cards?.length ?? 0;
+        visibleCardsRef.current = 0;
         setTrainX(110);
-        setDoorOpen(false);
-        setPeoplePhase("hidden");
         setVisibleCards(0);
         setTrainExited(false);
         setShowEnd(false);
@@ -289,59 +322,66 @@ export default function InvertedTrainJourney() {
         setTrainExited(true);
         setShowEnd(true);
         setTrackMoving(false);
-        ScrollTrigger.getAll().forEach((st) => st.kill());
+        const containerTop =
+          containerRef.current?.getBoundingClientRect().height ?? 0;
+        ScrollTrigger.getAll().forEach((st) => st.kill(true));
+        document.querySelectorAll(".gsap-pin-spacer").forEach((el) => {
+          el.parentNode?.removeChild(el);
+        });
+        window.scrollTo({ top: containerTop, behavior: "instant" });
         return;
       }
 
-      // ── Door ─────────────────────────────────────────────────────────────
-      setDoorOpen(spLocal >= T.ARRIVED && spLocal < T.DOOR_CLOSED);
-
-      // ── People: ONLY visible at station 0 (departure) and station 7 (arrival)
-      // Hidden for all intermediate stops.
-      if (stIdx === 0 || stIdx === STATIONS_COUNT - 1) {
-        if (spLocal < T.ARRIVED) setPeoplePhase("hidden");
-        else if (spLocal < T.DOOR_OPEN) setPeoplePhase("hidden");
-        else if (spLocal < T.PEOPLE_OUT) setPeoplePhase("exiting");
-        else if (spLocal < T.PEOPLE_IN) setPeoplePhase("outside");
-        else if (spLocal < T.DOOR_CLOSED) setPeoplePhase("boarding");
-        else setPeoplePhase("gone");
-      } else {
-        setPeoplePhase("hidden");
-      }
-
       if (spLocal < T.ARRIVED) {
+        // entering
         setTrainX((1 - spLocal / T.ARRIVED) * 110);
+      } else if (spLocal >= T.DEPARTED) {
+        // exiting
+        const exitProgress = (spLocal - T.DEPARTED) / (1 - T.DEPARTED);
+        setTrainX(-exitProgress * 110);
       } else {
+        // stopped at station
         setTrainX(0);
       }
 
-      // ── Cards (one per scroll chunk) ──────────────────────────────────────
-      const cardWindow = T.PEOPLE_IN - T.PEOPLE_OUT;
-      //   const cardStep   = cardWindow / Math.max(1, station.cards.length);
-        const totalCards = cardCountRef.current;
-        const cardStep = cardWindow / Math.max(1, totalCards);
-        if (spLocal < T.PEOPLE_OUT) {
-            setVisibleCards(0);
-        } else if (spLocal >= T.PEOPLE_IN) {
-            setVisibleCards(totalCards);             // ← always uses ref
-        } else {
-            const rawCount = (spLocal - T.PEOPLE_OUT) / cardStep;
-            console.log(Math.min(Math.max(0, Math.floor(rawCount)), totalCards));
-            setVisibleCards(Math.min(Math.max(0, Math.floor(rawCount)), totalCards));
-        }
+      const currentCardCount = STATIONS[stIdx]?.cards?.length ?? 0;
+
+      let newVisibleCards = 0;
+
+      if (spLocal < T.ARRIVED) {
+        newVisibleCards = 0;
+      } else if (spLocal >= T.CARDS_END) {
+        newVisibleCards = currentCardCount;
+      } else {
+        const progress = (spLocal - T.ARRIVED) / (T.CARDS_END - T.ARRIVED);
+        newVisibleCards = Math.floor(progress * currentCardCount);
+      }
+
+      // Only update state if value actually changed — prevents unnecessary re-renders
+      if (newVisibleCards !== visibleCardsRef.current) {
+        visibleCardsRef.current = newVisibleCards;
+        setVisibleCards(newVisibleCards);
+      }
     });
   }, []);
 
   // ── Skip Tour: kill pin, jump to end screen ─────────────────────────────────
   const handleSkip = useCallback(() => {
-    ScrollTrigger.getAll().forEach((st) => st.kill());
+    const containerTop =
+      containerRef.current?.getBoundingClientRect().height ?? 0;
+    ScrollTrigger.getAll().forEach((st) => st.kill(true));
+    document.querySelectorAll(".gsap-pin-spacer").forEach((el) => {
+      el.parentNode?.removeChild(el);
+    });
+    window.scrollTo({ top: containerTop, behavior: "instant" });
+
     journeyDoneRef.current = true;
     setActiveIdx(STATIONS_COUNT - 1);
     setTrainExited(true);
     setShowEnd(true);
     setTrackMoving(false);
     // Scroll back to top so the component (now unpinned) is in view
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
 
   useGSAP(
@@ -357,43 +397,12 @@ export default function InvertedTrainJourney() {
         scrub: 0.8,
         anticipatePin: 1,
         onUpdate: handleUpdate,
-        onLeave: (self) => {
-          self.scroll(self.end);
-        },
       });
     },
     { scope: containerRef },
   );
 
   const station = STATIONS[activeIdx];
-
-  // ─── People position ──────────────────────────────────────────────────────
-  const DOOR_X = "calc(14% + 280px)";
-  const PLATFORM_X = "calc(14% + 420px)";
-
-  let peopleLeft = DOOR_X;
-  let peopleOpacity = 0;
-  let peopleFlipped = false;
-
-  switch (peoplePhase) {
-    case "exiting":
-      peopleLeft = PLATFORM_X;
-      peopleOpacity = 1;
-      peopleFlipped = false;
-      break;
-    case "outside":
-      peopleLeft = PLATFORM_X;
-      peopleOpacity = 1;
-      peopleFlipped = false;
-      break;
-    case "boarding":
-      peopleLeft = DOOR_X;
-      peopleOpacity = 1;
-      peopleFlipped = true;
-      break;
-    default:
-      peopleOpacity = 0;
-  }
 
   return (
     <>
@@ -600,7 +609,7 @@ export default function InvertedTrainJourney() {
         ══════════════════════════════════════════════════════════════════════ */}
         <div
           style={{
-            flex: "0 0 42%",
+            flex: "0 0 16%",
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -621,7 +630,7 @@ export default function InvertedTrainJourney() {
               style={{
                 position: "absolute",
                 left: "14%",
-                bottom: 102,
+                bottom: 150,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -655,7 +664,7 @@ export default function InvertedTrainJourney() {
                 <span
                   style={{
                     width: 1,
-                    height: 12,
+                    height: 20,
                     background: "#c9a84c",
                     opacity: 0.4,
                   }}
@@ -683,21 +692,6 @@ export default function InvertedTrainJourney() {
             </motion.div>
           </AnimatePresence>
 
-          {/* People — animated horizontally between door and platform.
-              Rendered on first stop (idx 0) and last stop (idx 7) only. */}
-          <motion.div
-            animate={{ left: peopleLeft, opacity: peopleOpacity }}
-            transition={{ duration: 1.0, ease: "easeInOut" }}
-            style={{
-              position: "absolute",
-              bottom: 20,
-              zIndex: 25,
-              pointerEvents: "none",
-            }}
-          >
-            <PeopleSVG flipped={peopleFlipped} />
-          </motion.div>
-
           {/* Train — exits left on final station */}
           <motion.div
             ref={trainWrapRef}
@@ -717,10 +711,10 @@ export default function InvertedTrainJourney() {
             }}
           >
             <img
-              src={doorOpen ? "/train-open.png" : "/train-closed.png"}
+              src="/train-closed.png"
               alt="Train"
               style={{
-                width: 680,
+                width: 1200,
                 filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.22))",
                 transform: "scaleX(-1)",
               }}

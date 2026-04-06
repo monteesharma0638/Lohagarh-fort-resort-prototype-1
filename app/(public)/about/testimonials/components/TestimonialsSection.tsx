@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useFetch } from "@/hooks/api";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 type Testimonial = {
   name: string;
@@ -242,34 +243,43 @@ const townhall: Testimonial[] = [
 ];
 
 const testimonials = {
-    lohagarhFortResort: {
+    "lohagarh-fort-resort": {
         title: "Lohagarh Fort Resort, Jaipur",
-        data: lohagarhFortResort
+        id: "lohagarh-fort-resort"
     },
-    lohagarhCorbettResort: {
+    "corbett-resort": {
         title: "Lohagarh Corbett Resort, Nainital",
-        data: lohagarhCorbettResort
+        id: "corbett-resort"
     },
-    mahalKhas: {
+    "mahalkhas": {
         title: "MahalKhas, Bharatpur",
-        data: mahalKhas
+        id: "mahalkhas"
     },
-    kothiLohagarh: {
+    "kothi-lohagarh": {
         title: "Kothi Lohagarh, Jaipur",
-        data: kothiLohagarh
+        id: "kothi-lohagarh"
     },
-    lohagarhDesertResort: {
+    "lohagarh-desert-resort": {
         title: "Lohagarh Desert Resort, Jaiselmer",
-        data: lohagarhDesertResort
+        id: "lohagarh-desert-resort"
     },
-    townhall: {
+    "townhall": {
       title: "Townhall Restaurant & Events",
-      data: townhall
+      id: "townhall"
     }
 }
 
 export default function TestimonialsSection() {
-  const [selectedHotel, setSelectedHotel] = useState<keyof typeof testimonials>("lohagarhFortResort");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  
+  const params = new URLSearchParams(searchParams);
+  const property = params.get("property") as keyof typeof testimonials;
+  const selectedHotel = Object.keys(testimonials).includes(property) ? property : "lohagarh-fort-resort";
+  
+  
+  const { data } = useFetch(`/api/properties/testimonials?id=${selectedHotel}`);
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
@@ -281,7 +291,10 @@ export default function TestimonialsSection() {
       <div className="mb-10">
         <select
           value={selectedHotel}
-          onChange={(e) => setSelectedHotel(e.target.value as any)}
+          onChange={(e) => {
+            params.set("property", e.target.value);
+            router.replace(`${pathname}?${params.toString()}`, {scroll: false});
+          }}
           className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none"
         >
           {
@@ -294,14 +307,14 @@ export default function TestimonialsSection() {
 
       {/* Testimonials */}
       <div className="space-y-6">
-        {testimonials[selectedHotel].data.map((t, i) => (
+        {data?.map?.((t: any, i: any) => (
           <div
             key={i}
             className="border border-amber-200 rounded-lg p-6 bg-white hover:shadow-md transition"
           >
             <h3 className="text-lg font-semibold">{t.name}</h3>
-            <p className="text-sm text-gray-500 mb-3">{t.date}</p>
-            <p className="text-gray-700 leading-relaxed">{t.message}</p>
+            <p className="text-sm text-gray-500 mb-3">{new Date(t.time).toLocaleString()}</p>
+            <p className="text-gray-700 leading-relaxed">{t.description}</p>
           </div>
         ))}
       </div>

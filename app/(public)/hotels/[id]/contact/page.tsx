@@ -2,6 +2,7 @@ import HotelSubPage from "@/components/HotelSubPage";
 import { hasWeddingPages } from "../helpers";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { getHotel } from "@/lib/db";
+import ContactForm from "./components/ContactForm";
 
 export default async function HotelContactPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -18,7 +19,7 @@ export default async function HotelContactPage({ params }: { params: Promise<{ i
       hasWedding={hotel.hasWedding}
       hasSpa={!!hotel.spa}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto">
         <div>
           <h2 className="text-3xl font-serif text-foreground mb-6">Get in Touch</h2>
           <p className="text-foreground/70 mb-8">
@@ -59,15 +60,7 @@ export default async function HotelContactPage({ params }: { params: Promise<{ i
 
         <div>
           <h3 className="text-2xl font-serif text-foreground mb-6">Send a Message</h3>
-          <form className="space-y-4">
-            <input type="text" placeholder="Full Name" className="w-full border border-border bg-background p-3 text-sm outline-none focus:border-primary" />
-            <input type="email" placeholder="Email Address" className="w-full border border-border bg-background p-3 text-sm outline-none focus:border-primary" />
-            <input type="tel" placeholder="Phone Number" className="w-full border border-border bg-background p-3 text-sm outline-none focus:border-primary" />
-            <textarea placeholder="Your Message" rows={5} className="w-full border border-border bg-background p-3 text-sm outline-none focus:border-primary resize-none" />
-            <button type="submit" className="w-full bg-primary text-white py-4 text-sm tracking-widest uppercase font-bold hover:bg-primary/90 transition-colors">
-              Send Message
-            </button>
-          </form>
+          <ContactForm company={`Enquiry from ${hotel.name} contact page`} />
         </div>
       </div>
     </HotelSubPage>
