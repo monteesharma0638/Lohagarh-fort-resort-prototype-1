@@ -3,6 +3,9 @@
 import SectionHeading from "@/components/SectionHeading";
 import MotionDiv from "@/components/MotionDiv";
 import Link from "next/link";
+import { fetchVideoMeta, VideoCard, VideoMeta } from "@/components/ui/video-card";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 // ─── Unsplash image constants ───────────────────────────────────────────────
 const HERO_BG =
@@ -10,9 +13,9 @@ const HERO_BG =
 const WEDDING_HERO =
   "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80";
 const WEDDING_1 =
-  "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80";
+"https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/jal-mandap.jpg";
 const WEDDING_2 =
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80";
+"https://pub-ff97545f109a472fb64184a710a01a80.r2.dev/lohagarh-fort-resort/front-2.jpg";
 const WEDDING_3 =
   "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80";
 
@@ -97,26 +100,29 @@ function ImageTriad({ imgs }: { imgs: [string, string, string] }) {
   return (
     <div className="grid grid-cols-12 gap-3 mt-10 h-[420px]">
       {/* Large left image */}
-      <div className="col-span-7 overflow-hidden">
-        <img
+      <div className="relative col-span-7 overflow-hidden">
+        <Image
           src={imgs[0]}
-          alt=""
+          alt="Section 1"
+          fill
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
         />
       </div>
       {/* Two stacked right images */}
       <div className="col-span-5 flex flex-col gap-3">
-        <div className="flex-1 overflow-hidden">
-          <img
+        <div className="relative flex-1 overflow-hidden">
+          <Image
             src={imgs[1]}
-            alt=""
+            alt="Section 2"
+            fill
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           />
         </div>
-        <div className="flex-1 overflow-hidden">
-          <img
+        <div className="relative flex-1 overflow-hidden">
+          <Image
             src={imgs[2]}
-            alt=""
+            alt="Section 3"
+            fill
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           />
         </div>
@@ -138,6 +144,7 @@ interface PackageSectionProps {
   price: string;
   priceNote: string;
   reverse?: boolean;
+  VideoMeta?: VideoMeta | null;
 }
 
 function PackageSection({
@@ -153,6 +160,7 @@ function PackageSection({
   price,
   priceNote,
   reverse = false,
+  VideoMeta = null,
 }: PackageSectionProps) {
   return (
     <section id={id} className="py-28 border-t border-[#e8dcc8]">
@@ -171,22 +179,34 @@ function PackageSection({
         >
           {/* Image */}
           <div className="w-full lg:w-1/2 overflow-hidden aspect-[4/3] relative">
-            <img
-              src={heroImg}
-              alt={title}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
+            {
+              VideoMeta ? (
+                <VideoCard meta={VideoMeta} index={0} />
+              ): (
+                <img
+                  src={heroImg}
+                  alt={title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              )
+            }
             {/* Gold frame accent */}
-            <div
-              className={`absolute w-32 h-32 border border-[#c9a84c]/40 ${
-                reverse ? "-top-4 -left-4" : "-top-4 -right-4"
-              } pointer-events-none`}
-            />
-            <div
-              className={`absolute w-32 h-32 border border-[#c9a84c]/40 ${
-                reverse ? "-bottom-4 -right-4" : "-bottom-4 -left-4"
-              } pointer-events-none`}
-            />
+            {
+              !VideoMeta && (
+                <>
+                  <div
+                    className={`absolute w-32 h-32 border border-[#c9a84c]/40 ${
+                      reverse ? "-top-4 -left-4" : "-top-4 -right-4"
+                    } pointer-events-none`}
+                  />
+                  <div
+                    className={`absolute w-32 h-32 border border-[#c9a84c]/40 ${
+                      reverse ? "-bottom-4 -right-4" : "-bottom-4 -left-4"
+                    } pointer-events-none`}
+                  />
+                </>
+              )
+            }
           </div>
 
           {/* Text */}
@@ -209,7 +229,7 @@ function PackageSection({
         <ImageTriad imgs={triImages} />
 
         {/* Features */}
-        <FeatureGrid features={features} />
+        {/* <FeatureGrid features={features} /> */}
 
         {/* CTA strip */}
         <div className="mt-16 text-center border border-[#e8dcc8] py-10 px-6 bg-[#f5f0e8]">
@@ -230,10 +250,14 @@ function PackageSection({
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function SpecialPackages() {
+  const [videoMeta, setVideoMeta] = useState<VideoMeta | null>(null);
+
+  useEffect(() => {
+    fetchVideoMeta("3BtuGZHHgV4").then(setVideoMeta);
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#faf8f4] text-[#1a1209]">
-
-      {/* ── HERO ── */}
       <div
         className="relative h-[100vh] flex items-center justify-center"
         style={{
@@ -351,6 +375,7 @@ export default function SpecialPackages() {
         features={weddingFeatures}
         price="From ₹12,00,000"
         priceNote="Per event · Customised quotations available"
+        VideoMeta={videoMeta}
       />
 
       {/* ── EVENTS SECTION ── */}
@@ -360,7 +385,7 @@ export default function SpecialPackages() {
         tag="Package II"
         title="Events"
         subtitle="Where every occasion becomes a story worth telling for generations."
-        description="Corporate conferences, product launches, brand activations, gala dinners — our palace venues transform any professional or celebratory occasion into an extraordinary experience. With state-of-the-art audio-visual infrastructure inside heritage architecture, your event will command authority and leave a lasting impression on every guest who walks through our sandstone arches."
+        description="From intimate birthday celebrations to grand milestone parties—our palace venues transform every personal occasion into an extraordinary experience. With state-of-the-art audio-visual infrastructure set within heritage architecture, your celebration will command attention and leave a lasting impression on every guest who walks through our sandstone arches."
         heroImg={EVENTS_HERO}
         triImages={[EVENTS_1, EVENTS_2, EVENTS_3]}
         features={eventsFeatures}

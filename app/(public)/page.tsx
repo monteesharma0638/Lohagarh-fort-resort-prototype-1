@@ -29,43 +29,83 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
       <Hero />
-      <section className="pt-20 md:py-32 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-           <div className="h-full w-full" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")' }} />
-        </div>
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            <MotionDiv
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="text-left md:col-span-2"
-            >
-              <SectionHeading 
-                title="LOHAGARH GROUP OF HOTELS" 
-                subtitle="WELCOME TO" 
-              />
-              {/* <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-serif italic max-w-3xl mx-auto mb-12">
-                Experience the grandeur of exotic Rajasthan with HRH, India's only chain of heritage Palace-hotels and resorts under private ownership, as you wake up to history on your doorstep.
-              </p> */}
-              <div className="flex flex-col items-left">
-                <p className="text-gray-600 text-sm tracking-widest max-w-2xl text-justify leading-loose mb-10">
-                  Experience the grandeur of exotic Rajasthan with Lohagarh, India's only chain of heritage Palace-hotels and resorts under private ownership, as you wake up to history on your doorstep.
-                </p>
-                <Link href="/about" className="mx-auto md:mx-0">
-                  <span className="bg-primary/10 border border-primary text-primary px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-500">
-                    Discover More
-                  </span>
-                </Link>
-              </div>
-            </MotionDiv>
-            <div className="md:col-span-1 pt-20 md:pt-0">
-              <Image className="rounded-xl" src={"https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg"} alt={""} width={600} height={1200} />
+ <section className="py-24 bg-[#faf8f4] overflow-hidden">
+      <div className="container mx-auto max-w-8xl px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[520px]">
+ 
+          {/* ── LEFT: Text Column ── */}
+          <MotionDiv
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex flex-col justify-center pr-0 lg:pr-15 py-10 lg:py-0"
+          >
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-8 h-px bg-primary" />
+              <span className="text-primary text-xs tracking-[0.35em] uppercase font-medium">
+                Welcome To
+              </span>
             </div>
-          </div>
+ 
+            {/* Heading */}
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1a120b] leading-[1.1] mb-6 tracking-tight">
+              Lohagarh<br />
+              <span className="text-[#3d2712]">Group of Companies</span>
+            </h2>
+ 
+            {/* Gold rule */}
+            <div className="w-12 h-[2px] bg-primary mb-8" />
+ 
+            {/* Body */}
+            <p className="text-[#5a4a38] text-base leading-[1.9] mb-10 max-w-md">
+              Experience the grandeur of exotic Rajasthan with Lohagarh —
+              India's only chain of heritage Palace-hotels and resorts under
+              private ownership. Wake up to history on your doorstep.
+            </p>
+ 
+ 
+            {/* CTA */}
+            <div>
+              <Link href="/about">
+                <span className="inline-block border border-primary text-primary px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all duration-400">
+                  Discover More
+                </span>
+              </Link>
+            </div>
+          </MotionDiv>
+ 
+          {/* ── RIGHT: Image Column ── */}
+          <MotionDiv
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+            className="relative"
+          >
+            {/* Decorative offset border */}
+            <div className="absolute top-4 right-4 bottom-[-16px] left-[-16px] border border-[#e8dcc8] z-0 hidden lg:block" />
+ 
+            {/* Main image */}
+            <div className="relative z-10 w-full h-full min-h-[400px] lg:min-h-0 overflow-hidden">
+              <Image
+                src="https://res.cloudinary.com/drayl5ppi/image/upload/v1773212407/lohagarh/images/hero/DSC03783_v1psxa.jpg"
+                alt="Lohagarh Heritage Palace"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+ 
+              {/* Subtle dark vignette on bottom of image only */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-black/20" />
+ 
+            </div>
+          </MotionDiv>
+ 
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Featured Hotels - Horizontal Reveal */}
       <section className="py-10 md:py-32 px-0 md:px-4 bg-primary-foreground">
