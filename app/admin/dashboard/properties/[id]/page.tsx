@@ -1,17 +1,29 @@
-import { Table, TableBody, TableHead } from "@/components/ui/table";
-import { getHotel } from "@/lib/db"
-import UpdatePage from "./components/UpdatePage";
+// app/admin/dashboard/properties/[id]/page.jsx
 
-export default async function page({params}: any) {
+import { notFound } from "next/navigation";
+import Properties from "@/models/Properties";
+import PropertyDrillEditor from "@/components/PropertyDrillEditor";
+import { connectDB } from "@/lib/db";
+
+const HIDDEN_FIELDS = { _id: 0, __v: 0, createdAt: 0, updatedAt: 0 };
+
+async function getProperty(id: string) {
+  await connectDB();
+  const doc = await Properties.findOne({ id }, HIDDEN_FIELDS).lean();
+  if (!doc) return null;
+  return JSON.parse(JSON.stringify(doc));
+}
+
+export default async function PropertyRootPage({ params }: any) {
   const { id } = await params;
-  const hotel = await getHotel(id);
-  console.log("🚀 ~ page ~ hotel:", hotel);
-
-  if(!hotel) return <div> Hotel not found </div>;
+  const property = await getProperty(id);
+  if (!property) notFound();
 
   return (
-    <div>
-        <UpdatePage hotel={hotel} />
-    </div>
-  )
+    <PropertyDrillEditor
+      documentId={id}
+      fullDocument={property}
+      path={[]}
+    />
+  );
 }

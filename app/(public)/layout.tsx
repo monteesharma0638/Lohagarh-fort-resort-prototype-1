@@ -8,8 +8,8 @@ import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
-  title: "Lohagarh Hotels - A Legacy of Indian Royalty",
-  description: "Discover the timeless elegance of Lohagarh Hotels, where historic forts and palaces have been transformed into luxurious sanctuaries. Experience a symphony of Indian hospitality and grandeur in our palatial destinations across the subcontinent.",
+  title: "Lohagarh Group of Companies - A Legacy of Indian Royalty",
+  description: "Experience a symphony of Indian hospitality at Lohagarh Hotels. Stay in luxurious sanctuaries within historic forts and palaces for a truly grand getaway.",
 };
 
 export default async function RootLayout({

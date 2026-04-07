@@ -9,14 +9,19 @@ import ResortExplorer from "./components/ResortExplorer";
 import AllExploreSections from "./components/AllExploreSections";
 import { getHotels } from "@/lib/db";
 import PalaceTrainSection from "./components/PalaceTrainSection";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Lohagarh Group of Companies - A Legacy of Indian Royalty",
+  description: "Experience a symphony of Indian hospitality at Lohagarh Hotels. Stay in luxurious sanctuaries within historic forts and palaces for a truly grand getaway.",
+};
 
-  const stats = [
-    { label: "Heritage Properties", value: "6" },
-    { label: "Years of Royalty", value: "20+" },
-    { label: "Global Awards", value: "100+" },
-    { label: "Happy Guests", value: "1M+" }
-  ];
+const stats = [
+  { label: "Heritage Properties", value: "6" },
+  { label: "Years of Royalty", value: "20+" },
+  { label: "Global Awards", value: "100+" },
+  { label: "Happy Guests", value: "1M+" }
+];
 
 export default async function Home() {
   const hotels = await getHotels();

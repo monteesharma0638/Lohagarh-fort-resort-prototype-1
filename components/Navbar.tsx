@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import MotionDiv from "./MotionDiv";
 import Image from "next/image";
+import PalaceOnWheelsContact from "./PalaceOnWheelsContact";
 
 type SubMenuItem = {
   label: string;

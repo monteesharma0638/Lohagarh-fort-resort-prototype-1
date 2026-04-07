@@ -7,6 +7,7 @@ import {
   FileText, 
   Newspaper,
   LogOut,
+  HotelIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -24,6 +25,7 @@ const navItems = [
   { icon: Users, label: "Users (Super Admin)", href: "/admin/dashboard/users", onlySuperAdmin: true },
   { icon: FileText, label: "Pages", href: "/admin/dashboard/pages" },
   { icon: Newspaper, label: "Blogs", href: "/admin/dashboard/blogs" },
+  { icon: HotelIcon, label: "Properties", href: "/admin/dashboard/properties" },
 ];
 
 export default async function AdminLayout({ children, params }: AdminLayoutProps) {

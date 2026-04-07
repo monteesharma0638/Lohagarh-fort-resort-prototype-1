@@ -1,6 +1,12 @@
 import MotionDiv from "@/components/MotionDiv";
 import AboutIntroSection from "@/sections/AboutIntroSection";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Lohagarh Group | Crafting Experiences in Luxury & Nature",
+  description: "Explore the vision behind Lohagarh. With 20+ years of excellence, we create harmonious escapes that blend traditional architecture with sustainable luxury.",
+};
 
 export default function AboutLohagarh() {
   return (

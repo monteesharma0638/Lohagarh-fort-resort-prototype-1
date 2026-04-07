@@ -41,7 +41,7 @@ export async function getHotels() {
   await connectDB();
   const result = await Properties.find().sort("priority").select("-_id -_v").lean();
 
-  return result;
+  return JSON.parse(JSON.stringify(result));
 }
 
 export async function getPageDataByRoute (route: string) {

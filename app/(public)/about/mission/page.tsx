@@ -1,6 +1,13 @@
 import MotionDiv from "@/components/MotionDiv";
 import Image from "next/image";
 import MissionSection from "./components/MissionSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Mission & Values | Lohagarh Group of Companies",
+  description: "Redefining luxury through the richness of Indian heritage. At Lohagarh, we blend sustainability, culture, and authentic hospitality to create memorable stays.",
+};
+
 
 export default function OurMission() {
   return (

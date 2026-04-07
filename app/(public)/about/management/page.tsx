@@ -1,6 +1,12 @@
 import MotionDiv from "@/components/MotionDiv";
 import VisionaryLeaders from "@/components/VisionaryLeaders";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Management Team | Lohagarh Group of Companies",
+  description: "Meet the leadership behind Lohagarh Group. Led by Managing Director Bhagat Singh Lohagarh, we specialize in luxury hospitality, real estate, and technology.",
+};
 
 export default function Management() {
   return (
