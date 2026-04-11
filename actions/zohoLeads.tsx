@@ -3,6 +3,8 @@
 // app/actions/zohoLeads.ts
 import nodemailer from 'nodemailer';
 import path from 'path';
+import { waitUntil } from "@vercel/functions";
+import fs from 'fs';
 
 async function sendMail(formData: FormData) {
 
@@ -15,41 +17,22 @@ async function sendMail(formData: FormData) {
     },
   });
 
+  const emailFilePath = path.join(process.cwd(), 'email-template' , 'email.html');
+  const emailTemplate = fs.readFileSync(emailFilePath, 'utf-8');
+
   const mailOptions = {
     from: 'monteesharma0638@gmail.com',
     to: formData.get('email') as string,
     subject: 'Thank you for your Enquiry - Lohagarh Group',
     // text: `Hi ${formData.get('firstName')}, we received your message!. We will get back to you shortly.`,
-    html: `<div style="font-family: 'Georgia', serif; color: #333; line-height: 1.6;">
-          <h2 style="color: #8B0000;">Greetings from the Heart of Heritage,</h2>
-          <p>Thank you for reaching out to the <b>Lohagarh Group of Companies</b>. We have successfully received your enquiry.</p>
-          
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="cid:hero_image" alt="Lohagarh Luxury" style="width: 100%; max-width: 600px; border-radius: 8px;">
-          </div>
-
-          <p style="font-style: italic; border-left: 4px solid #8B0000; padding-left: 15px; margin: 20px 0;">
-            "Where history meets hospitality, and every guest is treated as a sovereign."
-          </p>
-
-          <h3 style="color: #8B0000;">Enquiry Details:</h3>
-          <ul>
-            <li><b>Name:</b> ${formData.get('firstName')} ${formData.get('lastName')}</li>
-            <li><b>Interested In:</b> ${formData.get('company')}</li>
-          </ul>
-
-          <p>One of our <b>Royal Experience Curators</b> will contact you within 24 hours.</p>
-          <hr>
-          <p style="font-size: 0.8em; color: #777;">Lohagarh Group | Heritage • Luxury • Beyond</p>
-        </div>
-      `,
-      attachments: [
-        {
-          filename: 'resort-view.jpg',
-          path: path.join(process.cwd(), 'public', 'assets', 'drone-lohagarh.jpg'), // Path to your local image
-          cid: 'hero_image' // Same ID used in the <img src="cid:..."> tag
-        }
-      ]
+    html: emailTemplate,
+      // attachments: [
+      //   {
+      //     filename: 'resort-view.jpg',
+      //     path: path.join(process.cwd(), 'public','drone-lohagarh.jpg'), // Path to your local image
+      //     cid: 'hero_image' // Same ID used in the <img src="cid:..."> tag
+      //   }
+      // ]
   };
 
   try {
@@ -80,17 +63,16 @@ export async function submitToZoho(formData: FormData) {
 
   try {
     // Adding headers to ensure the server-side request isn't blocked by Zoho's firewall
-    const response = await Promise.all([fetch('https://crm.zoho.in/crm/WebToLeadForm', {
+    const response = await fetch('https://crm.zoho.in/crm/WebToLeadForm', {
       method: 'POST',
       body: zohoPayload,
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       }
-    }),
+    });
 
     // Send the confirmation email after the CRM check
-    await sendMail(formData)
-    ]);
+    waitUntil(sendMail(formData));
 
     return { success: true };
   } catch (error) {
