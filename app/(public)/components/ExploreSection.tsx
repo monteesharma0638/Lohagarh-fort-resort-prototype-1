@@ -46,7 +46,7 @@ interface IExploreSection {
 
 export default function ExploreSection({ reverse = false, content, title, image }: IExploreSection) {
   return (
-    <section className="w-full bg-[#D6CBB3] flex items-center justify-center border-2 md:border-0 border-primary">
+    <section className="w-full bg-[#D6CBB3] flex items-center justify-center">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden">
         
         {/* Left Side: Content */}
